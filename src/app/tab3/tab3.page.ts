@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor() {}
-
+    slideOpts = {
+        initialSlide: 1,
+        speed: 400
+    };
 }

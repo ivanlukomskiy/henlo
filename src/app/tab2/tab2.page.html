@@ -1,33 +1,11 @@
-<ion-content>
-    <div style="height: 30%"></div>
-    <ion-item-sliding #item>
-        <ion-card>
-            <ion-card-content>
-                <ion-input placeholder="Original"></ion-input>
-                <ion-input placeholder="Translation"></ion-input>
-            </ion-card-content>
-            <!--<ion-button color="primary">Primary</ion-button>-->
-
-            <!--
-            <ion-item-sliding #item>
-                <ion-item>
-                    Item
-                </ion-item>
-                <ion-item-options side="left">
-                    <button ion-button (click)="favorite(item)">Favorite</button>
-                    <button ion-button color="danger" (click)="share(item)">Share</button>
-                </ion-item-options>
-
-                <ion-item-options side="right">
-                    <button ion-button (click)="unread(item)">Unread</button>
-                </ion-item-options>
-            </ion-item-sliding>
-            -->
-
-        </ion-card>
-        <ion-item-options side="start">
-            <!--<button ion-button (click)="">Favorite</button>-->
-            <!--<button ion-button color="danger" (click)="">Share</button>-->
-        </ion-item-options>
-    </ion-item-sliding>
+<ion-content id="myElement">
+    <ion-card
+            style="padding-top: 10px; padding-bottom: 10px; margin-top: 20%;"
+            [style.marginLeft.px]="shift + 10"
+            [style.margin-right.px]="10 -shift"
+    >
+        <ion-input placeholder="Original" [(ngModel)]="original" #inputOriginal></ion-input>
+        <ion-input placeholder="Translation" [(ngModel)]="translation"></ion-input>
+    </ion-card>
+    <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">{{hintText}}</div>
 </ion-content>
