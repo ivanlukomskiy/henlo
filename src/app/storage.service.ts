@@ -19,17 +19,23 @@ export class StorageService {
         this.subject.subscribe(callback);
     }
 
+    getSnapshot() {
+        console.log('getting snap');
+        return this.load()
+            .then(translations => JSON.parse(JSON.stringify(translations)));
+    }
+
     load() {
         const _self = this;
         if (_self.translations !== null) {
             _self.subject.next(_self.translations);
-            return;
+            return Promise.resolve(_self.translations);
         }
-        _self.storage.get('translations')
+        return _self.storage.get('translations')
             .then(val => {
                 _self.translations = val;
-                console.log('jsakdjnsd');
                 _self.subject.next(val);
+                return val;
             });
     }
 
