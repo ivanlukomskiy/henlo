@@ -13,6 +13,7 @@ import
 import 'rxjs-compat/add/observable/interval';
 import {Storage} from '@ionic/storage';
 import {StorageService} from '../storage.service';
+import * as Hammer from './../../../node_modules/hammerjs/hammer.js';
 
 const PAN_MIN_SHIFT = 40;
 
