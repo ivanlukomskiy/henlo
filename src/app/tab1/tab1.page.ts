@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Storage} from '@ionic/storage';
+import {StorageService} from '../storage.service';
 
 @Component({
     selector: 'app-tab1',
@@ -8,13 +8,32 @@ import {Storage} from '@ionic/storage';
 })
 export class Tab1Page implements OnInit {
 
+    translationsFiltered = [];
     translations = [];
+    search = '';
 
-    constructor(private storage: Storage) {
+    constructor(private storage: StorageService) {
+    }
+
+    searchChanged(val) {
+        console.log('val', val.detail.value);
+        this.updateList(val.detail.value);
+    }
+
+    updateList(val) {
+        const search = val ? val : this.search;
+        const regExp = new RegExp(search, 'i');
+        console.log('this.search', search);
+        this.translationsFiltered = this.translations.filter(translation =>
+            regExp.test(translation.original) || regExp.test(translation.translation));
+        this.translations.forEach(translation => {
+            console.log(translation, regExp.test(translation.original), regExp.test(translation.translation));
+        });
     }
 
     deleteTranslation(translation) {
         console.log('Delete translation ');
+        this.storage.remove(translation.uuid);
     }
 
     editTranslation(translation) {
@@ -23,9 +42,10 @@ export class Tab1Page implements OnInit {
 
     ngOnInit(): void {
         const _self = this;
-        _self.storage.get('translations')
-            .then(val => {
-                _self.translations = val;
-            });
+        console.log(this.storage);
+        this.storage.subscribe(translations => {
+            _self.translations = translations;
+            _self.updateList(null);
+        });
     }
 }
