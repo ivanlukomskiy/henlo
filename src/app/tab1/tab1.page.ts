@@ -23,7 +23,6 @@ export class Tab1Page implements OnInit {
     updateList(val) {
         const search = val ? val : this.search;
         const regExp = new RegExp(search, 'i');
-        console.log('this.search', search);
         this.translationsFiltered = this.translations.filter(translation =>
             regExp.test(translation.original) || regExp.test(translation.translation));
         this.translations.forEach(translation => {
@@ -32,12 +31,10 @@ export class Tab1Page implements OnInit {
     }
 
     deleteTranslation(translation) {
-        console.log('Delete translation ');
         this.storage.remove(translation.uuid);
     }
 
     editTranslation(translation) {
-        console.log('knlklkm');
     }
 
     ngOnInit(): void {

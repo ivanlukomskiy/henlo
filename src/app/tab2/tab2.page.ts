@@ -46,11 +46,8 @@ export class Tab2Page implements OnInit {
             console.log('Couldn\'t save, some fields are empty');
             return;
         }
-        console.log('Start');
         self.storage.save(self.original, self.translation)
-            .then(() => console.log('start21'))
             .then(() => {
-                console.log('Saved');
                 self.cancel(self);
             });
     }
@@ -65,7 +62,6 @@ export class Tab2Page implements OnInit {
 
     focus(self) {
         setTimeout(() => { // this will make the execution after the above boolean has changed
-            console.log(self.originalInput);
             self.originalInput.setFocus();
         }, 0);
     }
@@ -78,10 +74,8 @@ export class Tab2Page implements OnInit {
         if (ev.type === 'panend') {
             self.setText('', 1, self);
             if (ev.deltaX > PAN_MIN_SHIFT) {
-                console.log('DLSMKDM');
                 self.save(self);
             } else if (ev.deltaX < -PAN_MIN_SHIFT) {
-                console.log('DLSMKDsdM');
                 self.cancel(self);
             }
         } else if (ev.type === 'panright' && ev.deltaX > PAN_MIN_SHIFT) {
@@ -104,13 +98,9 @@ export class Tab2Page implements OnInit {
 
     ngOnInit(): void {
         const self = this;
-
         var myElement = document.getElementById('myElement');
-
         const mc = new Hammer(myElement);
-
         mc.on('panleft panright panend', ev => self.panCaptured(ev, self));
-
-        // self.focus(self);
+        self.focus(self);
     }
 }
