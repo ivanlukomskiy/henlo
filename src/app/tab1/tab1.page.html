@@ -1,21 +1,26 @@
 <ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)"></ion-searchbar>
 <ion-content *ngIf="storage">
-    <ion-list>
-        <ng-container *ngFor="let tr of translationsFiltered">
-            <ion-item-sliding>
-                <ion-item-options side="start">
-                    <ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>
-                </ion-item-options>
-                <!--<ion-item-options side="end">-->
+    <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
+        <div style="text-align: center; width: 100%; font-size: small; margin-top: 20px">
+            {{datePretty(translationsByDates[datestring].date)}}
+        </div>
+        <ion-list style="padding-top: 0;">
+            <ng-container *ngFor="let tr of translationsByDates[datestring].translations">
+                <ion-item-sliding>
+                    <ion-item-options side="start">
+                        <ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>
+                    </ion-item-options>
+                    <!--<ion-item-options side="end">-->
                     <!--<ion-item-option color="primary" (click)="editTranslation(tr)">Edit</ion-item-option>-->
-                <!--</ion-item-options>-->
-                <ion-item class="ion-text-wrap">
-                    <ion-label class="ion-text-nowrap">{{tr.original}}</ion-label>
-                    <ion-text class="ion-text-nowrap">{{tr.translation}}</ion-text>
-                </ion-item>
-            </ion-item-sliding>
-        </ng-container>
-    </ion-list>
+                    <!--</ion-item-options>-->
+                    <ion-item class="ion-text-wrap">
+                        <ion-label class="ion-text-nowrap">{{tr.original}}</ion-label>
+                        <ion-text class="ion-text-nowrap">{{tr.translation}}</ion-text>
+                    </ion-item>
+                </ion-item-sliding>
+            </ng-container>
+        </ion-list>
+    </ng-container>
     <div style="display:flex; width: 100%; height: 30%;" *ngIf="!translations || translations.length === 0">
         <ion-label class="ion-text-center" style="margin: auto" color="medium">
             <h2>Nothing to show</h2>

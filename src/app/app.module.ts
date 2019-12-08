@@ -12,7 +12,9 @@ import {AppComponent} from './app.component';
 import {StorageService} from './storage.service';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [
+        AppComponent,
+    ],
     entryComponents: [],
     imports: [
         BrowserModule,

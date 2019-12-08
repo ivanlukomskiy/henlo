@@ -66,7 +66,7 @@ export class Tab2Page implements OnInit {
             self.originalInput.setFocus();
         }, 0);
     }
-
+    
     panCaptured(ev, self) {
         console.log(ev.type);
         // if (!ev.hasOwnProperty('deltaX')) {
