@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
+import {ModalController} from '@ionic/angular';
+import {Tab2Page} from '../tab2/tab2.page';
+import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -18,11 +21,11 @@ export class Tab1Page implements OnInit {
     search = '';
     translationsByDates = {};
 
-    constructor(private storage: StorageService) {
+    constructor(private storage: StorageService,
+                public modalController: ModalController) {
     }
 
     searchChanged(val) {
-        console.log('val', val.detail.value);
         this.updateList(val.detail.value);
     }
 
@@ -49,7 +52,6 @@ export class Tab1Page implements OnInit {
             translationsByDates [key].translations.push(a);
         });
         this.translationsByDates = translationsByDates;
-        console.log('translationsByDates: ', translationsByDates);
     }
 
     deleteTranslation(translation) {
@@ -57,11 +59,22 @@ export class Tab1Page implements OnInit {
     }
 
     editTranslation(translation) {
+        this.presentModal(translation);
+    }
+
+    async presentModal(translation) {
+        const modal = await this.modalController.create({
+            component: TranslationEditComponent,
+            componentProps: {
+                edit: 'true',
+                translation: JSON.parse(JSON.stringify(translation))
+            }
+        });
+        return await modal.present();
     }
 
     ngOnInit(): void {
         const _self = this;
-        console.log(this.storage);
         this.storage.subscribe(translations => {
             _self.translations = translations;
             _self.updateList(null);
@@ -74,7 +87,7 @@ export class Tab1Page implements OnInit {
         const todayTime = today.getTime();
 
         const truncated = this.truncateHours(date).getTime();
-        const diff = (truncated - todayTime) / 24 / 60 / 60 / 1000;
+        const diff = (todayTime - truncated) / 24 / 60 / 60 / 1000;
         if (diff === 0) {
             return 'Today';
         } else if (diff === 1) {

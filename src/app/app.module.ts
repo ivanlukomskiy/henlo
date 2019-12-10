@@ -10,12 +10,17 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StorageService} from './storage.service';
+import {Tab2Page} from './tab2/tab2.page';
+import {Tab2PageModule} from './tab2/tab2.module';
+import {TranslationEditComponent} from './translation-edit/translation-edit.component';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
-    entryComponents: [],
+    entryComponents: [
+
+    ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(),

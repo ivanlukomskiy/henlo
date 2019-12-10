@@ -45,7 +45,6 @@ export class Tab3Page implements OnInit {
         _self.storage.getSnapshot()
             .then(translations => {
                 shuffleArray(translations);
-                console.log('this.translations', translations);
                 _self.translations = translations;
                 if (!_self.translations) {
                     console.error('No translations found');

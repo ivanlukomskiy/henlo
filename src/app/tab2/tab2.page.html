@@ -1,13 +1,3 @@
-<ion-content id="myElement">
-    <div
-            style="padding: 20px;margin-top: 20%"
-            [style.marginLeft.px]="shift + 10"
-            [style.margin-right.px]="10 -shift"
-    >
-        <ion-input placeholder="Original" [(ngModel)]="original" #inputOriginal
-                   style="text-align: center;font-size: x-large"></ion-input>
-        <ion-input placeholder="Translation" [(ngModel)]="translation"
-                   style="text-align: center;font-size: x-large"></ion-input>
-    </div>
-    <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">{{hintText}}</div>
+<ion-content class="parent">
+    <app-translation-edit class="child" id="edit"></app-translation-edit>
 </ion-content>

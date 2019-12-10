@@ -20,7 +20,6 @@ export class StorageService {
     }
 
     getSnapshot() {
-        console.log('getting snap');
         return this.load()
             .then(translations => JSON.parse(JSON.stringify(translations)));
     }
@@ -36,6 +35,29 @@ export class StorageService {
                 _self.translations = val;
                 _self.subject.next(val);
                 return val;
+            });
+    }
+
+    clear() {
+        const newTranslations = [];
+        this.translations = newTranslations;
+        return this.storage.set('translations', newTranslations)
+            .then(() => {
+                this.subject.next(newTranslations);
+            });
+    }
+
+    update(translation) {
+        const self = this;
+        const index = this.translations.findIndex(tr => tr.uuid === translation.uuid);
+        if (index === -1) {
+            throw new Error('Translation with uuid ' + translation.uuid + ' not found');
+        }
+        translation.updated = new Date();
+        self.translations[index] = translation;
+        return this.storage.set('translations', this.translations)
+            .then(() => {
+                this.subject.next(self.translations);
             });
     }
 
