@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="!started">
     <ion-row>
         <ion-col>
             <ion-toolbar>
@@ -14,48 +14,30 @@
         </ion-col>
     </ion-row>
 
-    <ion-row>
-        <ion-col col-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-card-title>All</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    123 new words
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
-        <ion-col col-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-card-title>Starred</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    123 new words
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col col-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-card-title>Today</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    123 new words
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
-        <ion-col col-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-card-title>Yesterday</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    123 new words
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
+    <ion-row *ngIf="translationsByDays">
+        <ng-container *ngFor="let key of objectKeys(translationsByDays)">
+            <ion-col size="6" (click)="learn(key)">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>{{datePretty(translationsByDays[key].date)}}</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{translationsByDays[key].translations.length}} new words
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ng-container>
     </ion-row>
 </ion-content>
+
+<ng-container *ngIf="started">
+<ion-content style="background-color: red;" (click)="tapped()" (swipeleft)="back()">
+    <div style="margin-top: 20%; padding: 20px; text-align: center; height: 30%">
+        <h1>{{learnDirection == 'en_ru' ? translation.original : translation.translation}}</h1>
+        <p *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</p>
+    </div>
+    <div style="margin-top: 20%; padding: 20px; text-align: center">
+        {{currentIndex + 1}} / {{translations.length}}
+    </div>
+</ion-content>
+</ng-container>

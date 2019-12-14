@@ -3,10 +3,8 @@ import {StorageService} from '../storage.service';
 import {ModalController} from '@ionic/angular';
 import {Tab2Page} from '../tab2/tab2.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
+import {UtilsService} from '../utils/utils.service';
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-];
 
 @Component({
     selector: 'app-tab1',
@@ -22,17 +20,17 @@ export class Tab1Page implements OnInit {
     translationsByDates = {};
 
     constructor(private storage: StorageService,
-                public modalController: ModalController) {
+                public modalController: ModalController,
+                public utils: UtilsService
+    ) {
     }
 
     searchChanged(val) {
         this.updateList(val.detail.value);
     }
 
-    truncateHours(date) {
-        const truncated = new Date(date);
-        truncated.setHours(0, 0, 0, 0);
-        return truncated;
+    datePretty(date) {
+        return this.utils.datePretty(date);
     }
 
     updateList(val) {
@@ -43,18 +41,7 @@ export class Tab1Page implements OnInit {
         this.translationsFiltered = this.translations.filter(translation =>
             regExp.test(translation.original) || regExp.test(translation.translation));
 
-        this.translationsFiltered.sort((a, b) => b.added.getTime() - a.added.getTime());
-
-        const translationsByDates = {};
-        this.translationsFiltered.forEach(a => {
-            const date = self.truncateHours(a.added);
-            const key = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
-            if (!translationsByDates.hasOwnProperty(key)) {
-                translationsByDates [key] = {date, translations: []};
-            }
-            translationsByDates [key].translations.push(a);
-        });
-        this.translationsByDates = translationsByDates;
+        this.translationsByDates = this.utils.sortAndGroup(this.translationsFiltered);
     }
 
     deleteTranslation(translation) {
@@ -86,24 +73,6 @@ export class Tab1Page implements OnInit {
         });
     }
 
-    datePretty(date: Date) {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const todayTime = today.getTime();
 
-        const truncated = this.truncateHours(date).getTime();
-        const diff = (todayTime - truncated) / 24 / 60 / 60 / 1000;
-        if (diff === 0) {
-            return 'Today';
-        } else if (diff === 1) {
-            return 'Yesterday';
-        } else if (diff < 20) {
-            return diff + ' days ago';
-        } else if (today.getFullYear() === date.getFullYear()) {
-            return date.getDate() + ' ' + monthNames[date.getMonth()];
-        } else {
-            return date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
-        }
-    }
 
 }

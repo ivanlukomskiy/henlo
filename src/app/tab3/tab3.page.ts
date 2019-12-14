@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
+import {UtilsService} from '../utils/utils.service';
 
 @Component({
     selector: 'app-tab3',
@@ -7,6 +8,8 @@ import {StorageService} from '../storage.service';
     styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
+    objectKeys = Object.keys;
+
     translation = null;
     unveiled = false;
     started = false;
@@ -14,10 +17,15 @@ export class Tab3Page implements OnInit {
     learnDirection = 'en_ru';
 
     translations;
+    currentIndex = 0;
+    translationsByDays;
 
     options = [];
 
-    constructor(private storage: StorageService) {
+    constructor(
+        private storage: StorageService,
+        private utils: UtilsService
+    ) {
         // storage.getSettings()
     }
 
@@ -29,52 +37,46 @@ export class Tab3Page implements OnInit {
         if (!this.unveiled) {
             this.unveiled = true;
         } else {
-            this.translation = this.translations.pop();
-            if (!this.translation) {
-                this.reload();
+            this.currentIndex++;
+            if (this.currentIndex >= this.translations.length) {
+                this.currentIndex = 0;
+                this.utils.shuffleArray(this.translations);
             }
+            this.translation = this.translations[this.currentIndex];
             this.unveiled = false;
         }
     }
 
-    reload() {
-        function shuffleArray(array) {
-            for (var i = array.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-
-        const _self = this;
-        _self.storage.getSnapshot()
-            .then(translations => {
-                shuffleArray(translations);
-                _self.translations = translations;
-                if (!_self.translations) {
-                    console.error('No translations found');
-                    return;
-                }
-                _self.translation = _self.translations.pop();
-            });
+    back() {
+        this.started = false;
     }
 
-    updateList() {
+    datePretty(date) {
+        return this.utils.datePretty(date);
+    }
 
+    learn(key) {
+        this.translations = this.translationsByDays[key].translations;
+        this.utils.shuffleArray(this.translations);
+        this.currentIndex = 0;
+        this.translation = this.translations[this.currentIndex];
+        this.started = true;
+    }
+
+    updateList(translations) {
+        this.translationsByDays = this.utils.sortAndGroup(translations);
+        console.log('this.translationsByDays: ', this.translationsByDays);
+        console.log('this.translationsByDays.length: ', Object.keys(this.translationsByDays).length);
     }
 
     ngOnInit(): void {
         const _self = this;
         this.storage.subscribe(translations => {
             console.log('translations: ', translations);
-            _self.translations = translations;
-            _self.updateList();
+            _self.updateList(translations);
         });
     }
 
     ionViewDidEnter() {
-        this.reload();
-// this.started = false;
     }
 }

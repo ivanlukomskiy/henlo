@@ -2,7 +2,6 @@
 <ion-content *ngIf="storage">
     <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
         <div style="text-align: center; width: 100%; font-size: small; margin-top: 40px">
-            <!--<ion-badge color="primary">{{datePretty(translationsByDates[datestring].date)}}</ion-badge>-->
             <h3>{{datePretty(translationsByDates[datestring].date)}}</h3>
         </div>
         <ion-list style="padding-top: 0;">
