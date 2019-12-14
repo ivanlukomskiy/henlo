@@ -39,8 +39,11 @@ export class Tab1Page implements OnInit {
         const self = this;
         const search = val ? val : this.search;
         const regExp = new RegExp(search, 'i');
+
         this.translationsFiltered = this.translations.filter(translation =>
             regExp.test(translation.original) || regExp.test(translation.translation));
+
+        this.translationsFiltered.sort((a, b) => b.added.getTime() - a.added.getTime());
 
         const translationsByDates = {};
         this.translationsFiltered.forEach(a => {
@@ -67,13 +70,15 @@ export class Tab1Page implements OnInit {
             component: TranslationEditComponent,
             componentProps: {
                 edit: 'true',
-                translation: JSON.parse(JSON.stringify(translation))
+                translation: Object.assign({}, translation)
             }
         });
         return await modal.present();
     }
 
     ngOnInit(): void {
+        this.storage.clear();
+        this.storage.generate();
         const _self = this;
         this.storage.subscribe(translations => {
             _self.translations = translations;
@@ -95,9 +100,9 @@ export class Tab1Page implements OnInit {
         } else if (diff < 20) {
             return diff + ' days ago';
         } else if (today.getFullYear() === date.getFullYear()) {
-            return date.getDay + ' ' + monthNames[date.getMonth()];
+            return date.getDate() + ' ' + monthNames[date.getMonth()];
         } else {
-            return date.getDay + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
+            return date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
         }
     }
 

@@ -17,7 +17,6 @@ export class TranslationEditComponent implements OnInit {
         original: '',
         translation: ''
     };
-    @Output() closeModal = new EventEmitter();
 
     tick = 0;
     shift = '50px';
@@ -39,6 +38,7 @@ export class TranslationEditComponent implements OnInit {
             return;
         }
         if (self.edit) {
+            console.log('this.translation: ', this.translation);
             self.storage.update(this.translation)
                 .then(() => {
                     self.cancel();
@@ -63,9 +63,9 @@ export class TranslationEditComponent implements OnInit {
 
     focus() {
         const self = this;
-        setTimeout(() => {
-            self.originalInput.setFocus();
-        }, 100);
+        // setTimeout(() => {
+        //     self.originalInput.setFocus();
+        // }, 100);
     }
 
     setText(text, transparency, self) {
@@ -75,5 +75,6 @@ export class TranslationEditComponent implements OnInit {
 
     ngOnInit(): void {
         this.focus();
+        console.log('this.translation: ', this.translation);
     }
 }

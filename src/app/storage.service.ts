@@ -14,9 +14,18 @@ export class StorageService {
     constructor(private storage: Storage) {
     }
 
+    getSettings() {
+        return this.storage.get('settings');
+    }
+
+    setSettings(settings) {
+        return this.storage.set('settings', settings);
+    }
+
     subscribe(callback) {
+        const self = this;
+        self.subject.subscribe(callback);
         this.load();
-        this.subject.subscribe(callback);
     }
 
     getSnapshot() {
@@ -44,6 +53,25 @@ export class StorageService {
         return this.storage.set('translations', newTranslations)
             .then(() => {
                 this.subject.next(newTranslations);
+            });
+    }
+
+    generate() {
+        const newTranslations = [];
+        for (let i = 0; i < 500; i++) {
+            const date = new Date(new Date().getTime() - Math.random() * 24 * 60 * 60 * 1000 * 50);
+            const newTranslation = {
+                original: Math.random().toString(36).substring(7),
+                translation: Math.random().toString(36).substring(7),
+                added: date,
+                uuid: uuid()
+            };
+            newTranslations.push(newTranslation);
+        }
+        this.translations = newTranslations;
+        return this.storage.set('translations', newTranslations)
+            .then(() => {
+                this.subject.next(this.translations);
             });
     }
 

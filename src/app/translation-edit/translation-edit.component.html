@@ -1,8 +1,8 @@
 <div id="content1" style="background-color: #7e57ff" (swipeleft)="cancel()" (swiperight)="save()">
     <div class="text-block" id="content">
         <form (ngSubmit)="save()">
-            <ion-input placeholder="Original" [(ngModel)]="translation.original" #inputOriginal></ion-input>
-            <ion-input placeholder="Translation" [(ngModel)]="translation.translation"></ion-input>
+            <ion-input placeholder="Original" [(ngModel)]="translation.original" #inputOriginal  name="original"></ion-input>
+            <ion-input placeholder="Translation" [(ngModel)]="translation.translation"  name="translation"></ion-input>
         </form>
     </div>
     <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">

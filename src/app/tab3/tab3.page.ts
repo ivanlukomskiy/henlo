@@ -7,16 +7,22 @@ import {StorageService} from '../storage.service';
     styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
-    // translation = {
-    //     translation: 'Пёсель',
-    //     original: 'Doggie'
-    // };
     translation = null;
     unveiled = false;
+    started = false;
+
+    learnDirection = 'en_ru';
 
     translations;
 
+    options = [];
+
     constructor(private storage: StorageService) {
+        // storage.getSettings()
+    }
+
+    segmentChanged(event) {
+        console.log('event', event.detail.value);
     }
 
     tapped() {
@@ -54,7 +60,21 @@ export class Tab3Page implements OnInit {
             });
     }
 
+    updateList() {
+
+    }
+
     ngOnInit(): void {
+        const _self = this;
+        this.storage.subscribe(translations => {
+            console.log('translations: ', translations);
+            _self.translations = translations;
+            _self.updateList();
+        });
+    }
+
+    ionViewDidEnter() {
         this.reload();
+// this.started = false;
     }
 }
