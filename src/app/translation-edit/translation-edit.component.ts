@@ -17,6 +17,7 @@ export class TranslationEditComponent implements OnInit {
         original: '',
         translation: ''
     };
+    translationsNumber = 0;
 
     tick = 0;
     shift = '50px';
@@ -75,6 +76,10 @@ export class TranslationEditComponent implements OnInit {
 
     ngOnInit(): void {
         this.focus();
+        const _self = this;
+        this.storage.subscribe(translations => {
+            _self.translationsNumber = translations.length;
+        });
         console.log('this.translation: ', this.translation);
     }
 }

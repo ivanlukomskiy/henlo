@@ -5,6 +5,7 @@ import {Tab2Page} from '../tab2/tab2.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
 
+//2019-12-14T02:50:50.876Z
 
 @Component({
     selector: 'app-tab1',
@@ -34,14 +35,16 @@ export class Tab1Page implements OnInit {
     }
 
     updateList(val) {
-        const self = this;
+        console.log('Updating list');
         const search = val ? val : this.search;
         const regExp = new RegExp(search, 'i');
 
+        console.log('Filtering');
         this.translationsFiltered = this.translations.filter(translation =>
             regExp.test(translation.original) || regExp.test(translation.translation));
-
+        console.log('filtering done');
         this.translationsByDates = this.utils.sortAndGroup(this.translationsFiltered);
+        console.log('sorting and groupping done');
     }
 
     deleteTranslation(translation) {
@@ -64,15 +67,13 @@ export class Tab1Page implements OnInit {
     }
 
     ngOnInit(): void {
-        this.storage.clear();
-        this.storage.generate();
+        // this.storage.clear();
+        // this.storage.generate();
+        console.log('Init tab 1');
         const _self = this;
         this.storage.subscribe(translations => {
             _self.translations = translations;
             _self.updateList(null);
         });
     }
-
-
-
 }

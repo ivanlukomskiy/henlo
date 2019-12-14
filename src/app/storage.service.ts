@@ -34,12 +34,27 @@ export class StorageService {
     }
 
     load() {
+        console.log('loading translations');
         const _self = this;
         if (_self.translations !== null) {
             _self.subject.next(_self.translations);
             return Promise.resolve(_self.translations);
         }
         return _self.storage.get('translations')
+            .then(translations => {
+                translations.forEach(translation => {
+                    if (typeof translation.added === 'string') {
+                        translation.added = new Date(translation.added).getTime();
+                    }
+                    if (translation.added instanceof Date) {
+                        translation.added = translation.added.getTime();
+                    }
+                    if (translation.hasOwnProperty('updated')) {
+                        delete translation.updated;
+                    }
+                });
+                return translations;
+            })
             .then(val => {
                 _self.translations = val;
                 _self.subject.next(val);
@@ -48,6 +63,7 @@ export class StorageService {
     }
 
     clear() {
+        console.log('clearing service');
         const newTranslations = [];
         this.translations = newTranslations;
         return this.storage.set('translations', newTranslations)
@@ -57,13 +73,14 @@ export class StorageService {
     }
 
     generate() {
+        console.log('generating transaction examples');
         const newTranslations = [];
-        for (let i = 0; i < 500; i++) {
-            const date = new Date(new Date().getTime() - Math.random() * 24 * 60 * 60 * 1000 * 50);
+        for (let i = 0; i < 5; i++) {
+            const timestamp = new Date().getTime() - Math.random() * 24 * 60 * 60 * 1000 * 50;
             const newTranslation = {
                 original: Math.random().toString(36).substring(7),
                 translation: Math.random().toString(36).substring(7),
-                added: date,
+                added: timestamp,
                 uuid: uuid()
             };
             newTranslations.push(newTranslation);
@@ -76,12 +93,13 @@ export class StorageService {
     }
 
     update(translation) {
+        console.log('updating record');
         const self = this;
         const index = this.translations.findIndex(tr => tr.uuid === translation.uuid);
         if (index === -1) {
             throw new Error('Translation with uuid ' + translation.uuid + ' not found');
         }
-        translation.updated = new Date();
+        // translation.updated = new Date().getTime();
         self.translations[index] = translation;
         return this.storage.set('translations', this.translations)
             .then(() => {
@@ -90,10 +108,11 @@ export class StorageService {
     }
 
     save(original, translation) {
+        console.log('saving new translations');
         const newTranslation = {
             original,
             translation,
-            added: new Date(),
+            added: new Date().getTime(),
             uuid: uuid()
         };
         const newTranslations = this.translations === null ? [newTranslation] : [newTranslation, ...this.translations];
@@ -105,6 +124,7 @@ export class StorageService {
     }
 
     remove(uuidToDelete) {
+        console.log('removing translation');
         const _self = this;
         _self.translations = _self.translations.filter(translation => translation.uuid !== uuidToDelete);
         _self.storage.set('translations', _self.translations)

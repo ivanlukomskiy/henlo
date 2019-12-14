@@ -1,4 +1,7 @@
-<div id="content1" style="background-color: #7e57ff" (swipeleft)="cancel()" (swiperight)="save()">
+<div id="content1" (swipeleft)="cancel()" (swiperight)="save()">
+    <div style="float: right; margin: 20px">
+    {{translationsNumber}}
+    </div>
     <div class="text-block" id="content">
         <form (ngSubmit)="save()">
             <ion-input placeholder="Original" [(ngModel)]="translation.original" #inputOriginal  name="original"></ion-input>
