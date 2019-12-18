@@ -61,12 +61,12 @@ export class Tab3Page implements OnInit {
         this.currentIndex = 0;
         this.translation = this.translations[this.currentIndex];
         this.started = true;
+        this.unveiled = false;
     }
 
     updateList(translations) {
         this.translationsByDays = this.utils.sortAndGroup(translations);
-        console.log('this.translationsByDays: ', this.translationsByDays);
-        console.log('this.translationsByDays.length: ', Object.keys(this.translationsByDays).length);
+        this.started = false;
     }
 
     ngOnInit(): void {

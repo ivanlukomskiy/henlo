@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
-import {ModalController} from '@ionic/angular';
+import {IonItemSliding, ModalController} from '@ionic/angular';
 import {Tab2Page} from '../tab2/tab2.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
@@ -51,7 +51,8 @@ export class Tab1Page implements OnInit {
         this.storage.remove(translation.uuid);
     }
 
-    editTranslation(translation) {
+    editTranslation(translation, slidingItem: IonItemSliding) {
+        slidingItem.close();
         this.presentModal(translation);
     }
 
