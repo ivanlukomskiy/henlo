@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class StorageService {
 
-    SERVICE_LOCATION = 'http://localhost:8000/api/v1/sync';
+    SERVICE_LOCATION = 'http://192.168.88.249:8000';
 
     translations = null;
     subject = new Subject();
@@ -22,7 +22,7 @@ export class StorageService {
         if (this.translations === null || this.translations === undefined) {
             return;
         }
-        return this.http.post(this.SERVICE_LOCATION,
+        return this.http.post(this.SERVICE_LOCATION + '/api/v1/sync',
             this.translations
         ).subscribe(data => {
             this.translations = data;
