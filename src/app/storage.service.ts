@@ -2,16 +2,32 @@ import {Injectable, OnInit} from '@angular/core';
 import {Storage} from '@ionic/storage';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StorageService {
 
+    SERVICE_LOCATION = 'http://localhost:8000/api/v1/sync';
+
     translations = null;
     subject = new Subject();
 
-    constructor(private storage: Storage) {
+    constructor(private storage: Storage,
+                private http: HttpClient) {
+    }
+
+    sync() {
+        if (this.translations === null || this.translations === undefined) {
+            return;
+        }
+        return this.http.post(this.SERVICE_LOCATION,
+            this.translations
+        ).subscribe(data => {
+            this.translations = data;
+            this.subject.next(data);
+        });
     }
 
     getSettings() {
@@ -93,13 +109,13 @@ export class StorageService {
     }
 
     update(translation) {
-        console.log('updating record');
+        console.log('updating record', translation);
         const self = this;
         const index = this.translations.findIndex(tr => tr.uuid === translation.uuid);
         if (index === -1) {
             throw new Error('Translation with uuid ' + translation.uuid + ' not found');
         }
-        // translation.updated = new Date().getTime();
+        translation.updated = new Date().getTime();
         self.translations[index] = translation;
         return this.storage.set('translations', this.translations)
             .then(() => {

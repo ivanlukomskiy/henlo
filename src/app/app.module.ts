@@ -13,7 +13,7 @@ import {StorageService} from './storage.service';
 import {Tab2Page} from './tab2/tab2.page';
 import {Tab2PageModule} from './tab2/tab2.module';
 import {TranslationEditComponent} from './translation-edit/translation-edit.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
     declarations: [
         AppComponent,
@@ -26,6 +26,7 @@ import {TranslationEditComponent} from './translation-edit/translation-edit.comp
         IonicModule.forRoot(),
         AppRoutingModule,
         IonicStorageModule.forRoot(),
+        HttpClientModule,
     ],
     providers: [
         StorageService,

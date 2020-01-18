@@ -18,4 +18,7 @@ export class SettingsPage implements OnInit {
         this.storage.clear();
     }
 
+    sync() {
+        this.storage.sync();
+    }
 }
