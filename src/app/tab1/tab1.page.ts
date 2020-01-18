@@ -5,7 +5,6 @@ import {Tab2Page} from '../tab2/tab2.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
 
-//2019-12-14T02:50:50.876Z
 
 @Component({
     selector: 'app-tab1',

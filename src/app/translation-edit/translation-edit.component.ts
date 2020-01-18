@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDes
 import {StorageService} from '../storage.service';
 import * as Hammer from './../../../node_modules/hammerjs/hammer.js';
 import {ModalController, NavController} from '@ionic/angular';
+import {UtilsService} from '../utils/utils.service';
 
 const PAN_MIN_SHIFT = 40;
 
@@ -28,6 +29,7 @@ export class TranslationEditComponent implements OnInit {
     constructor(
         private ngZone: NgZone,
         private storage: StorageService,
+        private utils: UtilsService,
         public modalController: ModalController
     ) {
     }
@@ -78,7 +80,7 @@ export class TranslationEditComponent implements OnInit {
         this.focus();
         const _self = this;
         this.storage.subscribe(translations => {
-            _self.translationsNumber = translations.length;
+            _self.translationsNumber = _self.utils.countTodayTranslations(translations);
         });
         console.log('this.translation: ', this.translation);
     }

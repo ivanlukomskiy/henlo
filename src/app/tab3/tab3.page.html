@@ -1,4 +1,4 @@
-<ion-content *ngIf="!started">
+<ion-content *ngIf="!started" (swipe)="swiped($event)">
     <ion-row>
         <ion-col>
             <ion-toolbar>
@@ -15,6 +15,16 @@
     </ion-row>
 
     <ion-row *ngIf="translationsByDays">
+        <ion-col size="6" (click)="learnAll()" *ngIf="objectKeys(translationsByDays).length > 1">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Learn All</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    {{translationsTotal.length}} new words
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
         <ng-container *ngFor="let key of objectKeys(translationsByDays)">
             <ion-col size="6" (click)="learn(key)">
                 <ion-card>
@@ -34,9 +44,10 @@
 <ion-content style="background-color: red;" (click)="tapped()" (swipeleft)="back()">
     <div style="margin-top: 20%; padding: 20px; text-align: center; height: 30%">
         <h1>{{learnDirection == 'en_ru' ? translation.original : translation.translation}}</h1>
-        <p *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</p>
+        <h4 *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</h4>
     </div>
     <div style="margin-top: 20%; padding: 20px; text-align: center">
+        {{timestampPretty(translation.added)}}<br>
         {{currentIndex + 1}} / {{translations.length}}
     </div>
 </ion-content>

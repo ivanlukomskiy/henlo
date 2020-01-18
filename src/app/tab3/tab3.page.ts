@@ -14,9 +14,10 @@ export class Tab3Page implements OnInit {
     unveiled = false;
     started = false;
 
-    learnDirection = 'en_ru';
+    learnDirection = 'ru_en';
 
     translations;
+    translationsTotal;
     currentIndex = 0;
     translationsByDays;
 
@@ -55,18 +56,27 @@ export class Tab3Page implements OnInit {
         return this.utils.datePretty(date);
     }
 
+    timestampPretty(timestamp) {
+        return this.utils.datePretty(new Date(timestamp));
+    }
+
     learn(key) {
         this.translations = this.translationsByDays[key].translations;
+        this.prepareLearning();
+    }
+
+    updateList(translations) {
+        this.translationsByDays = this.utils.sortAndGroup(translations);
+        this.translationsTotal = [...translations];
+        this.started = false;
+    }
+
+    private prepareLearning() {
         this.utils.shuffleArray(this.translations);
         this.currentIndex = 0;
         this.translation = this.translations[this.currentIndex];
         this.started = true;
         this.unveiled = false;
-    }
-
-    updateList(translations) {
-        this.translationsByDays = this.utils.sortAndGroup(translations);
-        this.started = false;
     }
 
     ngOnInit(): void {
@@ -77,6 +87,13 @@ export class Tab3Page implements OnInit {
         });
     }
 
-    ionViewDidEnter() {
+    learnAll() {
+        console.log('learn all');
+        this.translations = this.translationsTotal;
+        this.prepareLearning();
+    }
+
+    swiped(event) {
+        console.log('event: ', event);
     }
 }

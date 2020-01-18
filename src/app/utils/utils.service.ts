@@ -19,10 +19,22 @@ export class UtilsService {
         return truncated;
     }
 
-    public datePretty(date: Date) {
+    public countTodayTranslations(translations) {
+        const self = this;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const todayTime = today.getTime();
+        return translations.filter(tr => self.truncateHours(tr.added).getTime() === todayTime).length;
+    }
+
+    public datePretty(date: Date) {
+        console.log('date: ', date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayTime = today.getTime();
+
+        console.log('today: ', today, typeof(today));
+        console.log('date: ', date, typeof(date));
 
         const truncated = this.truncateHours(date).getTime();
         const diff = (todayTime - truncated) / 24 / 60 / 60 / 1000;

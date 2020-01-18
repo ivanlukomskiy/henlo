@@ -75,7 +75,7 @@ export class StorageService {
     generate() {
         console.log('generating transaction examples');
         const newTranslations = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 500; i++) {
             const timestamp = new Date().getTime() - Math.random() * 24 * 60 * 60 * 1000 * 50;
             const newTranslation = {
                 original: Math.random().toString(36).substring(7),
