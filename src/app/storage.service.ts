@@ -24,9 +24,12 @@ export class StorageService {
         }
         return this.http.post(this.SERVICE_LOCATION + '/api/v1/sync',
             this.translations
-        ).subscribe(data => {
+        ).toPromise().then(data => {
             this.translations = data;
-            this.subject.next(data);
+        }).then(() => {
+            return this.saveAll(this.translations);
+        }).then(() => {
+            this.subject.next(this.translations);
         });
     }
 
@@ -137,6 +140,10 @@ export class StorageService {
             .then(() => {
                 this.subject.next(this.translations);
             });
+    }
+
+    saveAll(newTranslations) {
+        return this.storage.set('translations', newTranslations);
     }
 
     remove(uuidToDelete) {
