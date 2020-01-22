@@ -2,3 +2,59 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.inner-scroll {
+  padding: 0;
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.hello-div {
+  width: 100%;
+  text-align: center;
+  background-color: #635c51;
+  padding-top: 25px;
+}
+
+.date-div {
+  text-align: center;
+  width: 100%;
+  font-size: small;
+  padding-top: 25px;
+  padding-bottom: 3px;
+  background-color: #39304a;
+}
+
+.date-header {
+  margin-bottom: 0;
+}
+
+.list-translation {
+  width: 50%;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.list-original {
+  width: 50%;
+  align-self: flex-end;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.list-item-dark {
+  background-color: #1E1E2C;
+}
+
+.words-list {
+  padding: 0 0 3px 0
+}

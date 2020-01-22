@@ -51,7 +51,7 @@ export class Tab1Page implements OnInit {
     }
 
     editTranslation(translation, slidingItem: IonItemSliding) {
-        slidingItem.close();
+        // slidingItem.close();
         this.presentModal(translation);
     }
 

@@ -1,23 +1,28 @@
-<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)"></ion-searchbar>
+<!--<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)"></ion-searchbar>-->
 <ion-content *ngIf="storage">
+    <div class="hello-div">
+        <h3>Hello</h3>
+        You've learned 10 words today
+    </div>
     <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
-        <div style="text-align: center; width: 100%; font-size: small; margin-top: 40px">
-            <h3>{{datePretty(translationsByDates[datestring].date)}}</h3>
+        <div class="date-div">
+            <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
         </div>
-        <ion-list style="padding-top: 0;">
-            <ng-container *ngFor="let tr of translationsByDates[datestring].translations">
-                <ion-item-sliding #ionSliding>
-                    <ion-item-options side="start">
-                        <ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>
-                    </ion-item-options>
-                    <ion-item-options side="end">
-                    <ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>
-                    </ion-item-options>
-                    <ion-item class="ion-text-wrap">
-                        <ion-label class="ion-text-nowrap">{{tr.original}}</ion-label>
-                        <ion-text class="ion-text-nowrap">{{tr.translation}}</ion-text>
-                    </ion-item>
-                </ion-item-sliding>
+        <ion-list class="words-list">
+            <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
+                <!--<ion-item-sliding #ionSliding>-->
+                <!--<ion-item-options side="start">-->
+                <!--<ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>-->
+                <!--</ion-item-options>-->
+                <!--<ion-item-options side="end">-->
+                <!--<ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>-->
+                <!--</ion-item-options>-->
+                <div (click)="editTranslation(tr, ionSliding)" class="list-item"
+                     [ngClass]="{'list-item-dark': i % 2 === 0}">
+                    <div class="list-original">{{tr.original}}</div>
+                    <div class="list-translation">{{tr.translation}}</div>
+                </div>
+                <!--</ion-item-sliding>-->
             </ng-container>
         </ion-list>
     </ng-container>
@@ -27,8 +32,8 @@
         </ion-label>
     </div>
     <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin: 10px">-->
-        <!--<ion-fab-button>-->
-            <!--<ion-icon name="add"></ion-icon>-->
-        <!--</ion-fab-button>-->
+    <!--<ion-fab-button>-->
+    <!--<ion-icon name="add"></ion-icon>-->
+    <!--</ion-fab-button>-->
     <!--</ion-fab>-->
 </ion-content>
