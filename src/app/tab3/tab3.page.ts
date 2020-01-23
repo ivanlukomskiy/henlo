@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {UtilsService} from '../utils/utils.service';
+import {ModalController} from '@ionic/angular';
 
 @Component({
     selector: 'app-tab3',
@@ -25,7 +26,8 @@ export class Tab3Page implements OnInit {
 
     constructor(
         private storage: StorageService,
-        private utils: UtilsService
+        private utils: UtilsService,
+        public modalController: ModalController
     ) {
         // storage.getSettings()
     }
@@ -95,5 +97,9 @@ export class Tab3Page implements OnInit {
 
     swiped(event) {
         console.log('event: ', event);
+    }
+
+    swipedLeft() {
+        this.modalController.dismiss({dismissed: true});
     }
 }

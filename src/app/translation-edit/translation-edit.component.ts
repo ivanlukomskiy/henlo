@@ -49,19 +49,15 @@ export class TranslationEditComponent implements OnInit {
         } else {
             self.storage.save(self.translation.original, self.translation.translation)
                 .then(() => {
-                    self.cancel();
+                    self.translation = {original: '', translation: ''};
                 });
         }
     }
 
     cancel() {
         const self = this;
-        self.translation = {original: '', translation: ''};
-        if (self.edit) {
-            self.modalController.dismiss({dismissed: true});
-        } else {
-            self.focus();
-        }
+        // self.translation = {original: '', translation: ''};
+        self.modalController.dismiss({dismissed: true});
     }
 
     focus() {

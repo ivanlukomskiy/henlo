@@ -1,9 +1,9 @@
 <div id="content1" (swipeleft)="cancel()" (swiperight)="save()">
-    <div style="float: right; margin: 20px">
+    <div style="float: right; margin: 20px; color: #B0A990;">
     {{translationsNumber}}
     </div>
     <div class="text-block" id="content">
-        <form (ngSubmit)="save()">
+        <form (ngSubmit)="save()" style="color: #B0A990;">
             <ion-input placeholder="Original" [(ngModel)]="translation.original" #inputOriginal  name="original"></ion-input>
             <ion-input placeholder="Translation" [(ngModel)]="translation.translation"  name="translation"></ion-input>
         </form>

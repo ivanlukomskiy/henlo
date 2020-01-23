@@ -1,5 +1,5 @@
 <ion-content *ngIf="storage" style="display: flex; justify-content: center">
-    <div class="hello-div" *ngIf="!searchOn">
+    <div class="hello-div" *ngIf="search === ''">
         <h3>Hello</h3>
         You've learned 10 words today
     </div>
@@ -18,7 +18,7 @@
                         <!--<ion-item-options side="end">-->
                         <!--<ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>-->
                         <!--</ion-item-options>-->
-                        <div (click)="editTranslation(tr, ionSliding)" class="list-item"
+                        <div (click)="editTranslation(tr)" class="list-item"
                              [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
                             <div class="list-original">{{tr.original}}</div>
                             <div class="list-translation">{{tr.translation}}</div>
@@ -47,15 +47,15 @@
             <ion-icon name="ios-search" [ngClass]="{'iconActive': searchOn}"></ion-icon>
             <ion-label [ngClass]="{'iconActive': searchOn}">Search</ion-label>
         </ion-tab-button>
-        <ion-tab-button class="nav-item">
+        <ion-tab-button class="nav-item" (click)="addTranslation(tr)">
             <ion-icon name="ios-add-circle-outline"></ion-icon>
             <ion-label>Add</ion-label>
         </ion-tab-button>
-        <ion-tab-button class="nav-item">
+        <ion-tab-button class="nav-item" (click)="openLearner()">
             <ion-icon name="ios-refresh"></ion-icon>
             <ion-label>Learn</ion-label>
         </ion-tab-button>
-        <ion-tab-button class="nav-item">
+        <ion-tab-button class="nav-item" (click)="openSettings()">
             <ion-icon name="settings"></ion-icon>
             <ion-label>Settings</ion-label>
         </ion-tab-button>

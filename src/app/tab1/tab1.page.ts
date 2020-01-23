@@ -4,6 +4,8 @@ import {IonItemSliding, ModalController} from '@ionic/angular';
 import {Tab2Page} from '../tab2/tab2.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
+import {Tab3Page} from '../tab3/tab3.page';
+import {SettingsPage} from '../settings/settings.page';
 
 
 @Component({
@@ -27,6 +29,7 @@ export class Tab1Page implements OnInit {
     }
 
     searchChanged(val) {
+        this.search = val.detail.value;
         this.updateList(val.detail.value);
     }
 
@@ -51,18 +54,28 @@ export class Tab1Page implements OnInit {
         this.storage.remove(translation.uuid);
     }
 
-    editTranslation(translation, slidingItem: IonItemSliding) {
-        // slidingItem.close();
-        this.presentModal(translation);
+    editTranslation(translation) {
+        this.openEditor(translation);
     }
 
-    async presentModal(translation) {
+    addTranslation(translation) {
+        this.openEditor(null);
+    }
+
+    async openEditor(translation) {
         const modal = await this.modalController.create({
             component: TranslationEditComponent,
             componentProps: {
-                edit: 'true',
-                translation: Object.assign({}, translation)
+                edit: translation !== null,
+                translation: translation ? Object.assign({}, translation) : {}
             }
+        });
+        return await modal.present();
+    }
+
+    async openLearner() {
+        const modal = await this.modalController.create({
+            component: Tab3Page
         });
         return await modal.present();
     }
@@ -84,5 +97,12 @@ export class Tab1Page implements OnInit {
             this.search = '';
             this.updateList('');
         }
+    }
+
+    async openSettings() {
+        const modal = await this.modalController.create({
+            component: SettingsPage
+        });
+        return await modal.present();
     }
 }

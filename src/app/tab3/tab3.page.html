@@ -1,24 +1,24 @@
-<ion-content *ngIf="!started" (swipe)="swiped($event)">
-    <ion-row>
-        <ion-col>
-            <ion-toolbar>
-                <ion-segment mode="ios" (ionChange)="segmentChanged($event)" [(ngModel)]="learnDirection">
-                    <ion-segment-button value="en_ru" (checked)="true">
-                        EN-RU
-                    </ion-segment-button>
-                    <ion-segment-button value="ru_en">
-                        RU-EN
-                    </ion-segment-button>
-                </ion-segment>
-            </ion-toolbar>
-        </ion-col>
-    </ion-row>
+<ion-content *ngIf="!started" (swipe)="swiped($event)" (swipeleft)="swipedLeft()">
+    <!--<ion-row>-->
+        <!--<ion-col>-->
+            <!--<ion-toolbar>-->
+                <!--<ion-segment mode="ios" (ionChange)="segmentChanged($event)" [(ngModel)]="learnDirection">-->
+                    <!--<ion-segment-button value="en_ru" (checked)="true">-->
+                        <!--EN-RU-->
+                    <!--</ion-segment-button>-->
+                    <!--<ion-segment-button value="ru_en">-->
+                        <!--RU-EN-->
+                    <!--</ion-segment-button>-->
+                <!--</ion-segment>-->
+            <!--</ion-toolbar>-->
+        <!--</ion-col>-->
+    <!--</ion-row>-->
 
     <ion-row *ngIf="translationsByDays">
         <ion-col size="6" (click)="learnAll()" *ngIf="objectKeys(translationsByDays).length > 1">
-            <ion-card>
+            <ion-card style="background-color: #39304a">
                 <ion-card-header>
-                    <ion-card-title>Learn All</ion-card-title>
+                    <ion-card-title style="color: #B0A990;">Learn All</ion-card-title>
                 </ion-card-header>
                 <ion-card-content>
                     {{translationsTotal.length}} new words
@@ -27,9 +27,9 @@
         </ion-col>
         <ng-container *ngFor="let key of objectKeys(translationsByDays)">
             <ion-col size="6" (click)="learn(key)">
-                <ion-card>
+                <ion-card style="background-color: #39304a">
                     <ion-card-header>
-                        <ion-card-title>{{datePretty(translationsByDays[key].date)}}</ion-card-title>
+                        <ion-card-title style="color: #B0A990;">{{datePretty(translationsByDays[key].date)}}</ion-card-title>
                     </ion-card-header>
                     <ion-card-content>
                         {{translationsByDays[key].translations.length}} new words

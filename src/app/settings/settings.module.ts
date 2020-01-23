@@ -7,20 +7,35 @@ import {TranslationEditComponent} from '../translation-edit/translation-edit.com
 import {TranslationEditModule} from '../translation-edit/translation-edit.module';
 import {SettingsPage} from './settings.page';
 
-@NgModule({
-    imports: [
-        TranslationEditModule,
-        IonicModule,
-        CommonModule,
-        FormsModule,
-        RouterModule.forChild([{path: '', component: SettingsPage}]),
-    ],
-    declarations: [
-        SettingsPage
-    ],
-    entryComponents: [
-        TranslationEditComponent
-    ]
-})
+@NgModule(
+//     {
+//     imports: [
+//         TranslationEditModule,
+//         IonicModule,
+//         CommonModule,
+//         FormsModule,
+//         RouterModule.forChild([{path: '', component: SettingsPage}]),
+//     ],
+//     declarations: [
+//         SettingsPage
+//     ],
+//     entryComponents: [
+//         TranslationEditComponent
+//     ]
+// }
+    {
+        declarations: [
+            SettingsPage
+        ],
+        imports: [
+            IonicModule,
+            CommonModule,
+            FormsModule,
+        ],
+        exports: [
+            SettingsPage
+        ]
+    }
+)
 export class SettingsPageModule {
 }
