@@ -1,3 +1,4 @@
+
 .welcome-card img {
   max-height: 35vh;
   overflow: hidden;
@@ -34,13 +35,13 @@
 
 .list-translation {
   width: 50%;
-  align-self: flex-end;
+  align-self: center;
   text-align: right;
 }
 
 .list-original {
   width: 50%;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .list-item {
@@ -49,12 +50,59 @@
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  border-bottom: 2px solid #1E1E2C;
 }
 
-.list-item-dark {
-  background-color: #1E1E2C;
+.list-item-last {
+  border-bottom: none;
 }
 
 .words-list {
-  padding: 0 0 3px 0
+  padding: 0 0 3px 0;
+}
+
+.bottom-panel {
+  //height: 70px;
+  display: flex;
+  background-color: #181823;
+  justify-content: space-around;
+}
+
+.nav-button {
+}
+
+.nav-item {
+  color: #B0A990;
+}
+
+.nav-panel {
+  justify-content: space-around;
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+}
+
+.main-column-wrapper {
+  width: 100%;
+  //border: 1px solid rebeccapurple;
+  display: flex;
+  //max-width: 700px;
+  justify-content: space-around;
+}
+.main-column {
+  width: 100%;
+  //border: 1px solid red;
+  //display: flex;
+  max-width: 700px;
+  //justify-content: space-around;
+}
+
+.search {
+  color: #B0A990;
+  background-color: #181823;
+  //padding-top: 25px;
+}
+
+.iconActive {
+  color: #E9E7E0;
 }

@@ -17,6 +17,7 @@ export class Tab1Page implements OnInit {
     translationsFiltered = [];
     translations = [];
     search = '';
+    searchOn = false;
     translationsByDates = {};
 
     constructor(private storage: StorageService,
@@ -75,5 +76,13 @@ export class Tab1Page implements OnInit {
             _self.translations = translations;
             _self.updateList(null);
         });
+    }
+
+    seachClicked() {
+        this.searchOn = !this.searchOn;
+        if (!this.searchOn) {
+            this.search = '';
+            this.updateList('');
+        }
     }
 }

@@ -1,31 +1,34 @@
-<!--<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)"></ion-searchbar>-->
-<ion-content *ngIf="storage">
-    <div class="hello-div">
+<ion-content *ngIf="storage" style="display: flex; justify-content: center">
+    <div class="hello-div" *ngIf="!searchOn">
         <h3>Hello</h3>
         You've learned 10 words today
     </div>
-    <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
-        <div class="date-div">
-            <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
-        </div>
-        <ion-list class="words-list">
-            <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
-                <!--<ion-item-sliding #ionSliding>-->
-                <!--<ion-item-options side="start">-->
-                <!--<ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>-->
-                <!--</ion-item-options>-->
-                <!--<ion-item-options side="end">-->
-                <!--<ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>-->
-                <!--</ion-item-options>-->
-                <div (click)="editTranslation(tr, ionSliding)" class="list-item"
-                     [ngClass]="{'list-item-dark': i % 2 === 0}">
-                    <div class="list-original">{{tr.original}}</div>
-                    <div class="list-translation">{{tr.translation}}</div>
+    <div class="main-column-wrapper">
+        <div class="main-column">
+            <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
+                <div class="date-div">
+                    <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
                 </div>
-                <!--</ion-item-sliding>-->
+                <ion-list class="words-list">
+                    <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
+                        <!--<ion-item-sliding #ionSliding>-->
+                        <!--<ion-item-options side="start">-->
+                        <!--<ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>-->
+                        <!--</ion-item-options>-->
+                        <!--<ion-item-options side="end">-->
+                        <!--<ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>-->
+                        <!--</ion-item-options>-->
+                        <div (click)="editTranslation(tr, ionSliding)" class="list-item"
+                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
+                            <div class="list-original">{{tr.original}}</div>
+                            <div class="list-translation">{{tr.translation}}</div>
+                        </div>
+                        <!--</ion-item-sliding>-->
+                    </ng-container>
+                </ion-list>
             </ng-container>
-        </ion-list>
-    </ng-container>
+        </div>
+    </div>
     <div style="display:flex; width: 100%; height: 30%;" *ngIf="!translations || translations.length === 0">
         <ion-label class="ion-text-center" style="margin: auto" color="medium">
             <h2>Nothing to show</h2>
@@ -37,3 +40,24 @@
     <!--</ion-fab-button>-->
     <!--</ion-fab>-->
 </ion-content>
+<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)" *ngIf="searchOn" class="search"></ion-searchbar>
+<div class="bottom-panel">
+    <div class="nav-panel">
+        <ion-tab-button class="nav-item" (click)="seachClicked()">
+            <ion-icon name="ios-search" [ngClass]="{'iconActive': searchOn}"></ion-icon>
+            <ion-label [ngClass]="{'iconActive': searchOn}">Search</ion-label>
+        </ion-tab-button>
+        <ion-tab-button class="nav-item">
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+            <ion-label>Add</ion-label>
+        </ion-tab-button>
+        <ion-tab-button class="nav-item">
+            <ion-icon name="ios-refresh"></ion-icon>
+            <ion-label>Learn</ion-label>
+        </ion-tab-button>
+        <ion-tab-button class="nav-item">
+            <ion-icon name="settings"></ion-icon>
+            <ion-label>Settings</ion-label>
+        </ion-tab-button>
+    </div>
+</div>
