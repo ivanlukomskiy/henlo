@@ -70,6 +70,12 @@
 
 .nav-button {
 }
+ion-label {
+  margin: 0;
+}
+.item {
+  min-height: 1rem; /* <- this can be whatever you need */
+}
 
 .nav-item {
   color: #B0A990;

@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
-import {IonItemSliding, ModalController} from '@ionic/angular';
-import {Tab2Page} from '../tab2/tab2.page';
+import {ModalController, Platform} from '@ionic/angular';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
 import {Tab3Page} from '../tab3/tab3.page';
@@ -22,9 +21,12 @@ export class Tab1Page implements OnInit {
     searchOn = false;
     translationsByDates = {};
 
+    @ViewChild('searchInput', {static: false}) searchInput!: any;
+
     constructor(private storage: StorageService,
                 public modalController: ModalController,
-                public utils: UtilsService
+                public utils: UtilsService,
+                private platform: Platform
     ) {
     }
 
@@ -55,7 +57,8 @@ export class Tab1Page implements OnInit {
     }
 
     editTranslation(translation) {
-        this.openEditor(translation);
+        const res = this.openEditor(translation);
+        console.log('res: ', res);
     }
 
     addTranslation(translation) {
@@ -70,39 +73,66 @@ export class Tab1Page implements OnInit {
                 translation: translation ? Object.assign({}, translation) : {}
             }
         });
-        return await modal.present();
+        const self = this;
+        modal.onDidDismiss().then(result => {
+            console.log('result: ', result);
+            console.log('result.data.deleted: ', result.data.deleted);
+            if (result.data.deleted) {
+                self.deleteTranslation(translation);
+            }
+        });
+        return await modal.present().then(() => {
+            self.closeSearch();
+        });
     }
 
     async openLearner() {
+        const self = this;
         const modal = await this.modalController.create({
             component: Tab3Page
         });
-        return await modal.present();
-    }
-
-    ngOnInit(): void {
-        // this.storage.clear();
-        // this.storage.generate();
-        console.log('Init tab 1');
-        const _self = this;
-        this.storage.subscribe(translations => {
-            _self.translations = translations;
-            _self.updateList(null);
+        return await modal.present().then(() => {
+            self.closeSearch();
         });
     }
 
-    seachClicked() {
+    ngOnInit(): void {
+        const self = this;
+        this.storage.subscribe(translations => {
+            self.translations = translations;
+            self.updateList(null);
+        });
+        this.platform.backButton.subscribe(() => {
+            self.closeSearch();
+        });
+    }
+
+    closeSearch() {
+        if (this.searchOn) {
+            this.searchClicked();
+        }
+    }
+
+    searchClicked() {
         this.searchOn = !this.searchOn;
         if (!this.searchOn) {
             this.search = '';
             this.updateList('');
+        } else {
+            const self = this;
+            setTimeout(() => {
+                self.searchInput.setFocus();
+            }, 50);
         }
     }
 
     async openSettings() {
+        const self = this;
         const modal = await this.modalController.create({
             component: SettingsPage
         });
-        return await modal.present();
+        return await modal.present().then(() => {
+            self.closeSearch();
+        });
     }
 }

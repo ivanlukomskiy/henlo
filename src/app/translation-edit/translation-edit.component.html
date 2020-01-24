@@ -1,14 +1,20 @@
-<div id="content1" (swipeleft)="cancel()" (swiperight)="save()">
-    <div style="float: right; margin: 20px; color: #B0A990;">
-    {{translationsNumber}}
+<div id="content1" (swipeleft)="cancel()" (swiperight)="sweptRight()">
+    <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0">
+        {{translationsNumber}}
     </div>
     <div class="text-block" id="content">
         <form (ngSubmit)="save()" style="color: #B0A990;">
-            <ion-input placeholder="Original" [(ngModel)]="translation.original" #inputOriginal  name="original"></ion-input>
-            <ion-input placeholder="Translation" [(ngModel)]="translation.translation"  name="translation"></ion-input>
+            <ion-textarea autosize [(ngModel)]="translation.original" #inputOriginal placeholder="Original"
+                          class="t-input"
+                          name="original">
+            </ion-textarea>
+            <ion-textarea autosize [(ngModel)]="translation.translation" placeholder="Translation" name="translation"
+                          class="t-input" #inputTranslation>
+            </ion-textarea>
         </form>
     </div>
     <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">
         {{hintText}}
     </div>
+    <ion-icon name="ios-trash" class="bot" (click)="deleteItem()" *ngIf="edit"></ion-icon>
 </div>

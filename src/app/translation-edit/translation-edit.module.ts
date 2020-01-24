@@ -5,7 +5,7 @@ import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {Tab2Page} from '../tab2/tab2.page';
-
+import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
     declarations: [
@@ -15,6 +15,7 @@ import {Tab2Page} from '../tab2/tab2.page';
         IonicModule,
         CommonModule,
         FormsModule,
+        AutosizeModule,
     ],
     exports: [
         TranslationEditComponent

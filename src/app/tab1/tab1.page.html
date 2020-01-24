@@ -11,19 +11,11 @@
                 </div>
                 <ion-list class="words-list">
                     <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
-                        <!--<ion-item-sliding #ionSliding>-->
-                        <!--<ion-item-options side="start">-->
-                        <!--<ion-item-option color="danger" (click)="deleteTranslation(tr)">Delete</ion-item-option>-->
-                        <!--</ion-item-options>-->
-                        <!--<ion-item-options side="end">-->
-                        <!--<ion-item-option color="primary" (click)="editTranslation(tr, ionSliding)">Edit</ion-item-option>-->
-                        <!--</ion-item-options>-->
                         <div (click)="editTranslation(tr)" class="list-item"
                              [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
                             <div class="list-original">{{tr.original}}</div>
                             <div class="list-translation">{{tr.translation}}</div>
                         </div>
-                        <!--</ion-item-sliding>-->
                     </ng-container>
                 </ion-list>
             </ng-container>
@@ -34,16 +26,12 @@
             <h2>Nothing to show</h2>
         </ion-label>
     </div>
-    <!--<ion-fab vertical="bottom" horizontal="end" slot="fixed" style="margin: 10px">-->
-    <!--<ion-fab-button>-->
-    <!--<ion-icon name="add"></ion-icon>-->
-    <!--</ion-fab-button>-->
-    <!--</ion-fab>-->
 </ion-content>
-<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)" *ngIf="searchOn" class="search"></ion-searchbar>
+<ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)" *ngIf="searchOn" class="search"
+               #searchInput name="searchInput"></ion-searchbar>
 <div class="bottom-panel">
     <div class="nav-panel">
-        <ion-tab-button class="nav-item" (click)="seachClicked()">
+        <ion-tab-button class="nav-item" (click)="searchClicked()">
             <ion-icon name="ios-search" [ngClass]="{'iconActive': searchOn}"></ion-icon>
             <ion-label [ngClass]="{'iconActive': searchOn}">Search</ion-label>
         </ion-tab-button>

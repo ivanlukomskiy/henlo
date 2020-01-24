@@ -1,10 +1,7 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, Input, NgZone, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
-import * as Hammer from './../../../node_modules/hammerjs/hammer.js';
-import {ModalController, NavController} from '@ionic/angular';
+import {ModalController} from '@ionic/angular';
 import {UtilsService} from '../utils/utils.service';
-
-const PAN_MIN_SHIFT = 40;
 
 @Component({
     selector: 'app-translation-edit',
@@ -19,12 +16,12 @@ export class TranslationEditComponent implements OnInit {
         translation: ''
     };
     translationsNumber = 0;
-
     tick = 0;
     shift = '50px';
     hintText = '';
     hintColor = '#000';
-    @ViewChild('inputOriginal', {static: true}) originalInput!: ElementRef;
+    @ViewChild('inputOriginal', {static: true}) originalInput!: any;
+    @ViewChild('translationInput', {static: true}) translationInput!: any;
 
     constructor(
         private ngZone: NgZone,
@@ -36,10 +33,6 @@ export class TranslationEditComponent implements OnInit {
 
     save() {
         const self = this;
-        if (this.translation.original === '' || this.translation.translation === '') {
-            console.log('Couldn\'t save, some fields are empty');
-            return;
-        }
         if (self.edit) {
             console.log('this.translation: ', this.translation);
             self.storage.update(this.translation)
@@ -56,15 +49,14 @@ export class TranslationEditComponent implements OnInit {
 
     cancel() {
         const self = this;
-        // self.translation = {original: '', translation: ''};
         self.modalController.dismiss({dismissed: true});
     }
 
     focus() {
         const self = this;
-        // setTimeout(() => {
-        //     self.originalInput.setFocus();
-        // }, 100);
+        setTimeout(() => {
+            self.originalInput.setFocus();
+        }, 100);
     }
 
     setText(text, transparency, self) {
@@ -73,11 +65,31 @@ export class TranslationEditComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.focus();
-        const _self = this;
+        const self = this;
         this.storage.subscribe(translations => {
-            _self.translationsNumber = _self.utils.countTodayTranslations(translations);
+            self.translationsNumber = self.utils.countTodayTranslations(translations);
         });
-        console.log('this.translation: ', this.translation);
+        if (!this.edit) {
+            this.focus();
+        }
+    }
+
+    deleteItem() {
+        this.modalController.dismiss({deleted: true});
+    }
+
+    sweptRight() {
+        const self = this;
+        if (this.translation.original === '' || this.translation.original == null) {
+            setTimeout(() => {
+                self.originalInput.setFocus();
+            }, 50);
+        } else if (this.translation.translation === '' || this.translation.translation == null) {
+            setTimeout(() => {
+                self.translationInput.setFocus();
+            }, 50);
+        } else {
+            this.save();
+        }
     }
 }
