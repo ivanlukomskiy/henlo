@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
-import {ModalController} from '@ionic/angular';
+import {LoadingController, ModalController, ToastController} from '@ionic/angular';
 
 @Component({
     selector: 'app-settings',
@@ -10,7 +10,9 @@ import {ModalController} from '@ionic/angular';
 export class SettingsPage implements OnInit {
 
     constructor(private storage: StorageService,
-                public modalController: ModalController) {
+                public modalController: ModalController,
+                public loadingController: LoadingController,
+                public toastController: ToastController) {
     }
 
     ngOnInit() {
@@ -20,8 +22,34 @@ export class SettingsPage implements OnInit {
         this.storage.clear();
     }
 
-    sync() {
-        this.storage.sync();
+    async sync() {
+        const loading = await this.loadingController.create({
+            message: 'Synchronizing...'
+        });
+        loading.present();
+        this.storage.sync().then(() => {
+            this.success();
+        }).catch(() => {
+            this.failure();
+        }).then(() => {
+            this.loadingController.dismiss();
+        });
+    }
+
+    async failure() {
+        const toast = await this.toastController.create({
+            message: 'Failed to synchronize',
+            duration: 2000
+        });
+        toast.present();
+    }
+
+    async success() {
+        const toast = await this.toastController.create({
+            message: 'Synchronized successfully!',
+            duration: 2000
+        });
+        toast.present();
     }
 
     swipedLeft() {
