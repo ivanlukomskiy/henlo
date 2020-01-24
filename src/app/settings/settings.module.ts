@@ -3,14 +3,14 @@ import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
-import {TranslationEditModule} from '../translation-edit/translation-edit.module';
+import {EditComponent} from '../edit/edit.component';
+import {EditModule} from '../edit/edit.module';
 import {SettingsPage} from './settings.page';
 
 @NgModule(
 //     {
 //     imports: [
-//         TranslationEditModule,
+//         EditModule,
 //         IonicModule,
 //         CommonModule,
 //         FormsModule,
@@ -20,7 +20,7 @@ import {SettingsPage} from './settings.page';
 //         SettingsPage
 //     ],
 //     entryComponents: [
-//         TranslationEditComponent
+//         EditComponent
 //     ]
 // }
     {

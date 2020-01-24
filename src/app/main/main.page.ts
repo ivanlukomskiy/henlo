@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {ModalController, Platform} from '@ionic/angular';
-import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
+import {EditComponent} from '../edit/edit.component';
 import {UtilsService} from '../utils/utils.service';
 import {LearnPage} from '../learn/learn.page';
 import {SettingsPage} from '../settings/settings.page';
@@ -67,7 +67,7 @@ export class MainPage implements OnInit {
 
     async openEditor(translation) {
         const modal = await this.modalController.create({
-            component: TranslationEditComponent,
+            component: EditComponent,
             componentProps: {
                 edit: translation !== null,
                 translation: translation ? Object.assign({}, translation) : {}

@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TranslationEditComponent} from './translation-edit.component';
+import {EditComponent} from './edit.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({
     declarations: [
-        TranslationEditComponent
+        EditComponent
     ],
     imports: [
         IonicModule,
@@ -16,8 +16,8 @@ import {AutosizeModule} from 'ngx-autosize';
         AutosizeModule,
     ],
     exports: [
-        TranslationEditComponent
+        EditComponent
     ]
 })
-export class TranslationEditModule {
+export class EditModule {
 }

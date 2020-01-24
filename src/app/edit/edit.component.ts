@@ -5,10 +5,10 @@ import {UtilsService} from '../utils/utils.service';
 
 @Component({
     selector: 'app-translation-edit',
-    templateUrl: './translation-edit.component.html',
-    styleUrls: ['./translation-edit.component.scss'],
+    templateUrl: './edit.component.html',
+    styleUrls: ['./edit.component.scss'],
 })
-export class TranslationEditComponent implements OnInit {
+export class EditComponent implements OnInit {
 
     @Input() edit = false;
     @Input() translation = {

@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {LearnPage} from './learn.page';
 import {StorageService} from '../storage.service';
 import {UtilsModule} from '../utils/utils.module';
-import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
+import {EditComponent} from '../edit/edit.component';
 
 @NgModule(
 //     {

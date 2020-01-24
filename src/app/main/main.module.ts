@@ -4,8 +4,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {MainPage} from './main.page';
-import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
-import {TranslationEditModule} from '../translation-edit/translation-edit.module';
+import {EditComponent} from '../edit/edit.component';
+import {EditModule} from '../edit/edit.module';
 import {LearnPageModule} from '../learn/learn.module';
 import {LearnPage} from '../learn/learn.page';
 import {SettingsPage} from '../settings/settings.page';
@@ -13,7 +13,7 @@ import {SettingsPageModule} from '../settings/settings.module';
 
 @NgModule({
     imports: [
-        TranslationEditModule,
+        EditModule,
         SettingsPageModule,
         LearnPageModule,
         IonicModule,
@@ -25,7 +25,7 @@ import {SettingsPageModule} from '../settings/settings.module';
         MainPage
     ],
     entryComponents: [
-        TranslationEditComponent,
+        EditComponent,
         LearnPage,
         SettingsPage
     ]

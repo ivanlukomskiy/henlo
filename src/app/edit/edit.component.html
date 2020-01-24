@@ -5,11 +5,11 @@
     <div class="text-block" id="content">
         <form (ngSubmit)="save()" style="color: #B0A990;">
             <ion-textarea autosize [(ngModel)]="translation.original" #inputOriginal placeholder="Original"
-                          class="t-input"
+                          class="t-input" maxlength="200"
                           name="original">
             </ion-textarea>
             <ion-textarea autosize [(ngModel)]="translation.translation" placeholder="Translation" name="translation"
-                          class="t-input" #inputTranslation>
+                          class="t-input" #inputTranslation maxlength="200">
             </ion-textarea>
         </form>
     </div>
