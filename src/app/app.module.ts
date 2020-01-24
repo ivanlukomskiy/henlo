@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
 import {IonicStorageModule} from '@ionic/storage';
 
@@ -11,6 +11,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StorageService} from './storage.service';
 import {HttpClientModule} from '@angular/common/http';
+import * as Hammer from 'hammerjs';
+
+export class CustomHammerConfig extends HammerGestureConfig {
+    overrides = {
+        pan: {
+            direction: Hammer.DIRECTION_ALL
+        },
+        swipe: {
+            direction: Hammer.DIRECTION_ALL
+        }
+    };
+}
 
 @NgModule({
     declarations: [
@@ -29,6 +41,7 @@ import {HttpClientModule} from '@angular/common/http';
         StatusBar,
         SplashScreen,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+        {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
     ],
     bootstrap: [AppComponent]
 })

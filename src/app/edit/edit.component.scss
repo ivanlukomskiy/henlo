@@ -8,6 +8,11 @@ ion-input {
   margin-top: 20%
 }
 
+ion-input {
+  --placeholder-color: green;     /* placeholder text color */
+  --ion-color-primary: red;
+}
+
 #content {
   height: 100%;
   width: 100%;
@@ -24,12 +29,23 @@ ion-input {
 }
 
 
-.bot {
+.star {
   position: fixed;
-  left: 50%;
-  bottom: 20px;
-  transform: translate(-50%, -50%);
+  right: 20px;
+  top: 20px;
   margin: 0 auto;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.trash-container {
+  position: fixed;
+  margin: 0 auto;
+  bottom: 0;
+}
+
+.trash-icon {
+  width: 40px;
+  height: 40px;
+  margin: 20px;
 }

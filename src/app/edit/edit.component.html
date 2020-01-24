@@ -1,14 +1,17 @@
-<div id="content1" (swipeleft)="cancel()" (swiperight)="sweptRight()">
+<!--<div id="content1">-->
+<div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)">
     <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0">
         {{translationsNumber}}
     </div>
     <div class="text-block" id="content">
         <form (ngSubmit)="save()" style="color: #B0A990;">
             <ion-textarea autosize [(ngModel)]="translation.original" #inputOriginal placeholder="Original"
+                          [ngStyle]="{'opacity': textOpacity}"
                           class="t-input" maxlength="200"
                           name="original">
             </ion-textarea>
             <ion-textarea autosize [(ngModel)]="translation.translation" placeholder="Translation" name="translation"
+                          [ngStyle]="{'opacity': textOpacity}"
                           class="t-input" #inputTranslation maxlength="200">
             </ion-textarea>
         </form>
@@ -16,5 +19,15 @@
     <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">
         {{hintText}}
     </div>
-    <ion-icon name="ios-trash" class="bot" (click)="deleteItem()" *ngIf="edit"></ion-icon>
+    <!--<ion-icon name="ios-trash" class="bot" (click)="deleteItem()" *ngIf="edit"></ion-icon>-->
+    <div class="trash-container" (pan)="handlePan($event)" (swipe)="trashSwiped($event)"
+         [ngStyle]="{'left': trashShift + 'px' }" (click)="trashClicked()">
+        <ion-icon id="trash" name="ios-trash" class="trash-icon"
+                  [ngStyle]="{'opacity': trashOpacity}"
+                  *ngIf="edit">
+        </ion-icon>
+    </div>
+    <!--<ion-icon id="star" name="ios-star" class="star"-->
+              <!--(pan)="handlePan($event)" (swipe)="trashSwiped($event)" *ngIf="edit">-->
+    <!--</ion-icon>-->
 </div>
