@@ -3,8 +3,6 @@ import {CommonModule} from '@angular/common';
 import {TranslationEditComponent} from './translation-edit.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-import {Tab2Page} from '../tab2/tab2.page';
 import {AutosizeModule} from 'ngx-autosize';
 
 @NgModule({

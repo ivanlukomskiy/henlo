@@ -3,16 +3,16 @@ import {StorageService} from '../storage.service';
 import {ModalController, Platform} from '@ionic/angular';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {UtilsService} from '../utils/utils.service';
-import {Tab3Page} from '../tab3/tab3.page';
+import {LearnPage} from '../learn/learn.page';
 import {SettingsPage} from '../settings/settings.page';
 
 
 @Component({
     selector: 'app-tab1',
-    templateUrl: 'tab1.page.html',
-    styleUrls: ['tab1.page.scss']
+    templateUrl: 'main.page.html',
+    styleUrls: ['main.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class MainPage implements OnInit {
     objectKeys = Object.keys;
 
     translationsFiltered = [];
@@ -89,7 +89,7 @@ export class Tab1Page implements OnInit {
     async openLearner() {
         const self = this;
         const modal = await this.modalController.create({
-            component: Tab3Page
+            component: LearnPage
         });
         return await modal.present().then(() => {
             self.closeSearch();

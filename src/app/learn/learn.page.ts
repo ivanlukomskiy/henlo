@@ -5,10 +5,10 @@ import {ModalController} from '@ionic/angular';
 
 @Component({
     selector: 'app-tab3',
-    templateUrl: 'tab3.page.html',
-    styleUrls: ['tab3.page.scss']
+    templateUrl: 'learn.page.html',
+    styleUrls: ['learn.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class LearnPage implements OnInit {
     objectKeys = Object.keys;
 
     translation = null;

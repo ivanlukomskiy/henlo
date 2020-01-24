@@ -3,7 +3,7 @@ import {RouterModule} from '@angular/router';
 import {NgModule, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {Tab3Page} from './tab3.page';
+import {LearnPage} from './learn.page';
 import {StorageService} from '../storage.service';
 import {UtilsModule} from '../utils/utils.module';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
@@ -15,13 +15,13 @@ import {TranslationEditComponent} from '../translation-edit/translation-edit.com
 //         CommonModule,
 //         FormsModule,
 //         UtilsModule,
-//         RouterModule.forChild([{path: '', component: Tab3Page}])
+//         RouterModule.forChild([{path: '', component: LearnPage}])
 //     ],
-//     declarations: [Tab3Page]
+//     declarations: [LearnPage]
 // }
     {
         declarations: [
-            Tab3Page
+            LearnPage
         ],
         imports: [
             IonicModule,
@@ -29,8 +29,8 @@ import {TranslationEditComponent} from '../translation-edit/translation-edit.com
             FormsModule,
         ],
         exports: [
-            Tab3Page
+            LearnPage
         ]
     })
-export class Tab3PageModule {
+export class LearnPageModule {
 }

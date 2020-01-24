@@ -3,11 +3,11 @@ import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {Tab1Page} from './tab1.page';
+import {MainPage} from './main.page';
 import {TranslationEditComponent} from '../translation-edit/translation-edit.component';
 import {TranslationEditModule} from '../translation-edit/translation-edit.module';
-import {Tab3PageModule} from '../tab3/tab3.module';
-import {Tab3Page} from '../tab3/tab3.page';
+import {LearnPageModule} from '../learn/learn.module';
+import {LearnPage} from '../learn/learn.page';
 import {SettingsPage} from '../settings/settings.page';
 import {SettingsPageModule} from '../settings/settings.module';
 
@@ -15,20 +15,20 @@ import {SettingsPageModule} from '../settings/settings.module';
     imports: [
         TranslationEditModule,
         SettingsPageModule,
-        Tab3PageModule,
+        LearnPageModule,
         IonicModule,
         CommonModule,
         FormsModule,
-        RouterModule.forChild([{path: '', component: Tab1Page}]),
+        RouterModule.forChild([{path: '', component: MainPage}]),
     ],
     declarations: [
-        Tab1Page
+        MainPage
     ],
     entryComponents: [
         TranslationEditComponent,
-        Tab3Page,
+        LearnPage,
         SettingsPage
     ]
 })
-export class Tab1PageModule {
+export class MainPageModule {
 }
