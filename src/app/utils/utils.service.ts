@@ -58,6 +58,7 @@ export class UtilsService {
     public sortAndGroup(translations) {
         const self = this;
         console.log('sorting translations: ', translations);
+        translations = translations.filter(translation => !translation.deleted);
         translations.sort((a, b) => b.added - a.added);
 
         const translationsByDates = {};

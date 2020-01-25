@@ -14,7 +14,8 @@ export class EditComponent implements OnInit {
     @Input() edit = false;
     @Input() translation = {
         original: '',
-        translation: ''
+        translation: '',
+        starred: false
     };
     translationsNumber = 0;
     tick = 0;
@@ -55,9 +56,9 @@ export class EditComponent implements OnInit {
                     self.cancel(null);
                 });
         } else {
-            self.storage.save(self.translation.original, self.translation.translation)
+            self.storage.save(self.translation.original, self.translation.translation, self.translation.starred)
                 .then(() => {
-                    self.translation = {original: '', translation: ''};
+                    self.translation = {original: '', translation: '', starred: false};
                     self.focus();
                 });
         }
@@ -143,14 +144,27 @@ export class EditComponent implements OnInit {
             clearInterval(self.animationTimer);
             return;
         }
-        self.trashOpacity = 1 -  self.phase / self.ANIMATION_TICKS;
+        self.trashOpacity = 1 - self.phase / self.ANIMATION_TICKS;
         self.phase += 1;
         self.trashShift = (Math.sin(self.phase * Math.PI / 2 / self.ANIMATION_TICKS - Math.PI / 2) + 1) * self.ANIMATION_DISTANCE;
     }
 
     trashClicked() {
         const self = this;
-        console.log('this.trashShift: ', this.trashShift);
         this.animationTimer = setInterval(() => this.trashAnimation(self), 5);
+    }
+
+    sweptVertically(event) {
+        console.log('this.translation: ', this.translation);
+        if (event.target['id'] === 'trash' || !this.edit) {
+            return;
+        }
+        if (this.translation.hasOwnProperty('starred') && this.translation.starred) {
+            this.translation.starred = false;
+            this.storage.starTranslation(this.translation['uuid'], false);
+        } else {
+            this.translation.starred = true;
+            this.storage.starTranslation(this.translation['uuid'], true);
+        }
     }
 }

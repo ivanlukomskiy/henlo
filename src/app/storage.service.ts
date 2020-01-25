@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
@@ -10,6 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class StorageService {
 
     SERVICE_LOCATION = 'http://192.168.88.249:8000';
+    // SERVICE_LOCATION = 'http://localhost:8000';
 
     translations = null;
     subject = new Subject();
@@ -50,6 +51,21 @@ export class StorageService {
     getSnapshot() {
         return this.load()
             .then(translations => JSON.parse(JSON.stringify(translations)));
+    }
+
+    starTranslation(translationUuid, starred) {
+        const self = this;
+        const index = this.translations.findIndex(tr => tr.uuid === translationUuid);
+        if (index === -1) {
+            throw new Error('Translation with uuid ' + translationUuid + ' not found');
+        }
+        const translation = self.translations[index];
+        translation.updated = new Date().getTime();
+        translation.starred = starred;
+        return this.storage.set('translations', this.translations)
+            .then(() => {
+                this.subject.next(self.translations);
+            });
     }
 
     load() {
@@ -126,11 +142,12 @@ export class StorageService {
             });
     }
 
-    save(original, translation) {
+    save(original, translation, starred) {
         console.log('saving new translations');
         const newTranslation = {
             original,
             translation,
+            starred,
             added: new Date().getTime(),
             uuid: uuid()
         };
@@ -149,7 +166,11 @@ export class StorageService {
     remove(uuidToDelete) {
         console.log('removing translation');
         const _self = this;
-        _self.translations = _self.translations.filter(translation => translation.uuid !== uuidToDelete);
+        _self.translations.filter(translation => translation.uuid === uuidToDelete)
+            .forEach(translation => {
+                translation.deleted = true;
+                translation.updated = new Date().getTime();
+            });
         _self.storage.set('translations', _self.translations)
             .then(() => {
                 _self.subject.next(this.translations);

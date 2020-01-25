@@ -1,5 +1,6 @@
 <!--<div id="content1">-->
-<div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)">
+<div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)" (swipeup)="sweptVertically($event)"
+     (swipedown)="sweptVertically($event)">
     <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0">
         {{translationsNumber}}
     </div>
@@ -20,14 +21,15 @@
         {{hintText}}
     </div>
     <!--<ion-icon name="ios-trash" class="bot" (click)="deleteItem()" *ngIf="edit"></ion-icon>-->
-    <div class="trash-container" (pan)="handlePan($event)" (swipe)="trashSwiped($event)"
+    <div class="trash-container" (pan)="handlePan($event)"
          [ngStyle]="{'left': trashShift + 'px' }" (click)="trashClicked()">
         <ion-icon id="trash" name="ios-trash" class="trash-icon"
                   [ngStyle]="{'opacity': trashOpacity}"
                   *ngIf="edit">
         </ion-icon>
     </div>
-    <!--<ion-icon id="star" name="ios-star" class="star"-->
-              <!--(pan)="handlePan($event)" (swipe)="trashSwiped($event)" *ngIf="edit">-->
-    <!--</ion-icon>-->
+    <ion-icon id="star" name="ios-star" class="star"
+              [ngStyle]="{'display': translation.hasOwnProperty(['starred']) && translation['starred'] ? 'block' : 'none'}"
+              *ngIf="edit">
+    </ion-icon>
 </div>

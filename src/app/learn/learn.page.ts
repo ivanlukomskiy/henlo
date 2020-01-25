@@ -19,6 +19,7 @@ export class LearnPage implements OnInit {
 
     translations;
     translationsTotal;
+    starredNumber = 0;
     currentIndex = 0;
     translationsByDays;
 
@@ -29,7 +30,6 @@ export class LearnPage implements OnInit {
         private utils: UtilsService,
         public modalController: ModalController
     ) {
-        // storage.getSettings()
     }
 
     segmentChanged(event) {
@@ -68,9 +68,10 @@ export class LearnPage implements OnInit {
     }
 
     updateList(translations) {
-        this.translationsByDays = this.utils.sortAndGroup(translations);
-        this.translationsTotal = [...translations];
-        this.started = false;
+        const translationsFiltered = translations.filter(translation => !translation.deleted);
+        this.translationsByDays = this.utils.sortAndGroup(translationsFiltered);
+        this.translationsTotal = [...translationsFiltered];
+        this.starredNumber = translationsFiltered.filter(tr => tr.hasOwnProperty('starred') && tr.starred).length;
     }
 
     private prepareLearning() {
@@ -84,22 +85,31 @@ export class LearnPage implements OnInit {
     ngOnInit(): void {
         const _self = this;
         this.storage.subscribe(translations => {
-            console.log('translations: ', translations);
             _self.updateList(translations);
         });
     }
 
+    learnStarred() {
+        this.translations = this.translationsTotal.filter(tr => tr.hasOwnProperty('starred') && tr.starred);
+        this.prepareLearning();
+    }
+
     learnAll() {
-        console.log('learn all');
         this.translations = this.translationsTotal;
         this.prepareLearning();
     }
 
-    swiped(event) {
-        console.log('event: ', event);
-    }
-
     swipedLeft() {
         this.modalController.dismiss({dismissed: true});
+    }
+
+    sweptVertically(event) {
+        if (this.translation.hasOwnProperty('starred') && this.translation.starred) {
+            this.translation.starred = false;
+            this.storage.starTranslation(this.translation['uuid'], false);
+        } else {
+            this.translation.starred = true;
+            this.storage.starTranslation(this.translation['uuid'], true);
+        }
     }
 }
