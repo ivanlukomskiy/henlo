@@ -64,9 +64,6 @@
             {{timestampPretty(translation.added)}}<br>
             {{currentIndex + 1}} / {{translations.length}}
         </div>
-        <ion-icon id="star" name="ios-star" class="star"
-                  [ngStyle]="{'display': translation.hasOwnProperty(['starred'])
-                   && translation['starred'] ? 'block' : 'none'}">
-        </ion-icon>
+        <fi-star *ngIf="translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
     </div>
 </ng-container>

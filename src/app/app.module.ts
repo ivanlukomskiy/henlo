@@ -12,6 +12,7 @@ import {AppComponent} from './app.component';
 import {StorageService} from './storage.service';
 import {HttpClientModule} from '@angular/common/http';
 import * as Hammer from 'hammerjs';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export class CustomHammerConfig extends HammerGestureConfig {
     overrides = {
@@ -35,6 +36,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
         AppRoutingModule,
         IonicStorageModule.forRoot(),
         HttpClientModule,
+        // BrowserAnimationsModule,
     ],
     providers: [
         StorageService,

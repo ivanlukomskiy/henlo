@@ -12,7 +12,7 @@ import {SettingsPage} from './settings.page';
 //     imports: [
 //         EditModule,
 //         IonicModule,
-//         CommonModule,
+//         FiCommonModule,
 //         FormsModule,
 //         RouterModule.forChild([{path: '', component: SettingsPage}]),
 //     ],

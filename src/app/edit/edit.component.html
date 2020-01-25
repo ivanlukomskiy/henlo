@@ -1,4 +1,3 @@
-<!--<div id="content1">-->
 <div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)" (swipeup)="sweptVertically($event)"
      (swipedown)="sweptVertically($event)">
     <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0">
@@ -28,8 +27,5 @@
                   *ngIf="edit">
         </ion-icon>
     </div>
-    <ion-icon id="star" name="ios-star" class="star"
-              [ngStyle]="{'display': translation.hasOwnProperty(['starred']) && translation['starred'] ? 'block' : 'none'}"
-              *ngIf="edit">
-    </ion-icon>
+    <fi-star *ngIf="edit && translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
 </div>

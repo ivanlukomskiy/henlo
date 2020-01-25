@@ -7,12 +7,13 @@ import {LearnPage} from './learn.page';
 import {StorageService} from '../storage.service';
 import {UtilsModule} from '../utils/utils.module';
 import {EditComponent} from '../edit/edit.component';
+import {FiCommonModule} from '../fi-common/fi-common.module';
 
 @NgModule(
 //     {
 //     imports: [
 //         IonicModule,
-//         CommonModule,
+//         FiCommonModule,
 //         FormsModule,
 //         UtilsModule,
 //         RouterModule.forChild([{path: '', component: LearnPage}])
@@ -27,6 +28,7 @@ import {EditComponent} from '../edit/edit.component';
             IonicModule,
             CommonModule,
             FormsModule,
+            FiCommonModule,
         ],
         exports: [
             LearnPage
