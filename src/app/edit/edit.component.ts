@@ -24,6 +24,7 @@ export class EditComponent implements OnInit {
     hintColor = '#000';
     trashShift = 0;
     width = 500;
+    MARGINS = 20;
     @ViewChild('inputOriginal', {static: true}) inputOriginal!: any;
     @ViewChild('inputTranslation', {static: true}) inputTranslation!: any;
     ANIMATION_TICKS = 60;
@@ -33,6 +34,9 @@ export class EditComponent implements OnInit {
     trashOpacity = 1;
     phase = 0;
     animationStarted = false;
+    TRASH_ICON_SIZE = 40;
+    TRASH_ICON_MARGIN = 20;
+    trashSlideMaxDistance = 400;
 
     constructor(
         private ngZone: NgZone,
@@ -44,6 +48,7 @@ export class EditComponent implements OnInit {
         const self = this;
         platform.ready().then(() => {
             self.width = platform.width();
+            self.trashSlideMaxDistance = self.width - self.TRASH_ICON_SIZE - 2 * self.TRASH_ICON_MARGIN;
         });
     }
 
@@ -121,9 +126,9 @@ export class EditComponent implements OnInit {
         if (this.animationStarted) {
             return;
         }
-        const deltaX = event.deltaX > this.width - 140 ? this.width - 140 : event.deltaX < 0 ? 0 : event.deltaX;
+        const deltaX = event.deltaX > this.trashSlideMaxDistance ? this.trashSlideMaxDistance : event.deltaX < 0 ? 0 : event.deltaX;
         this.trashShift = deltaX;
-        this.textOpacity = 1 - deltaX / (this.width - 140);
+        this.textOpacity = 1 - deltaX / this.trashSlideMaxDistance;
         if (event.isFinal) {
             if (this.textOpacity > 0.3) {
                 this.trashShift = 0;

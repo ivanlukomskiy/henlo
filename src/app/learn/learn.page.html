@@ -64,6 +64,6 @@
             {{timestampPretty(translation.added)}}<br>
             {{currentIndex + 1}} / {{translations.length}}
         </div>
-        <fi-star *ngIf="translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
+        <fi-star [visible]="translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
     </div>
 </ng-container>

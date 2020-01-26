@@ -19,13 +19,14 @@
     <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">
         {{hintText}}
     </div>
-    <!--<ion-icon name="ios-trash" class="bot" (click)="deleteItem()" *ngIf="edit"></ion-icon>-->
     <div class="trash-container" (pan)="handlePan($event)"
          [ngStyle]="{'left': trashShift + 'px' }" (click)="trashClicked()">
         <ion-icon id="trash" name="ios-trash" class="trash-icon"
-                  [ngStyle]="{'opacity': trashOpacity}"
+                  [ngStyle]="{'opacity': trashOpacity,
+                  'width': TRASH_ICON_SIZE + 'px',
+                  'margin': TRASH_ICON_MARGIN + 'px'}"
                   *ngIf="edit">
         </ion-icon>
     </div>
-    <fi-star *ngIf="edit && translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
+    <fi-star [visible]="edit && translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
 </div>
