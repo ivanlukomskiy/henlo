@@ -24,6 +24,7 @@ export class LearnPage implements OnInit {
     translationsByDays;
 
     options = [];
+    progressBarWidth = '0';
 
     constructor(
         private storage: StorageService,
@@ -47,6 +48,8 @@ export class LearnPage implements OnInit {
             }
             this.translation = this.translations[this.currentIndex];
             this.unveiled = false;
+            console.log('this.translations.length > 1: ', this.translations.length > 1);
+            this.progressBarWidth = this.translations.length > 1 ? (this.currentIndex / (this.translations.length - 1)) * 100 + '%' : '0';
         }
     }
 
@@ -80,6 +83,7 @@ export class LearnPage implements OnInit {
         this.translation = this.translations[this.currentIndex];
         this.started = true;
         this.unveiled = false;
+        this.progressBarWidth = '0';
     }
 
     ngOnInit(): void {

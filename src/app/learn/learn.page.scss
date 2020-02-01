@@ -22,3 +22,10 @@
   //border: 1px solid red;
   height: 100%;
 }
+
+.progress-bar {
+  background-color: #B0A990;
+  height: 4px;
+  width: 0;
+  transition: width 200ms ease;
+}

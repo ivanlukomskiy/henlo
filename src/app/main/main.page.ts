@@ -102,9 +102,7 @@ export class MainPage implements OnInit {
         });
         const self = this;
         modal.onDidDismiss().then(result => {
-            console.log('result: ', result);
-            console.log('result.data.deleted: ', result.data.deleted);
-            if (result.data.deleted) {
+            if (result.data && result.data.deleted) {
                 self.deleteTranslation(translation);
             }
         });

@@ -56,6 +56,7 @@
 <ng-container *ngIf="started">
     <div class="learning-container" (click)="tapped()" (swipeleft)="back()"
          (swipeup)="sweptVertically($event)" (swipedown)="sweptVertically($event)">
+        <div class="progress-bar" [ngStyle]="{'width': progressBarWidth}"></div>
         <div style="margin-top: 20%; padding: 20px; text-align: center; height: 30%">
             <h1>{{learnDirection == 'en_ru' ? translation.original : translation.translation}}</h1>
             <h4 *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</h4>
