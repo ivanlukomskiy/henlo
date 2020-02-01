@@ -55,21 +55,47 @@ export class UtilsService {
         }
     }
 
-    public sortAndGroup(translations) {
+    public organize(translations) {
         const self = this;
-        console.log('sorting translations: ', translations);
         translations = translations.filter(translation => !translation.deleted);
         translations.sort((a, b) => b.added - a.added);
 
+        const result = {
+            stats: {
+                translationsThisDay: 0,
+                translationsThisMonth: 0,
+                translationsThisYear: 0,
+                translationsTotal: 0
+            },
+            translationsByDates: {}
+        };
+
+        const today = self.truncateHours(new Date());
+        const thisDate = today.getDate();
+        const thisMonth = today.getMonth();
+        const thisYear = today.getFullYear();
+
         const translationsByDates = {};
-        translations.forEach(a => {
-            const date = self.truncateHours(a.added);
+        translations.forEach(translation => {
+            const date = self.truncateHours(translation.added);
             const key = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
             if (!translationsByDates.hasOwnProperty(key)) {
                 translationsByDates [key] = {date, translations: []};
             }
-            translationsByDates [key].translations.push(a);
+            translationsByDates [key].translations.push(translation);
+
+            if (date.getFullYear() === thisYear) {
+                result.stats.translationsThisYear += 1;
+                if (date.getMonth() === thisMonth) {
+                    result.stats.translationsThisMonth += 1;
+                    if (date.getDate() === thisDate) {
+                        result.stats.translationsThisDay += 1;
+                    }
+                }
+            }
         });
-        return translationsByDates;
+        result.stats.translationsTotal = translations.length;
+        result.translationsByDates = translationsByDates;
+        return result;
     }
 }

@@ -20,6 +20,7 @@ export class MainPage implements OnInit {
     search = '';
     searchOn = false;
     translationsByDates = {};
+    subtitle = 'just one moment ... ';
 
     @ViewChild('searchInput', {static: false}) searchInput!: any;
 
@@ -28,6 +29,30 @@ export class MainPage implements OnInit {
                 public utils: UtilsService,
                 private platform: Platform
     ) {
+    }
+
+    getSubtitleText(stats) {
+        if (stats.translationsThisDay > 0) {
+            return this.getAmountOfWordsText(stats.translationsThisDay) + ' today';
+        }
+        if (stats.translationsThisMonth > 0) {
+            return this.getAmountOfWordsText(stats.translationsThisMonth) + ' this month';
+        }
+        if (stats.translationsThisYear > 0) {
+            return this.getAmountOfWordsText(stats.translationsThisYear) + ' this year';
+        }
+        if (stats.translationsTotal > 0) {
+            return this.getAmountOfWordsText(stats.translationsTotal) + ' in total';
+        }
+        return 'You haven\'t learn any words yet';
+    }
+
+    getAmountOfWordsText(n) {
+        if (n === 1) {
+            return 'You\'ve learned one word';
+        } else {
+            return 'You\'ve learned ' + n + ' words';
+        }
     }
 
     searchChanged(val) {
@@ -48,7 +73,9 @@ export class MainPage implements OnInit {
         this.translationsFiltered = this.translations.filter(translation =>
             regExp.test(translation.original) || regExp.test(translation.translation));
         console.log('filtering done');
-        this.translationsByDates = this.utils.sortAndGroup(this.translationsFiltered);
+        const organized = this.utils.organize(this.translationsFiltered);
+        this.subtitle = this.getSubtitleText(organized.stats);
+        this.translationsByDates = organized.translationsByDates;
         console.log('sorting and groupping done');
     }
 
