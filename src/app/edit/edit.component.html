@@ -1,17 +1,18 @@
 <div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)" (swipeup)="sweptVertically($event)"
      (swipedown)="sweptVertically($event)">
-    <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0">
+    <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0 && !draftMode">
         {{translationsNumber}}
     </div>
     <div class="text-block" id="content">
         <form (ngSubmit)="save()" style="color: #B0A990;">
-            <ion-textarea autosize [(ngModel)]="translation.original" #inputOriginal placeholder="Original"
-                          [ngStyle]="{'opacity': textOpacity}"
+            <ion-textarea autosize [(ngModel)]="translation.original" #inputOriginal
+                          placeholder="{{draftMode ? 'Draft' : 'Original'}}"
+                          [ngStyle]="{'opacity': textOpacity, 'margin-top': draftMode ? '35px' : '0'}"
                           class="t-input" maxlength="200"
                           name="original">
             </ion-textarea>
             <ion-textarea autosize [(ngModel)]="translation.translation" placeholder="Translation" name="translation"
-                          [ngStyle]="{'opacity': textOpacity}"
+                          [ngStyle]="{'opacity': textOpacity, 'display': draftMode ? 'none' : null}"
                           class="t-input" #inputTranslation maxlength="200">
             </ion-textarea>
         </form>
@@ -29,4 +30,5 @@
         </ion-icon>
     </div>
     <fi-star [visible]="edit && translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
+    <fi-draft [active]="draftMode" (click)="draftMode = !draftMode"></fi-draft>
 </div>

@@ -3,6 +3,7 @@ import {Storage} from '@ionic/storage';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
 import {HttpClient} from '@angular/common/http';
+import {Error} from 'tslint/lib/error';
 
 @Injectable({
     providedIn: 'root'
@@ -127,12 +128,15 @@ export class StorageService {
             });
     }
 
-    update(translation) {
+    update(translation, updateCreationTime) {
         console.log('updating record', translation);
         const self = this;
         const index = this.translations.findIndex(tr => tr.uuid === translation.uuid);
         if (index === -1) {
             throw new Error('Translation with uuid ' + translation.uuid + ' not found');
+        }
+        if (updateCreationTime) {
+            translation.added = new Date().getTime();
         }
         translation.updated = new Date().getTime();
         self.translations[index] = translation;

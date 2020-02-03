@@ -37,7 +37,7 @@ export class UtilsService {
             return 'Today';
         } else if (diff === 1) {
             return 'Yesterday';
-        } else if (diff < 20) {
+        } else if (diff < 7) {
             return diff + ' days ago';
         } else if (today.getFullYear() === date.getFullYear()) {
             return date.getDate() + ' ' + monthNames[date.getMonth()];
@@ -84,6 +84,10 @@ export class UtilsService {
             }
             translationsByDates [key].translations.push(translation);
 
+            if (self.isDraft(translation)) {
+                return;
+            }
+            result.stats.translationsTotal += 1;
             if (date.getFullYear() === thisYear) {
                 result.stats.translationsThisYear += 1;
                 if (date.getMonth() === thisMonth) {
@@ -94,8 +98,16 @@ export class UtilsService {
                 }
             }
         });
-        result.stats.translationsTotal = translations.length;
         result.translationsByDates = translationsByDates;
         return result;
+    }
+
+    public isDraft(translation) {
+        return translation.original === '' || translation.translation === '';
+    }
+
+    public isEnglish(text) {
+        // rough, but fine for now
+        return text.replace(/[a-zA-Z]+/g, '').length < text.length / 2;
     }
 }

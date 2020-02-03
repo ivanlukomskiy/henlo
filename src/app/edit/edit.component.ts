@@ -12,11 +12,7 @@ export class EditComponent implements OnInit {
 
     animationTimer: number;
     @Input() edit = false;
-    @Input() translation = {
-        original: '',
-        translation: '',
-        starred: false
-    };
+    @Input() translation;
     translationsNumber = 0;
     tick = 0;
     shift = '50px';
@@ -24,7 +20,6 @@ export class EditComponent implements OnInit {
     hintColor = '#000';
     trashShift = 0;
     width = 500;
-    MARGINS = 20;
     @ViewChild('inputOriginal', {static: true}) inputOriginal!: any;
     @ViewChild('inputTranslation', {static: true}) inputTranslation!: any;
     ANIMATION_TICKS = 60;
@@ -32,6 +27,8 @@ export class EditComponent implements OnInit {
 
     textOpacity = 1;
     trashOpacity = 1;
+    draftMode = false;
+    editDraft = false;
     phase = 0;
     animationStarted = false;
     TRASH_ICON_SIZE = 40;
@@ -52,11 +49,26 @@ export class EditComponent implements OnInit {
         });
     }
 
+    ngOnInit(): void {
+        const self = this;
+        this.storage.subscribe(translations => {
+            self.translationsNumber = self.utils.countTodayTranslations(translations);
+        });
+        if (this.edit && this.utils.isDraft(this.translation)) {
+            this.draftMode = true;
+            this.editDraft = true;
+        }
+        if (!this.edit) {
+            this.focusOriginal();
+        }
+    }
+
     save() {
         const self = this;
         if (self.edit) {
-            console.log('this.translation: ', this.translation);
-            self.storage.update(this.translation)
+            // update creation time when transition from draft to translation
+            const updateCreation = this.editDraft && !this.utils.isDraft(this.translation);
+            self.storage.update(this.translation, updateCreation)
                 .then(() => {
                     self.cancel(null);
                 });
@@ -64,7 +76,7 @@ export class EditComponent implements OnInit {
             self.storage.save(self.translation.original, self.translation.translation, self.translation.starred)
                 .then(() => {
                     self.translation = {original: '', translation: '', starred: false};
-                    self.focus();
+                    self.focusOriginal();
                 });
         }
     }
@@ -78,26 +90,23 @@ export class EditComponent implements OnInit {
         self.modalController.dismiss({dismissed: true});
     }
 
-    focus() {
+    focusOriginal() {
         const self = this;
         setTimeout(() => {
             self.inputOriginal.setFocus();
         }, 50);
     }
 
+    focusTranslation() {
+        const self = this;
+        setTimeout(() => {
+            self.inputTranslation.setFocus();
+        }, 50);
+    }
+
     setText(text, transparency, self) {
         self.hintText = text;
         self.hintColor = 'rgba(128, 128, 128, ' + transparency + ')';
-    }
-
-    ngOnInit(): void {
-        const self = this;
-        this.storage.subscribe(translations => {
-            self.translationsNumber = self.utils.countTodayTranslations(translations);
-        });
-        if (!this.edit) {
-            this.focus();
-        }
     }
 
     deleteItem() {
@@ -110,16 +119,14 @@ export class EditComponent implements OnInit {
         }
         const self = this;
         if (this.translation.original === '' || this.translation.original == null) {
-            setTimeout(() => {
-                self.inputOriginal.setFocus();
-            }, 50);
-        } else if (this.translation.translation === '' || this.translation.translation == null) {
-            setTimeout(() => {
-                self.inputTranslation.setFocus();
-            }, 50);
-        } else {
-            this.save();
+            self.focusOriginal();
+            return;
         }
+        if (!this.draftMode && (this.translation.translation === '' || this.translation.translation == null)) {
+            self.focusTranslation();
+            return;
+        }
+        this.save();
     }
 
     handlePan(event) {
@@ -161,7 +168,31 @@ export class EditComponent implements OnInit {
 
     sweptVertically(event) {
         console.log('this.translation: ', this.translation);
-        if (event.target['id'] === 'trash' || !this.edit) {
+        if (event.target['id'] === 'trash') {
+            return;
+        }
+        if (this.utils.isDraft(this.translation)) {
+            console.log('switch draft mode');
+            this.draftMode = !this.draftMode;
+            if (this.draftMode) {
+                if (this.translation.original === '') {
+                    this.translation.original = this.translation.translation;
+                }
+                this.translation.translation = '';
+            } else {
+                if (!this.utils.isEnglish(this.translation.original)) {
+                    this.translation.translation = this.translation.original;
+                    this.translation.original = '';
+                }
+                if (this.translation.original === '') {
+                    this.focusOriginal();
+                } else {
+                    this.focusTranslation();
+                }
+            }
+            return;
+        }
+        if (!this.edit) {
             return;
         }
         if (this.translation.hasOwnProperty('starred') && this.translation.starred) {

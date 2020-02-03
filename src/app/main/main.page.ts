@@ -94,12 +94,17 @@ export class MainPage implements OnInit {
 
     async openEditor(translation) {
         const modal = await this.modalController.create({
-            component: EditComponent,
-            componentProps: {
-                edit: translation !== null,
-                translation: translation ? Object.assign({}, translation) : {}
-            }
-        });
+                component: EditComponent,
+                componentProps: {
+                    edit: translation !== null,
+                    translation: translation ? Object.assign({}, translation) :
+                        {
+                            original: '',
+                            translation: '',
+                            starred: false
+                        }
+                }
+            });
         const self = this;
         modal.onDidDismiss().then(result => {
             if (result.data && result.data.deleted) {
