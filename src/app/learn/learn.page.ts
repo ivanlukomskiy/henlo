@@ -71,7 +71,9 @@ export class LearnPage implements OnInit {
     }
 
     updateList(translations) {
-        const translationsFiltered = translations.filter(translation => !translation.deleted);
+        const translationsFiltered = translations
+            .filter(translation => !translation.deleted)
+            .filter(translation => translation.original !== '' && translation.translation !== '');
         this.translationsByDays = this.utils.organize(translationsFiltered).translationsByDates;
         this.translationsTotal = [...translationsFiltered];
         this.starredNumber = translationsFiltered.filter(tr => tr.hasOwnProperty('starred') && tr.starred).length;

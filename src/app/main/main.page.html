@@ -3,6 +3,16 @@
         <h3>Henlo</h3>
         {{subtitle}}
     </div>
+    <div class="bottom-panel" *ngIf="search === ''">
+        <div class="nav-panel">
+            <ion-tab-button class="nav-item" class="nav-top" *ngFor="let viewMode of viewModes"
+            [ngClass]="viewMode === selectedMode ? 'nav-top-selected' : 'nav-top'"
+            (click)="selectedMode = viewMode; updateList(null)">
+                <ion-icon name="{{viewMode.icon}}"></ion-icon>
+                <ion-label>{{viewMode.label}}</ion-label>
+            </ion-tab-button>
+        </div>
+    </div>
     <div class="main-column-wrapper">
         <div class="main-column">
             <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
@@ -12,16 +22,22 @@
                 <ion-list class="words-list">
                     <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
                         <div (click)="editTranslation(tr)" class="list-item"
+                             *ngIf="tr.translation !== ''"
                              [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
                             <div class="list-original">{{tr.original}}</div>
                             <div class="list-translation">{{tr.translation}}</div>
+                        </div>
+                        <div (click)="editTranslation(tr)" class="list-item"
+                             *ngIf="tr.translation === ''"
+                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
+                            <div style="width: 100%; text-align: center">{{tr.original}}</div>
                         </div>
                     </ng-container>
                 </ion-list>
             </ng-container>
         </div>
     </div>
-    <div style="display:flex; width: 100%; height: 30%;" *ngIf="!translations || translations.length === 0">
+    <div style="display:flex; width: 100%; height: 30%;" *ngIf="!translationsFiltered || translationsFiltered.length === 0">
         <ion-label class="ion-text-center" style="margin: auto" color="medium">
             <h2>Nothing to show</h2>
         </ion-label>

@@ -68,11 +68,20 @@
   justify-content: space-around;
 }
 
-.nav-button {
+.nav-top {
+  background-color: #181823;
+  color: #39304a;
 }
+
+.nav-top-selected {
+  background-color: #181823;
+  color: #B0A990;
+}
+
 ion-label {
   margin: 0;
 }
+
 .item {
   min-height: 1rem; /* <- this can be whatever you need */
 }
@@ -101,6 +110,7 @@ ion-label {
   //max-width: 700px;
   justify-content: space-around;
 }
+
 .main-column {
   width: 100%;
   //border: 1px solid red;

@@ -21,6 +21,24 @@ export class MainPage implements OnInit {
     searchOn = false;
     translationsByDates = {};
     subtitle = 'just one moment ... ';
+    viewModes = [
+        {
+            label: 'all',
+            icon: 'list-box',
+            modeFilter: translation => translation.original !== '' && translation.translation !== ''
+        },
+        {
+            label: 'starred',
+            icon: 'star',
+            modeFilter: translation => translation.starred
+        },
+        {
+            label: 'drafts',
+            icon: 'create',
+            modeFilter: translation => translation.original === '' || translation.translation === ''
+        },
+    ];
+    selectedMode = this.viewModes[0];
 
     @ViewChild('searchInput', {static: false}) searchInput!: any;
 
@@ -32,6 +50,25 @@ export class MainPage implements OnInit {
     }
 
     getSubtitleText(stats) {
+        if (this.selectedMode.label === 'starred') {
+            const starredWordsCount = this.translationsFiltered.length;
+            if (starredWordsCount === 0) {
+                return 'You haven\'t starred any words yet';
+            }
+            if (starredWordsCount === 1) {
+                return 'You\'ve starred one word';
+            }
+            return 'You have ' + starredWordsCount + ' starred words';
+        } else if (this.selectedMode.label === 'drafts') {
+            const draftsCount = this.translationsFiltered.length;
+            if (draftsCount === 0) {
+                return 'No drafts found';
+            }
+            if (draftsCount === 1) {
+                return 'You have one draft';
+            }
+            return 'You have ' + draftsCount + ' drafts';
+        }
         if (stats.translationsThisDay > 0) {
             return this.getAmountOfWordsText(stats.translationsThisDay) + ' today';
         }
@@ -66,12 +103,15 @@ export class MainPage implements OnInit {
 
     updateList(val) {
         console.log('Updating list');
+        const viewModeFilter = this.selectedMode.modeFilter;
         const search = val ? val : this.search;
         const regExp = new RegExp(search, 'i');
 
         console.log('Filtering');
-        this.translationsFiltered = this.translations.filter(translation =>
-            regExp.test(translation.original) || regExp.test(translation.translation));
+        this.translationsFiltered = this.translations
+            .filter(translation => regExp.test(translation.original) || regExp.test(translation.translation))
+            .filter(translation => !translation.deleted)
+            .filter(viewModeFilter);
         console.log('filtering done');
         const organized = this.utils.organize(this.translationsFiltered);
         this.subtitle = this.getSubtitleText(organized.stats);
@@ -94,17 +134,17 @@ export class MainPage implements OnInit {
 
     async openEditor(translation) {
         const modal = await this.modalController.create({
-                component: EditComponent,
-                componentProps: {
-                    edit: translation !== null,
-                    translation: translation ? Object.assign({}, translation) :
-                        {
-                            original: '',
-                            translation: '',
-                            starred: false
-                        }
-                }
-            });
+            component: EditComponent,
+            componentProps: {
+                edit: translation !== null,
+                translation: translation ? Object.assign({}, translation) :
+                    {
+                        original: '',
+                        translation: '',
+                        starred: false
+                    }
+            }
+        });
         const self = this;
         modal.onDidDismiss().then(result => {
             if (result.data && result.data.deleted) {
