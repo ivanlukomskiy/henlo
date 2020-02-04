@@ -25,16 +25,19 @@ export class MainPage implements OnInit {
         {
             label: 'all',
             icon: 'list-box',
+            showDates: true,
             modeFilter: translation => translation.original !== '' && translation.translation !== ''
         },
         {
             label: 'starred',
             icon: 'star',
+            showDates: false,
             modeFilter: translation => translation.starred
         },
         {
             label: 'drafts',
             icon: 'create',
+            showDates: false,
             modeFilter: translation => translation.original === '' || translation.translation === ''
         },
     ];

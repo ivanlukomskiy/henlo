@@ -15,21 +15,22 @@
     </div>
     <div class="main-column-wrapper">
         <div class="main-column">
+            <div [ngStyle]="{height: selectedMode.showDates ? '0' : '20px'}"></div>
             <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
-                <div class="date-div">
+                <div class="date-div" *ngIf="selectedMode.showDates">
                     <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
                 </div>
                 <ion-list class="words-list">
                     <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
                         <div (click)="editTranslation(tr)" class="list-item"
                              *ngIf="tr.translation !== ''"
-                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
+                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1 && selectedMode.showDates}">
                             <div class="list-original">{{tr.original}}</div>
                             <div class="list-translation">{{tr.translation}}</div>
                         </div>
                         <div (click)="editTranslation(tr)" class="list-item"
                              *ngIf="tr.translation === ''"
-                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
+                             [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1 && selectedMode.showDates}">
                             <div style="width: 100%; text-align: center">{{tr.original}}</div>
                         </div>
                     </ng-container>
