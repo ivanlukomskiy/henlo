@@ -87,6 +87,16 @@ export class MainPage implements OnInit {
         return 'You haven\'t learn any words yet';
     }
 
+    swiped(d) {
+        const viewIndex = this.viewModes.indexOf(this.selectedMode);
+        const newIndex = viewIndex + d;
+        if (newIndex < 0 || newIndex > this.viewModes.length - 1) {
+            return;
+        }
+        this.selectedMode = this.viewModes[newIndex];
+        this.updateList(null);
+    }
+
     getAmountOfWordsText(n) {
         if (n === 1) {
             return 'You\'ve learned one word';

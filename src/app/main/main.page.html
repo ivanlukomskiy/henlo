@@ -1,4 +1,4 @@
-<ion-content *ngIf="storage" style="display: flex; justify-content: center">
+<ion-content *ngIf="storage" style="display: flex; justify-content: center" (swipeleft)="swiped(1)" (swiperight)="swiped(-1)">
     <div class="hello-div" *ngIf="search === ''">
         <h3>Henlo</h3>
         {{subtitle}}
