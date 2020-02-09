@@ -24,7 +24,11 @@ export class UtilsService {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const todayTime = today.getTime();
-        return translations.filter(tr => self.truncateHours(tr.added).getTime() === todayTime).length;
+        return translations
+            .filter(tr => self.truncateHours(tr.added).getTime() === todayTime)
+            .filter(tr => !tr.deleted)
+            .filter(tr => !self.isDraft(tr))
+            .length;
     }
 
     public datePretty(date: Date) {

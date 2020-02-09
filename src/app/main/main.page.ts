@@ -61,6 +61,20 @@ export class MainPage implements OnInit {
         }
     }
 
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        console.log('this.modalOpened: ', this.modalOpened);
+        if (this.modalOpened) {
+            return;
+        }
+        console.log('event: ', event);
+        if (event.key === 'ArrowLeft') {
+            this.swiped(-1);
+        } else if (event.key === 'ArrowRight') {
+            this.swiped(1);
+        }
+    }
+
     searchKeyPress(event) {
         console.log('search key press');
         if (event.key === 'Escape') {
@@ -181,7 +195,7 @@ export class MainPage implements OnInit {
             component: EditComponent,
             componentProps: {
                 edit: translation !== null,
-                draftMode: true,
+                draftMode: self.selectedMode.label === 'drafts',
                 translation: translation ? Object.assign({}, translation) :
                     {
                         original: '',
