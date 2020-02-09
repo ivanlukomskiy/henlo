@@ -16,7 +16,7 @@
 .hello-div {
   width: 100%;
   text-align: center;
-  background-color: #635c51;
+  background-color: #4a4130;
   padding-top: 25px;
 }
 
@@ -61,7 +61,7 @@
   padding: 0 0 3px 0;
 }
 
-.bottom-panel {
+.tools-panel {
   //height: 70px;
   display: flex;
   background-color: #181823;
@@ -121,8 +121,14 @@ ion-label {
 
 .search {
   color: #B0A990;
-  background-color: #181823;
+  max-width: 700px;
   //padding-top: 25px;
+}
+
+.search-panel {
+  background-color: #181823;
+  justify-content: space-around;
+  display: flex;
 }
 
 .iconActive {

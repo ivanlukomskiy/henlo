@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {ModalController, Platform} from '@ionic/angular';
 import {EditComponent} from '../edit/edit.component';
@@ -21,6 +21,7 @@ export class MainPage implements OnInit {
     searchOn = false;
     translationsByDates = {};
     subtitle = 'just one moment ... ';
+    modalOpened = false;
     viewModes = [
         {
             label: 'all',
@@ -42,6 +43,34 @@ export class MainPage implements OnInit {
         },
     ];
     selectedMode = this.viewModes[0];
+
+    @HostListener('document:keypress', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        console.log('this.modalOpened: ', this.modalOpened);
+        if (this.modalOpened) {
+            return;
+        }
+        if (event.key === '1') {
+            this.searchClicked();
+        } else if (event.key === '2') {
+            this.addTranslation(null);
+        } else if (event.key === '3') {
+            this.openLearner();
+        } else if (event.key === '4') {
+            this.openSettings();
+        }
+    }
+
+    searchKeyPress(event) {
+        console.log('search key press');
+        if (event.key === 'Escape') {
+            this.search = '';
+            this.searchOn = false;
+            this.updateList('');
+        }
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    }
 
     @ViewChild('searchInput', {static: false}) searchInput!: any;
 
@@ -146,10 +175,13 @@ export class MainPage implements OnInit {
     }
 
     async openEditor(translation) {
+        const self = this;
+        self.modalOpened = true;
         const modal = await this.modalController.create({
             component: EditComponent,
             componentProps: {
                 edit: translation !== null,
+                draftMode: true,
                 translation: translation ? Object.assign({}, translation) :
                     {
                         original: '',
@@ -158,11 +190,11 @@ export class MainPage implements OnInit {
                     }
             }
         });
-        const self = this;
         modal.onDidDismiss().then(result => {
             if (result.data && result.data.deleted) {
                 self.deleteTranslation(translation);
             }
+            self.modalOpened = false;
         });
         return await modal.present().then(() => {
             self.closeSearch();
@@ -171,8 +203,12 @@ export class MainPage implements OnInit {
 
     async openLearner() {
         const self = this;
+        this.modalOpened = true;
         const modal = await this.modalController.create({
             component: LearnPage
+        });
+        modal.onDidDismiss().then(result => {
+            self.modalOpened = false;
         });
         return await modal.present().then(() => {
             self.closeSearch();
@@ -211,8 +247,12 @@ export class MainPage implements OnInit {
 
     async openSettings() {
         const self = this;
+        self.modalOpened = true;
         const modal = await this.modalController.create({
             component: SettingsPage
+        });
+        modal.onDidDismiss().then(result => {
+            self.modalOpened = false;
         });
         return await modal.present().then(() => {
             self.closeSearch();

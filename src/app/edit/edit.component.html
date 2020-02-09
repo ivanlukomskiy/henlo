@@ -9,16 +9,15 @@
                           placeholder="{{draftMode ? 'Draft' : 'Original'}}"
                           [ngStyle]="{'opacity': textOpacity, 'margin-top': draftMode ? '35px' : '0'}"
                           class="t-input" maxlength="200"
-                          name="original">
+                          name="original"
+                          (keydown)="onKeydown($event)">
             </ion-textarea>
             <ion-textarea autosize [(ngModel)]="translation.translation" placeholder="Translation" name="translation"
                           [ngStyle]="{'opacity': textOpacity, 'display': draftMode ? 'none' : null}"
-                          class="t-input" #inputTranslation maxlength="200">
+                          class="t-input" #inputTranslation maxlength="200"
+                          (keydown)="onKeydown($event)">
             </ion-textarea>
         </form>
-    </div>
-    <div style="width: 100%; text-align: center" id="hint" [style.color]="hintColor">
-        {{hintText}}
     </div>
     <div class="trash-container" (pan)="handlePan($event)"
          [ngStyle]="{'left': trashShift + 'px' }" (click)="trashClicked()">
@@ -30,5 +29,5 @@
         </ion-icon>
     </div>
     <fi-star [visible]="edit && translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
-    <fi-draft [active]="draftMode" (click)="draftMode = !draftMode"></fi-draft>
+    <!--<fi-draft [active]="draftMode" (click)="draftMode = !draftMode"></fi-draft>-->
 </div>

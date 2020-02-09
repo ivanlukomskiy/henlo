@@ -1,4 +1,4 @@
-import {Component, Input, NgZone, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, Input, NgZone, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {ModalController, Platform} from '@ionic/angular';
 import {UtilsService} from '../utils/utils.service';
@@ -13,11 +13,10 @@ export class EditComponent implements OnInit {
     animationTimer: number;
     @Input() edit = false;
     @Input() translation;
+    @Input() draftMode = false;
     translationsNumber = 0;
     tick = 0;
     shift = '50px';
-    hintText = '';
-    hintColor = '#000';
     trashShift = 0;
     width = 500;
     @ViewChild('inputOriginal', {static: true}) inputOriginal!: any;
@@ -27,7 +26,6 @@ export class EditComponent implements OnInit {
 
     textOpacity = 1;
     trashOpacity = 1;
-    draftMode = false;
     editDraft = false;
     phase = 0;
     animationStarted = false;
@@ -104,17 +102,12 @@ export class EditComponent implements OnInit {
         }, 50);
     }
 
-    setText(text, transparency, self) {
-        self.hintText = text;
-        self.hintColor = 'rgba(128, 128, 128, ' + transparency + ')';
-    }
-
     deleteItem() {
         this.modalController.dismiss({deleted: true});
     }
 
     sweptRight(event) {
-        if (event.target['id'] === 'trash') {
+        if (event && event.target['id'] === 'trash') {
             return;
         }
         const self = this;
@@ -201,6 +194,13 @@ export class EditComponent implements OnInit {
         } else {
             this.translation.starred = true;
             this.storage.starTranslation(this.translation['uuid'], true);
+        }
+    }
+
+    onKeydown(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            this.sweptRight(null);
         }
     }
 }

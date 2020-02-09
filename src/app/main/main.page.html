@@ -3,7 +3,7 @@
         <h3>Henlo</h3>
         {{subtitle}}
     </div>
-    <div class="bottom-panel" *ngIf="search === ''">
+    <div class="tools-panel" *ngIf="search === ''">
         <div class="nav-panel">
             <ion-tab-button class="nav-item" class="nav-top" *ngFor="let viewMode of viewModes"
             [ngClass]="viewMode === selectedMode ? 'nav-top-selected' : 'nav-top'"
@@ -44,9 +44,11 @@
         </ion-label>
     </div>
 </ion-content>
+<div class="search-panel">
 <ion-searchbar [ngModel]="search" (ionChange)="searchChanged($event)" *ngIf="searchOn" class="search"
-               #searchInput name="searchInput"></ion-searchbar>
-<div class="bottom-panel">
+               #searchInput name="searchInput" (keydown)="searchKeyPress($event)" (keypress)="$event.stopPropagation()"></ion-searchbar>
+</div>
+<div class="tools-panel">
     <div class="nav-panel">
         <ion-tab-button class="nav-item" (click)="searchClicked()">
             <ion-icon name="ios-search" [ngClass]="{'iconActive': searchOn}"></ion-icon>
