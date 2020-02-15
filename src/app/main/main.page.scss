@@ -13,26 +13,6 @@
   padding: 0px !important;
 }
 
-.hello-div {
-  width: 100%;
-  text-align: center;
-  background-color: #4a4130;
-  padding-top: 25px;
-}
-
-.date-div {
-  text-align: center;
-  width: 100%;
-  font-size: small;
-  padding-top: 25px;
-  padding-bottom: 3px;
-  background-color: #39304a;
-}
-
-.date-header {
-  margin-bottom: 0;
-}
-
 .list-translation {
   width: 50%;
   align-self: center;
@@ -45,12 +25,15 @@
 }
 
 .list-item {
+  font-family: "Segoe UI";
   display: flex;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
-  border-bottom: 2px solid #1E1E2C;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .list-item-last {
@@ -64,18 +47,10 @@
 .tools-panel {
   //height: 70px;
   display: flex;
-  background-color: #181823;
+  //background-color: #181823;
+  background-color: #80B7FF;
+  color: #608bc0;
   justify-content: space-around;
-}
-
-.nav-top {
-  background-color: #181823;
-  color: #39304a;
-}
-
-.nav-top-selected {
-  background-color: #181823;
-  color: #B0A990;
 }
 
 ion-label {
@@ -87,7 +62,9 @@ ion-label {
 }
 
 .nav-item {
-  color: #B0A990;
+  //color: #B0A990;
+  background-color: #80B7FF;
+  color: #000;
 }
 
 .nav-panel {
@@ -133,4 +110,53 @@ ion-label {
 
 .iconActive {
   color: #E9E7E0;
+}
+
+
+.hello-div {
+  width: 100%;
+  text-align: center;
+  background-color: #5c8bc7;
+  padding-top: 85px;
+  padding-bottom: 2px;
+}
+
+.nav-top {
+  background-color: #80B7FF;
+  color: #608bc0;
+}
+
+.nav-top-selected {
+  background-color: #80B7FF;
+  color: #000;
+}
+
+.date-div {
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 0;
+  background-color: #E8E8E8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Segoe UI";
+  display: flex;
+}
+
+.date-header {
+  font-size: small;
+  margin-bottom: 0;
+  color: #476489;
+  font-weight: bold;
+}
+
+.date-edges {
+  margin-top: 19px;
+  width: 50px;
+  //background-color: #F7931E;
+  background-color: #80B7FF;
+  height: 10px;
+  color: #476489;
+
 }

@@ -24,22 +24,22 @@ export class MainPage implements OnInit {
     modalOpened = false;
     viewModes = [
         {
-            label: 'all',
+            label: 'All',
             icon: 'list-box',
             showDates: true,
             modeFilter: translation => translation.original !== '' && translation.translation !== ''
         },
         {
-            label: 'starred',
-            icon: 'star',
-            showDates: false,
-            modeFilter: translation => translation.starred
-        },
-        {
-            label: 'drafts',
+            label: 'Drafts',
             icon: 'create',
             showDates: false,
             modeFilter: translation => translation.original === '' || translation.translation === ''
+        },
+        {
+            label: 'Starred',
+            icon: 'star',
+            showDates: false,
+            modeFilter: translation => translation.starred
         },
     ];
     selectedMode = this.viewModes[0];
@@ -62,7 +62,7 @@ export class MainPage implements OnInit {
     }
 
     @HostListener('document:keydown', ['$event'])
-    handleKeyboardEvent(event: KeyboardEvent) {
+    handleKeydownEvent(event: KeyboardEvent) {
         console.log('this.modalOpened: ', this.modalOpened);
         if (this.modalOpened) {
             return;
@@ -96,7 +96,7 @@ export class MainPage implements OnInit {
     }
 
     getSubtitleText(stats) {
-        if (this.selectedMode.label === 'starred') {
+        if (this.selectedMode.label === 'Starred') {
             const starredWordsCount = this.translationsFiltered.length;
             if (starredWordsCount === 0) {
                 return 'You haven\'t starred any words yet';
@@ -105,7 +105,7 @@ export class MainPage implements OnInit {
                 return 'You\'ve starred one word';
             }
             return 'You have ' + starredWordsCount + ' starred words';
-        } else if (this.selectedMode.label === 'drafts') {
+        } else if (this.selectedMode.label === 'Drafts') {
             const draftsCount = this.translationsFiltered.length;
             if (draftsCount === 0) {
                 return 'No drafts found';
@@ -195,7 +195,7 @@ export class MainPage implements OnInit {
             component: EditComponent,
             componentProps: {
                 edit: translation !== null,
-                draftMode: self.selectedMode.label === 'drafts',
+                draftMode: self.selectedMode.label === 'Drafts',
                 translation: translation ? Object.assign({}, translation) :
                     {
                         original: '',

@@ -1,11 +1,21 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+//$font-family-base: "Segoe UI";
+
+
+$font-family-base: "Segoe UI";
+$font-family-md-base: "Segoe UI";
+$font-family-ios-base: "Segoe UI";
+$font-family-wp-base: "Segoe UI";
+//$font-size-base:  14px;
+
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family: "Segoe UI";
   /* These examples use the same color: lightsteelblue. */
-  --ion-background-color:       #202030;
-  --ion-text-color:             #B0A990;
+  --ion-background-color:       #E8E8E8;
+  --ion-text-color:             #000;
 
   /** primary **/
   --ion-color-primary: #39304a;

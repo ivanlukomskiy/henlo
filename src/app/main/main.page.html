@@ -17,8 +17,10 @@
         <div class="main-column">
             <div [ngStyle]="{height: selectedMode.showDates ? '0' : '20px'}"></div>
             <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
-                <div class="date-div" *ngIf="selectedMode.showDates">
+                <div class="date-div"  style="flex-direction: row; justify-content: space-between" *ngIf="selectedMode.showDates">
+                    <div class="date-edges"></div>
                     <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
+                    <div class="date-edges"></div>
                 </div>
                 <ion-list class="words-list">
                     <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
