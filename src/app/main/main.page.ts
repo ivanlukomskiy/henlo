@@ -58,17 +58,7 @@ export class MainPage implements OnInit {
             this.openLearner();
         } else if (event.key === '4') {
             this.openSettings();
-        }
-    }
-
-    @HostListener('document:keydown', ['$event'])
-    handleKeyboardEvent(event: KeyboardEvent) {
-        console.log('this.modalOpened: ', this.modalOpened);
-        if (this.modalOpened) {
-            return;
-        }
-        console.log('event: ', event);
-        if (event.key === 'ArrowLeft') {
+        } else if (event.key === 'ArrowLeft') {
             this.swiped(-1);
         } else if (event.key === 'ArrowRight') {
             this.swiped(1);
