@@ -22,6 +22,10 @@ export class SettingsPage implements OnInit {
         this.storage.clear();
     }
 
+    generate() {
+        this.storage.generate();
+    }
+
     async sync() {
         const loading = await this.loadingController.create({
             message: 'Synchronizing...'

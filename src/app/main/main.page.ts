@@ -24,20 +24,20 @@ export class MainPage implements OnInit {
     modalOpened = false;
     viewModes = [
         {
-            label: 'all',
-            icon: 'list-box',
+            label: 'All',
+            icon: 'list-outline',
             showDates: true,
             modeFilter: translation => translation.original !== '' && translation.translation !== ''
         },
         {
-            label: 'starred',
+            label: 'Starred',
             icon: 'star',
             showDates: false,
             modeFilter: translation => translation.starred
         },
         {
-            label: 'drafts',
-            icon: 'create',
+            label: 'Drafts',
+            icon: 'create-outline',
             showDates: false,
             modeFilter: translation => translation.original === '' || translation.translation === ''
         },
