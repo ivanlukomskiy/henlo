@@ -78,6 +78,7 @@ export class StorageService {
         }
         return _self.storage.get('translations')
             .then(translations => {
+                console.log('translations: ', translations);
                 translations.forEach(translation => {
                     if (typeof translation.added === 'string') {
                         translation.added = new Date(translation.added).getTime();

@@ -16,8 +16,10 @@
 .hello-div {
   width: 100%;
   text-align: center;
-  background-color: #4a4130;
+  background: var(--header-background);
+  background-size: var(--header-background-size);
   padding-top: 25px;
+  color: var(--header-color);
 }
 
 .date-div {
@@ -26,7 +28,8 @@
   font-size: small;
   padding-top: 25px;
   padding-bottom: 3px;
-  background-color: #39304a;
+  background: var(--heading-background);
+  color: var(--heading-color);
 }
 
 .date-header {
@@ -50,7 +53,9 @@
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  border-bottom: 2px solid #1E1E2C;
+  border-bottom: var(--list-item-separator);
+  color: var(--list-item-color);
+  background: var(--list-item-background);
 }
 
 .list-item-last {
@@ -64,18 +69,18 @@
 .tools-panel {
   //height: 70px;
   display: flex;
-  background-color: #181823;
+  background: var(--navbar-background);
   justify-content: space-around;
 }
 
 .nav-top {
-  background-color: #181823;
-  color: #39304a;
+  background: var(--navbar-background);
+  color: var(--navbar-icon-inactive);
 }
 
 .nav-top-selected {
-  background-color: #181823;
-  color: #B0A990;
+  background: var(--navbar-background);
+  color: var(--navbar-icon-active);
 }
 
 ion-label {
@@ -87,7 +92,7 @@ ion-label {
 }
 
 .nav-item {
-  color: #B0A990;
+  color: var(--navbar-icon-active);
 }
 
 .nav-panel {
@@ -105,32 +110,31 @@ ion-label {
 
 .main-column-wrapper {
   width: 100%;
-  //border: 1px solid rebeccapurple;
   display: flex;
-  //max-width: 700px;
   justify-content: space-around;
+  background: var(--default-background);
 }
 
 .main-column {
   width: 100%;
-  //border: 1px solid red;
-  //display: flex;
   max-width: 700px;
-  //justify-content: space-around;
 }
 
 .search {
-  color: #B0A990;
+  color: var(--default-color);
+  background: var(--default-background);
+  --background: var(--default-background);
+  --icon-color: var(--default-color);
+  --clear-button-color: var(--default-color);
   max-width: 700px;
-  //padding-top: 25px;
 }
 
 .search-panel {
-  background-color: #181823;
+  --background: var(--button-background);
   justify-content: space-around;
   display: flex;
 }
 
 .iconActive {
-  color: #E9E7E0;
+  color: var(--navbar-icon-shine);
 }

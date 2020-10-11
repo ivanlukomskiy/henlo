@@ -1,6 +1,6 @@
 <div id="content1" (swipeleft)="cancel($event)" (swiperight)="sweptRight($event)" (swipeup)="sweptVertically($event)"
      (swipedown)="sweptVertically($event)">
-    <div style="float: right; margin: 20px; color: #B0A990;" *ngIf="!edit && translationsNumber > 0 && !draftMode">
+    <div class="words-number-indicator" *ngIf="!edit && translationsNumber > 0 && !draftMode">
         {{translationsNumber}}
     </div>
     <div class="text-block" id="content">

@@ -1,11 +1,40 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../assets/fonts/OpenSans-Regular.ttf');//mine
+}
+
 /** Ionic CSS Variables **/
 :root {
   /* These examples use the same color: lightsteelblue. */
-  --ion-background-color:       #202030;
-  --ion-text-color:             #B0A990;
+  --ion-font-family: "OpenSans";
+
+  --header-color: lightgreen;
+  --header-background: darkgreen url("../assets/starPattern.png");
+  --header-background-size: 40%;
+  --heading-color: lightgreen;
+  --heading-background: darkgreen;
+  --list-item-color: darkgreen;
+  --list-item-background: lightgreen;
+  --list-item-separator: 2px solid darkgreen;
+  --navbar-background: darkgreen;
+  --navbar-icon-active: lightgreen;
+  --navbar-icon-inactive: green;
+  --navbar-icon-shine: white;
+  --default-background: darkgreen;
+  --default-color: lightgreen;
+  --default-color-secondary: green;
+  --button-color: darkgreen;
+  --button-background: lightgreen;
+  --button-background-click: white;
+  --card-color: var(--button-color);
+  --card-color-secondary: var(--default-color-secondary);
+  --card-background: var(--button-background);
+
+  --ion-background-color: var(--default-background);
+  --ion-text-color: var(--default-color);
 
   /** primary **/
   --ion-color-primary: #39304a;

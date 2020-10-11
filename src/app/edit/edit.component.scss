@@ -8,11 +8,6 @@ ion-input {
   margin-top: 20%
 }
 
-ion-input {
-  --placeholder-color: green;     /* placeholder text color */
-  --ion-color-primary: red;
-}
-
 #content {
   height: 100%;
   width: 100%;
@@ -26,6 +21,7 @@ ion-input {
   font-size: x-large;
   margin: 0;
   padding: 0;
+  color: var(--default-color);
 }
 
 .trash-container {
@@ -38,4 +34,10 @@ ion-input {
   width: 40px;
   height: 40px;
   margin: 20px;
+}
+
+.words-number-indicator {
+  float: right;
+  margin: 20px;
+  color: var(--default-color-secondary);
 }

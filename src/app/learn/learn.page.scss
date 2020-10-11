@@ -6,6 +6,15 @@
   margin: 15px;
   height: 40px;
 }
+.learning-card {
+  background: var(--card-background);
+}
+.learning-card-title {
+  color: var(--card-color);
+}
+.learning-card-subtitle {
+  color: var(--card-color-secondary);
+}
 
 .star {
   position: fixed;
@@ -14,12 +23,11 @@
   margin: 0 auto;
   width: 40px;
   height: 40px;
-  color: #B0A990;
+  color: var(--default-color);
 }
 
 .learning-container {
-  color: #B0A990;
-  //border: 1px solid red;
+  color: var(--default-color);
   height: 100%;
 }
 

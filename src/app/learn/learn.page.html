@@ -1,50 +1,35 @@
 <ion-content *ngIf="!started" (swipeleft)="swipedLeft()">
-    <!--<ion-row>-->
-    <!--<ion-col>-->
-    <!--<ion-toolbar>-->
-    <!--<ion-segment mode="ios" (ionChange)="segmentChanged($event)" [(ngModel)]="learnDirection">-->
-    <!--<ion-segment-button value="en_ru" (checked)="true">-->
-    <!--EN-RU-->
-    <!--</ion-segment-button>-->
-    <!--<ion-segment-button value="ru_en">-->
-    <!--RU-EN-->
-    <!--</ion-segment-button>-->
-    <!--</ion-segment>-->
-    <!--</ion-toolbar>-->
-    <!--</ion-col>-->
-    <!--</ion-row>-->
-
     <ion-row *ngIf="translationsByDays">
         <ion-col size="6" (click)="learnAll()" *ngIf="objectKeys(translationsByDays).length > 1">
-            <ion-card style="background-color: #39304a">
+            <ion-card class="learning-card">
                 <ion-card-header>
-                    <ion-card-title style="color: #B0A990;">Learn All</ion-card-title>
+                    <ion-card-title class="learning-card-title">Learn All</ion-card-title>
                 </ion-card-header>
-                <ion-card-content>
+                <ion-card-content class="learning-card-subtitle">
                     {{translationsTotal.length}} new words
                 </ion-card-content>
             </ion-card>
         </ion-col>
         <ion-col size="6" (click)="learnStarred()" *ngIf="starredNumber > 0">
-            <ion-card style="background-color: #39304a">
+            <ion-card class="learning-card">
                 <ion-card-header>
-                    <ion-card-title style="color: #B0A990;">Learn Starred
+                    <ion-card-title class="learning-card-title">Learn Starred
                         <ion-icon name="ios-star"></ion-icon>
                     </ion-card-title>
                 </ion-card-header>
-                <ion-card-content>
+                <ion-card-content class="learning-card-subtitle">
                     {{starredNumber}} starred words
                 </ion-card-content>
             </ion-card>
         </ion-col>
         <ng-container *ngFor="let key of objectKeys(translationsByDays)">
             <ion-col size="6" (click)="learn(key)">
-                <ion-card style="background-color: #39304a">
+                <ion-card class="learning-card">
                     <ion-card-header>
-                        <ion-card-title style="color: #B0A990;">{{datePretty(translationsByDays[key].date)}}
+                        <ion-card-title class="learning-card-title">{{datePretty(translationsByDays[key].date)}}
                         </ion-card-title>
                     </ion-card-header>
-                    <ion-card-content>
+                    <ion-card-content class="learning-card-subtitle">
                         {{translationsByDays[key].translations.length}} new words
                     </ion-card-content>
                 </ion-card>
@@ -56,7 +41,6 @@
 <ng-container *ngIf="started">
     <div class="learning-container" (click)="tapped()" (swipeleft)="back()"
          (swipeup)="sweptVertically($event)" (swipedown)="sweptVertically($event)">
-        <!--<div class="progress-bar" [ngStyle]="{'width': progressBarWidth}"></div>-->
         <div style="margin-top: 20%; padding: 20px; text-align: center; height: 30%">
             <h1>{{learnDirection == 'en_ru' ? translation.original : translation.translation}}</h1>
             <h4 *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</h4>

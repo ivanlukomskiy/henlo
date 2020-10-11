@@ -28,7 +28,7 @@ export class SettingsPage implements OnInit {
 
     async sync() {
         const loading = await this.loadingController.create({
-            message: 'Synchronizing...'
+            message: 'Synchronizing...',
         });
         loading.present();
         this.storage.sync().then(() => {
