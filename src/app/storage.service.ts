@@ -9,10 +9,6 @@ import {Error} from 'tslint/lib/error';
     providedIn: 'root'
 })
 export class StorageService {
-
-    SERVICE_LOCATION = 'http://192.168.88.249:8000';
-    // SERVICE_LOCATION = 'http://localhost:8000';
-
     translations = null;
     subject = new Subject();
 
@@ -20,11 +16,13 @@ export class StorageService {
                 private http: HttpClient) {
     }
 
-    sync() {
+    async sync() {
         if (this.translations === null || this.translations === undefined) {
             return;
         }
-        return this.http.post(this.SERVICE_LOCATION + '/api/v1/sync',
+        const location = await this.getProperty('backendAddress');
+        console.log('location: ', location);
+        return this.http.post(location + '/api/v1/sync',
             this.translations
         ).toPromise().then(data => {
             this.translations = data;
@@ -41,6 +39,27 @@ export class StorageService {
 
     setSettings(settings) {
         return this.storage.set('settings', settings);
+    }
+
+    async getProperty(key) {
+        let settings = await this.getSettings();
+        if (!settings) {
+            settings = {};
+        }
+        if (!settings.hasOwnProperty(key)) {
+            return '';
+        } else {
+            return settings[key];
+        }
+    }
+
+    async setProperty(key, value) {
+        let settings = await this.storage.get('settings');
+        if (!settings) {
+            settings = {};
+        }
+        settings[key] = value;
+        await this.setSettings(settings);
     }
 
     subscribe(callback) {

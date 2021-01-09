@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
-import {LoadingController, ModalController, ToastController} from '@ionic/angular';
+import {AlertController, LoadingController, ModalController, ToastController} from '@ionic/angular';
 
 @Component({
     selector: 'app-settings',
@@ -12,18 +12,77 @@ export class SettingsPage implements OnInit {
     constructor(private storage: StorageService,
                 public modalController: ModalController,
                 public loadingController: LoadingController,
-                public toastController: ToastController) {
+                public toastController: ToastController,
+                public alertController: AlertController) {
     }
 
-    ngOnInit() {
+    backendAddress = '';
+
+    async ngOnInit() {
+        this.backendAddress = await this.storage.getProperty('backendAddress');
     }
 
-    clear() {
-        this.storage.clear();
+    async clear() {
+        await this.prompt('Do you really want to clear words?', 'All data will be lost',
+            async () => {
+                const loading = await this.loadingController.create({
+                    message: 'Clearing up...',
+                });
+                loading.present();
+                this.storage.clear().then(() => {
+                    this.success('Words cleared');
+                }).catch(() => {
+                    this.failure('Failed to clear words');
+                }).then(() => {
+                    this.loadingController.dismiss();
+                });
+            }
+        );
     }
 
-    generate() {
-        this.storage.generate();
+    backendAddressChanged(event) {
+        this.storage.setProperty('backendAddress', event.detail.value);
+    }
+
+    async prompt(title, text, callback) {
+        const alert = await this.alertController.create({
+            header: title,
+            message: text,
+            buttons: [
+                {
+                    text: 'Yes',
+                    cssClass: 'secondary',
+                    handler: () => {
+                        callback();
+                    }
+                },
+                {
+                    text: 'No',
+                    role: 'cancel',
+                    handler: () => {
+                    }
+                },
+            ]
+        });
+        return alert.present();
+    }
+
+    async generate() {
+        await this.prompt('Do you really want to generate new words?', 'All data will be lost',
+            async () => {
+                const loading = await this.loadingController.create({
+                    message: 'Generating...',
+                });
+                loading.present();
+                this.storage.generate().then(() => {
+                    this.success('New words generated successfully');
+                }).catch(() => {
+                    this.failure('Failed to generate words');
+                }).then(() => {
+                    this.loadingController.dismiss();
+                });
+            }
+        );
     }
 
     async sync() {
@@ -32,25 +91,25 @@ export class SettingsPage implements OnInit {
         });
         loading.present();
         this.storage.sync().then(() => {
-            this.success();
+            this.success('Sync successful');
         }).catch(() => {
-            this.failure();
+            this.failure('Failed to sync');
         }).then(() => {
             this.loadingController.dismiss();
         });
     }
 
-    async failure() {
+    async failure(text) {
         const toast = await this.toastController.create({
-            message: 'Failed to synchronize',
+            message: text,
             duration: 2000
         });
         toast.present();
     }
 
-    async success() {
+    async success(text) {
         const toast = await this.toastController.create({
-            message: 'Synchronized successfully!',
+            message: text,
             duration: 2000
         });
         toast.present();

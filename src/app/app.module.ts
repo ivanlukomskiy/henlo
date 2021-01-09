@@ -10,9 +10,10 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StorageService} from './storage.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import * as Hammer from 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DEFAULT_TIMEOUT, TimeoutInterceptor} from './timeout-interceptor';
 
 export class CustomHammerConfig extends HammerGestureConfig {
     overrides = {
@@ -42,6 +43,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
         StorageService,
         StatusBar,
         SplashScreen,
+        [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
+        [{ provide: DEFAULT_TIMEOUT, useValue: 4000 }],
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
     ],

@@ -19,6 +19,8 @@
   background: var(--header-background);
   background-size: var(--header-background-size);
   padding-top: 25px;
+  padding-bottom: 0px;
+  //font-size: 90px;
   color: var(--header-color);
 }
 
@@ -34,6 +36,9 @@
 
 .date-header {
   margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .list-translation {
@@ -50,9 +55,10 @@
 .list-item {
   display: flex;
   width: 100%;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 18px;
+  padding-bottom: 2px;
+  //padding-left: 10px;
+  //padding-right: 10px;
   border-bottom: var(--list-item-separator);
   color: var(--list-item-color);
   background: var(--list-item-background);
@@ -63,7 +69,7 @@
 }
 
 .words-list {
-  padding: 0 0 3px 0;
+  padding: 0 10px 10px 10px;
 }
 
 .tools-panel {
