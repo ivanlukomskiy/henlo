@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {AlertController, LoadingController, ModalController, ToastController} from '@ionic/angular';
+import {Clipboard} from '@ionic-native/clipboard/ngx';
 
 @Component({
     selector: 'app-settings',
@@ -13,7 +14,8 @@ export class SettingsPage implements OnInit {
                 public modalController: ModalController,
                 public loadingController: LoadingController,
                 public toastController: ToastController,
-                public alertController: AlertController) {
+                public alertController: AlertController,
+                private clipboard: Clipboard) {
     }
 
     backendAddress = '';
@@ -42,6 +44,16 @@ export class SettingsPage implements OnInit {
 
     backendAddressChanged(event) {
         this.storage.setProperty('backendAddress', event.detail.value);
+    }
+
+    async export() {
+        try {
+            const translations = await this.storage.getSnapshot();
+            await this.clipboard.copy(JSON.stringify(translations, null, 4));
+            await this.success('Copied to clipboard');
+        } catch (e) {
+            await this.failure('Failed to export words');
+        }
     }
 
     async prompt(title, text, callback) {

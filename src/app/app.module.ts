@@ -14,6 +14,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import * as Hammer from 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DEFAULT_TIMEOUT, TimeoutInterceptor} from './timeout-interceptor';
+import {Clipboard} from '@ionic-native/clipboard/ngx';
 
 export class CustomHammerConfig extends HammerGestureConfig {
     overrides = {
@@ -43,6 +44,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
         StorageService,
         StatusBar,
         SplashScreen,
+        Clipboard,
         [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
         [{ provide: DEFAULT_TIMEOUT, useValue: 4000 }],
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
