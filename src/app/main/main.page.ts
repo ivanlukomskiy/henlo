@@ -53,7 +53,7 @@ export class MainPage implements OnInit {
         if (event.key === '1') {
             this.searchClicked();
         } else if (event.key === '2') {
-            this.addTranslation(null);
+            this.addTranslation();
         } else if (event.key === '3') {
             this.openLearner();
         } else if (event.key === '4') {
@@ -78,7 +78,7 @@ export class MainPage implements OnInit {
 
     @ViewChild('searchInput', {static: false}) searchInput!: any;
 
-    constructor(private storage: StorageService,
+    constructor(public storage: StorageService,
                 public modalController: ModalController,
                 public utils: UtilsService,
                 private platform: Platform
@@ -174,7 +174,7 @@ export class MainPage implements OnInit {
         console.log('res: ', res);
     }
 
-    addTranslation(translation) {
+    addTranslation() {
         this.openEditor(null);
     }
 

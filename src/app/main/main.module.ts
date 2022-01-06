@@ -19,15 +19,10 @@ import {SettingsPageModule} from '../settings/settings.module';
         IonicModule,
         CommonModule,
         FormsModule,
-        RouterModule.forChild([{path: '', component: MainPage}]),
+        RouterModule.forChild([{ path: '', component: MainPage }]),
     ],
     declarations: [
         MainPage
-    ],
-    entryComponents: [
-        EditComponent,
-        LearnPage,
-        SettingsPage
     ]
 })
 export class MainPageModule {

@@ -31,7 +31,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
     declarations: [
         AppComponent,
     ],
-    entryComponents: [],
     imports: [
         BrowserModule,
         IonicModule.forRoot(),
@@ -47,8 +46,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
         Clipboard,
         [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
         [{ provide: DEFAULT_TIMEOUT, useValue: 4000 }],
-        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
-        {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
     bootstrap: [AppComponent]
 })
