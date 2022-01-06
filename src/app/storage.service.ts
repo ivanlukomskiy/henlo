@@ -3,7 +3,6 @@ import {Storage} from '@ionic/storage';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
 import {HttpClient} from '@angular/common/http';
-import {Error} from 'tslint/lib/error';
 
 @Injectable({
     providedIn: 'root'
