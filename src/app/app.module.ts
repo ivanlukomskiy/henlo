@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig} from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
 import {IonicStorageModule} from '@ionic/storage';
 
@@ -17,6 +17,32 @@ import {DEFAULT_TIMEOUT, TimeoutInterceptor} from './timeout-interceptor';
 import {Clipboard} from '@ionic-native/clipboard/ngx';
 
 export class CustomHammerConfig extends HammerGestureConfig {
+
+    buildHammer(element: HTMLElement) {
+        let options = {};
+
+        if (element.attributes['data-mc-options']) {
+            try {
+                options = JSON.parse(element.attributes['data-mc-options'].nodeValue);
+            } catch(err) {
+                console.error('An error occurred when attempting to parse Hammer.js options: ', err);
+            }
+        }
+
+        const mc = new Hammer(element, options);
+
+        // keep default angular config
+        mc.get('pinch').set({enable: true});
+        mc.get('rotate').set({enable: true});
+
+        // retain support for angular overrides object
+        for (const eventName in this.overrides) {
+            mc.get(eventName).set(this.overrides[eventName]);
+        }
+
+        return mc;
+    }
+
     overrides = {
         pan: {
             direction: Hammer.DIRECTION_ALL
@@ -38,6 +64,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
         IonicStorageModule.forRoot(),
         HttpClientModule,
         BrowserAnimationsModule,
+        HammerModule,
     ],
     providers: [
         StorageService,

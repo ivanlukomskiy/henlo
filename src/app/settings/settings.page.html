@@ -1,4 +1,5 @@
-<ion-content (swipeleft)="swipedLeft()">
+<ion-content>
+    <div (swipeleft)="swipedLeft()" style="height: 100%">
     <div class="settings-column">
     <ion-item>
         <ion-label position="stacked">Backend address</ion-label>
@@ -8,5 +9,6 @@
     <ion-button expand="block" class="menu settings-button" (click)="export()">Export words as json</ion-button>
     <ion-button expand="block" class="menu settings-button" (click)="clear()">Clear</ion-button>
     <ion-button expand="block" class="menu settings-button" (click)="generate()">Generate</ion-button>
+    </div>
     </div>
 </ion-content>

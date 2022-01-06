@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, NgZone, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, NgZone, OnInit, ViewChild} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {ModalController, Platform} from '@ionic/angular';
 import {UtilsService} from '../utils/utils.service';
@@ -56,6 +56,9 @@ export class EditComponent implements OnInit {
             this.draftMode = true;
             this.editDraft = true;
         }
+    }
+
+    ionViewDidEnter(): void {
         if (!this.edit) {
             this.focusOriginal();
         }
