@@ -97,6 +97,9 @@ export class StorageService {
         }
         return _self.storage.get('translations')
             .then(translations => {
+                if (!translations) {
+                    return [];
+                }
                 console.log('translations: ', translations);
                 translations.forEach(translation => {
                     if (typeof translation.added === 'string') {
