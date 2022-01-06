@@ -10,7 +10,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "android-prod": "ionic cordova run --device android --release -- -- --packageType=apk",
+    "android": "ionic cordova run --device android"
   },
   "private": true,
   "dependencies": {
