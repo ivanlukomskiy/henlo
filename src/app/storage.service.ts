@@ -3,6 +3,7 @@ import {Storage} from '@ionic/storage';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
 import {HttpClient} from '@angular/common/http';
+import * as randomWords from 'random-words';
 
 @Injectable({
     providedIn: 'root'
@@ -130,14 +131,21 @@ export class StorageService {
             });
     }
 
+    getRandomWord() {
+        const r = Math.random();
+        const wordsCount = r < 0.6 ? 1 : r < 0.8 ? 2 : 3;
+        return randomWords({exactly: wordsCount, join: ' '})
+    }
+
     generate() {
         console.log('generating transaction examples');
         const newTranslations = [];
         for (let i = 0; i < 500; i++) {
             const timestamp = new Date().getTime() - Math.random() * 24 * 60 * 60 * 1000 * 50;
+
             const newTranslation = {
-                original: Math.random().toString(36).substring(7),
-                translation: Math.random().toString(36).substring(7),
+                original: this.getRandomWord(),
+                translation: this.getRandomWord(),
                 added: timestamp,
                 uuid: uuid()
             };

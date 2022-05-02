@@ -15,6 +15,7 @@ import * as Hammer from 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DEFAULT_TIMEOUT, TimeoutInterceptor} from './timeout-interceptor';
 import {Clipboard} from '@ionic-native/clipboard/ngx';
+import { AngularD3CloudModule } from 'angular-d3-cloud'
 
 export class CustomHammerConfig extends HammerGestureConfig {
 
@@ -65,6 +66,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
         HttpClientModule,
         BrowserAnimationsModule,
         HammerModule,
+        AngularD3CloudModule,
     ],
     providers: [
         StorageService,

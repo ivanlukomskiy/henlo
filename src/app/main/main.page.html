@@ -1,27 +1,39 @@
 <ion-content *ngIf="storage" style="display: flex; justify-content: center">
     <div (swipeleft)="swiped(1)" (swiperight)="swiped(-1)" style="height: 100%"
          data-mc-options='{"touchAction": "pan-y"}'>
-        <div class="hello-div" *ngIf="search === ''">
-            <h1>Henlo</h1>
-            {{subtitle}}
-        </div>
-        <div class="tools-panel" *ngIf="search === ''">
-            <div class="nav-panel">
-                <ion-tab-button class="nav-item" class="nav-top" *ngFor="let viewMode of viewModes"
-                                [ngClass]="viewMode === selectedMode ? 'nav-top-selected' : 'nav-top'"
-                                (click)="selectedMode = viewMode; updateList(null)">
-                    <ion-icon name="{{viewMode.icon}}"></ion-icon>
-                    <ion-label>{{viewMode.label}}</ion-label>
-                </ion-tab-button>
-            </div>
-        </div>
+<!--        <div class="hello-div" *ngIf="search === ''">-->
+<!--            <h1>Henlo</h1>-->
+<!--            {{subtitle}}-->
+<!--        </div>-->
+<!--        <div class="tools-panel" *ngIf="search === ''">-->
+<!--            <div class="nav-panel">-->
+<!--                <ion-tab-button class="nav-item" class="nav-top" *ngFor="let viewMode of viewModes"-->
+<!--                                [ngClass]="viewMode === selectedMode ? 'nav-top-selected' : 'nav-top'"-->
+<!--                                (click)="selectedMode = viewMode; updateList(null)">-->
+<!--                    <ion-icon name="{{viewMode.icon}}"></ion-icon>-->
+<!--                    <ion-label>{{viewMode.label}}</ion-label>-->
+<!--                </ion-tab-button>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="main-column-wrapper">
             <div class="main-column">
                 <div [ngStyle]="{height: selectedMode.showDates ? '0' : '20px'}"></div>
                 <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
                     <div class="date-div" *ngIf="selectedMode.showDates">
-                        <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
+                        <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}} {{getTranslations(datestring).length}}</h3>
                     </div>
+<!--                    <div style="">-->
+<!--                    <angular-d3-cloud-->
+<!--                            [data]=getTranslations(datestring)-->
+<!--                            [width]="innerWidth"-->
+<!--                            [height]="getTranslations(datestring).length * 15"-->
+<!--                            [padding]="5"-->
+<!--                            [rotate]="0"-->
+<!--                            (wordClick)="onWorkClick($event)"-->
+<!--                            [autoFill]="false"-->
+<!--                            [fontSizeMapper]="wordSize"-->
+<!--                    ></angular-d3-cloud>-->
+<!--                    </div>-->
                     <ion-list class="words-list">
                         <ng-container *ngFor="let tr of translationsByDates[datestring].translations; let i=index">
                             <div (click)="editTranslation(tr)" class="list-item"

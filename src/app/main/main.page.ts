@@ -43,6 +43,25 @@ export class MainPage implements OnInit {
         },
     ];
     selectedMode = this.viewModes[0];
+    data = [
+        "Hello", "world", "normally", "you", "want", "more", "words",
+        "than", "this"].map(function (d) {
+        return { text: d, value: 10 + Math.random() * 90};
+    })
+    public innerWidth: any;
+    onWorkClick(event) {
+
+    }
+    wordColor(word: any, index: number) {
+        return 'black'
+    }
+    wordSize(word: any, idx: number) {
+        return (50 - Math.min(word.text.length, 30)) * (Math.random() * 0.2 + 0.9) * 0.4;
+    }
+    getTranslations(dateString: string) {
+        return this.translationsByDates[dateString].translations.map(tr => {
+            return {text: tr.original, value: 10 + Math.random() * 90}})
+    }
 
     @HostListener('document:keypress', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
@@ -228,6 +247,12 @@ export class MainPage implements OnInit {
         this.platform.backButton.subscribe(() => {
             self.closeSearch();
         });
+        this.innerWidth = window.innerWidth;
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(_) {
+        this.innerWidth = window.innerWidth;
     }
 
     closeSearch() {
