@@ -127,3 +127,23 @@ ion-label {
 .iconActive {
   color: var(--navbar-icon-shine);
 }
+
+.list-mode-panel {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 20px 7px;
+}
+
+.list-mode-option {
+  flex-grow: 1;
+  text-align: center;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.list-mode-selected {
+  border-color: var(--button-background);
+}
