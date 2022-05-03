@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StorageService} from '../storage.service';
 import {UtilsService} from '../utils/utils.service';
 import {ModalController} from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 
 @Component({
     selector: 'app-tab3',
@@ -27,13 +28,12 @@ export class LearnPage implements OnInit {
     progressBarWidth = '0';
 
     colouredBackground = true;
-    switchWeeks = false;
     backgroundColor = null;
 
     constructor(
         private storage: StorageService,
         private utils: UtilsService,
-        public modalController: ModalController
+        public modalController: ModalController,
     ) {
     }
 

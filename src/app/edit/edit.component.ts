@@ -38,10 +38,10 @@ export class EditComponent implements OnInit {
         private storage: StorageService,
         private utils: UtilsService,
         public modalController: ModalController,
-        platform: Platform
+        private platform: Platform,
     ) {
         const self = this;
-        platform.ready().then(() => {
+        this.platform.ready().then(() => {
             self.width = platform.width();
             self.trashSlideMaxDistance = self.width - self.TRASH_ICON_SIZE - 2 * self.TRASH_ICON_MARGIN;
         });

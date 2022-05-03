@@ -18,7 +18,7 @@
   text-align: left;
   /* background: var(--header-background); */
   background-size: var(--header-background-size);
-  padding: 5px 5px;
+  padding: 12px 5px;
   color: var(--header-color);
   font-size: 16pt;
   display: flex;
@@ -33,26 +33,6 @@
 }
 
 .hello-div-text {
-}
-
-.list-item {
-  display: flex;
-  width: 100%;
-  padding-top: 18px;
-  padding-bottom: 2px;
-  //padding-left: 10px;
-  //padding-right: 10px;
-  border-bottom: var(--list-item-separator);
-  color: var(--list-item-color);
-  background: var(--list-item-background);
-}
-
-.list-item-last {
-  border-bottom: none;
-}
-
-.words-list {
-  padding: 0 10px 10px 10px;
 }
 
 .tools-panel {

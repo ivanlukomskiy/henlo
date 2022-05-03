@@ -3,5 +3,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">localhost</domain>
         <domain includeSubdomains="true">192.168.88.249</domain>
+        <domain includeSubdomains="true">henlo.ru</domain>
+        <domain includeSubdomains="true">51.250.1.88</domain>
     </domain-config>
 </network-security-config>

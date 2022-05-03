@@ -10,12 +10,14 @@ import {Clipboard} from '@ionic-native/clipboard/ngx';
 })
 export class SettingsPage implements OnInit {
 
-    constructor(private storage: StorageService,
-                public modalController: ModalController,
-                public loadingController: LoadingController,
-                public toastController: ToastController,
-                public alertController: AlertController,
-                private clipboard: Clipboard) {
+    constructor(
+        private storage: StorageService,
+        public modalController: ModalController,
+        public loadingController: LoadingController,
+        public toastController: ToastController,
+        public alertController: AlertController,
+        private clipboard: Clipboard,
+    ) {
     }
 
     backendAddress = '';

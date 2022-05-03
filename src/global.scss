@@ -49,8 +49,8 @@
   color: var(--button-color);
   --background: var(--button-background);
   --background-activated: var(--button-background-click);
-  margin-left: 20px;
-  margin-top: 20px;
+  margin: 15px;
+  height: 40px;
 }
 
 .date-div {
@@ -68,4 +68,22 @@
   font-size: 14px;
   font-weight: bolder;
   text-transform: uppercase;
+}
+
+.list-item-last {
+  border-bottom: none !important;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+  padding-top: 18px;
+  padding-bottom: 2px;
+  border-bottom: var(--list-item-separator);
+  color: var(--list-item-color);
+  background: var(--list-item-background);
+}
+
+.words-list {
+  padding: 0 10px 10px 10px;
 }

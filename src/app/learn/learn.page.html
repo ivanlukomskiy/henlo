@@ -1,47 +1,53 @@
 <ion-content *ngIf="!started">
     <div (swipeleft)="swipedLeft()" style="height: 100%" data-mc-options='{"touchAction": "pan-y"}'>
+        <ng-container *ngIf="objectKeys(translationsByDays).length > 0">
+            <div class="date-div">
+                <h3 class="date-header">Settings</h3>
+            </div>
+            <ion-button (click)="reverseOrder()" expand="block" class="menu settings-button">
+                {{learnDirection == 'ru_en' ? "Translation → original" : "Original → translation"}}
+            </ion-button>
+            <ion-button (click)="switchColouredBackground()" expand="block" class="menu settings-button">
+                Coloured background: {{colouredBackground ? "yes" : "no"}}
+            </ion-button>
 
-        <div class="date-div">
-            <h3 class="date-header">Settings</h3>
-        </div>
-        <ion-button (click)="reverseOrder()" expand="block" class="menu settings-button">
-            {{learnDirection == 'ru_en' ? "Translation → original" : "Original → translation"}}
-        </ion-button>
-        <ion-button (click)="switchColouredBackground()" expand="block" class="menu settings-button">
-            Coloured background: {{colouredBackground ? "yes" : "no"}}
-        </ion-button>
-
-        <div class="date-div">
-            <h3 class="date-header">Learn mode</h3>
-        </div>
-        <ion-button (click)="learnAll()" expand="block" class="menu settings-button">
-            Random order
-        </ion-button>
-        <ion-button (click)="learnDayByDay()" expand="block" class="menu settings-button"
-                    *ngIf="objectKeys(translationsByDays).length > 1">
-            Day by day
-        </ion-button>
-        <!--        <ion-button expand="block" class="menu settings-button">-->
-        <!--            Least repeated-->
-        <!--        </ion-button>-->
-        <ion-button (click)="learnStarred()" *ngIf="starredNumber > 0" expand="block" class="menu settings-button">
-            Starred
-        </ion-button>
+            <div class="date-div">
+                <h3 class="date-header">Learn mode</h3>
+            </div>
+            <ion-button (click)="learnAll()" expand="block" class="menu settings-button">
+                Random order
+            </ion-button>
+            <ion-button (click)="learnDayByDay()" expand="block" class="menu settings-button"
+                        *ngIf="objectKeys(translationsByDays).length > 1">
+                Day by day
+            </ion-button>
+            <!--        <ion-button expand="block" class="menu settings-button">-->
+            <!--            Least repeated-->
+            <!--        </ion-button>-->
+            <ion-button (click)="learnStarred()" *ngIf="starredNumber > 0" expand="block" class="menu settings-button">
+                Starred
+            </ion-button>
 
 
-        <div class="date-div">
-            <h3 class="date-header">Learn by date</h3>
-        </div>
-        <ion-list class="words-list">
-            <ion-item (click)="learn(key)" *ngFor="let key of objectKeys(translationsByDays)">
-                <div class="list-item-left">
-                    {{datePretty(translationsByDays[key].date)}}
+            <div class="date-div">
+                <h3 class="date-header">Learn by date</h3>
+            </div>
+            <ion-list class="words-list">
+                <div (click)="learn(key)" class="list-item"
+                     *ngFor="let key of objectKeys(translationsByDays); let i=index"
+                     [ngClass]="{'list-item-last': i === objectKeys(translationsByDays).length - 1}">
+                    <div class="list-item-left">
+                        {{datePretty(translationsByDays[key].date)}}
+                    </div>
+                    <div class="list-item-right">
+                        {{translationsByDays[key].translations.length}}
+                    </div>
                 </div>
-                <div class="list-item-right">
-                    {{translationsByDays[key].translations.length}}
-                </div>
-            </ion-item>
-        </ion-list>
+            </ion-list>
+        </ng-container>
+        <div *ngIf="objectKeys(translationsByDays).length === 0" class="no-words">
+            Add some words to learn first
+        </div>
     </div>
 </ion-content>
 
