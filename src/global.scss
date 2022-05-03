@@ -39,3 +39,39 @@
   color: #B0A990 !important;
   display: none !important;
 }
+
+.list-item-right {
+  width: 50%;
+  align-self: center;
+  text-align: right;
+}
+
+.list-item-left {
+  width: 50%;
+  align-self: center;
+}
+
+.settings-button {
+  color: var(--button-color);
+  --background: var(--button-background);
+  --background-activated: var(--button-background-click);
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.date-div {
+  text-align: center;
+  width: 100%;
+  font-size: small;
+  padding-top: 25px;
+  padding-bottom: 3px;
+  //background: var(--heading-background);
+  color: var(--heading-color);
+}
+
+.date-header {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}

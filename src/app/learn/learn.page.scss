@@ -7,7 +7,14 @@
   height: 40px;
 }
 .learning-card {
-  background: var(--card-background);
+  //background: var(--card-background);
+}
+.learning-button {
+  border: 3px solid var(--heading-background);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+  max-width: 200px;
 }
 .learning-card-title {
   color: var(--card-color);
@@ -29,6 +36,9 @@
 .learning-container {
   color: var(--default-color);
   height: 100%;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
 
 .progress-bar {
@@ -36,4 +46,24 @@
   height: 4px;
   width: 0;
   transition: width 200ms ease;
+}
+
+.learning-state {
+  margin-top: 20%;
+  padding: 20px;
+  text-align: center
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; top: -20px}
+  to { opacity: 1; top: 0}
+}
+
+.hidden-word {
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  -webkit-animation: fadeIn 0.05s;
+  animation: fadeIn 0.05s;
 }

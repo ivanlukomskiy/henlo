@@ -1,53 +1,64 @@
 <ion-content *ngIf="!started">
     <div (swipeleft)="swipedLeft()" style="height: 100%" data-mc-options='{"touchAction": "pan-y"}'>
-        <ion-row *ngIf="translationsByDays">
-            <ion-col size="6" (click)="learnAll()" *ngIf="objectKeys(translationsByDays).length > 1">
-                <ion-card class="learning-card">
-                    <ion-card-header>
-                        <ion-card-title class="learning-card-title">Learn All</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content class="learning-card-subtitle">
-                        {{translationsTotal.length}} new words
-                    </ion-card-content>
-                </ion-card>
-            </ion-col>
-            <ion-col size="6" (click)="learnStarred()" *ngIf="starredNumber > 0">
-                <ion-card class="learning-card">
-                    <ion-card-header>
-                        <ion-card-title class="learning-card-title">Learn Starred
-                            <ion-icon name="ios-star"></ion-icon>
-                        </ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content class="learning-card-subtitle">
-                        {{starredNumber}} starred words
-                    </ion-card-content>
-                </ion-card>
-            </ion-col>
-            <ng-container *ngFor="let key of objectKeys(translationsByDays)">
-                <ion-col size="6" (click)="learn(key)">
-                    <ion-card class="learning-card">
-                        <ion-card-header>
-                            <ion-card-title class="learning-card-title">{{datePretty(translationsByDays[key].date)}}
-                            </ion-card-title>
-                        </ion-card-header>
-                        <ion-card-content class="learning-card-subtitle">
-                            {{translationsByDays[key].translations.length}} new words
-                        </ion-card-content>
-                    </ion-card>
-                </ion-col>
-            </ng-container>
-        </ion-row>
+
+        <div class="date-div">
+            <h3 class="date-header">Settings</h3>
+        </div>
+        <ion-button (click)="reverseOrder()" expand="block" class="menu settings-button">
+            {{learnDirection == 'ru_en' ? "Translation → original" : "Original → translation"}}
+        </ion-button>
+        <ion-button (click)="switchColouredBackground()" expand="block" class="menu settings-button">
+            Coloured background: {{colouredBackground ? "yes" : "no"}}
+        </ion-button>
+
+        <div class="date-div">
+            <h3 class="date-header">Learn mode</h3>
+        </div>
+        <ion-button (click)="learnAll()" expand="block" class="menu settings-button">
+            Random order
+        </ion-button>
+        <ion-button (click)="learnWeekByWeek()" expand="block" class="menu settings-button"
+                    *ngIf="objectKeys(translationsByDays).length > 1">
+            Week by week
+        </ion-button>
+        <!--        <ion-button expand="block" class="menu settings-button">-->
+        <!--            Least repeated-->
+        <!--        </ion-button>-->
+        <ion-button (click)="learnStarred()" *ngIf="starredNumber > 0" expand="block" class="menu settings-button">
+            Starred
+        </ion-button>
+
+
+        <div class="date-div">
+            <h3 class="date-header">Learn by date</h3>
+        </div>
+        <ion-list class="words-list">
+            <ion-item (click)="learn(key)" *ngFor="let key of objectKeys(translationsByDays)">
+                <div class="list-item-left">
+                    {{datePretty(translationsByDays[key].date)}}
+                </div>
+                <div class="list-item-right">
+                    {{translationsByDays[key].translations.length}}
+                </div>
+            </ion-item>
+        </ion-list>
     </div>
 </ion-content>
 
 <ng-container *ngIf="started">
     <div class="learning-container" (click)="tapped()" (swipeleft)="back()"
-         (swipeup)="sweptVertically($event)" (swipedown)="sweptVertically($event)">
+         (swipeup)="sweptVertically($event)" (swipedown)="sweptVertically($event)"
+         [ngStyle]="{'backgroundColor': getColor(translation)}"
+    >
         <div style="margin-top: 20%; padding: 20px; text-align: center; height: 30%">
             <h1>{{learnDirection == 'en_ru' ? translation.original : translation.translation}}</h1>
-            <h4 *ngIf="unveiled">{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</h4>
+            <div style="position: relative">
+                <div *ngIf="unveiled" class="hidden-word">
+                    <h4>{{learnDirection == 'ru_en' ? translation.original : translation.translation}}</h4>
+                </div>
+            </div>
         </div>
-        <div style="margin-top: 20%; padding: 20px; text-align: center">
+        <div class="learning-state">
             {{timestampPretty(translation.added)}}<br>
             {{currentIndex + 1}} / {{translations.length}}
         </div>

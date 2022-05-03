@@ -26,6 +26,10 @@ export class LearnPage implements OnInit {
     options = [];
     progressBarWidth = '0';
 
+    colouredBackground = true;
+    switchWeeks = false;
+    backgroundColor = null;
+
     constructor(
         private storage: StorageService,
         private utils: UtilsService,
@@ -35,6 +39,14 @@ export class LearnPage implements OnInit {
 
     segmentChanged(event) {
         console.log('event', event.detail.value);
+    }
+
+    reverseOrder() {
+        this.learnDirection = this.learnDirection == 'ru_en' ? 'en_ru' : 'ru_en'
+    }
+
+    switchColouredBackground() {
+        this.colouredBackground = !this.colouredBackground;
     }
 
     tapped() {
@@ -51,6 +63,24 @@ export class LearnPage implements OnInit {
             console.log('this.translations.length > 1: ', this.translations.length > 1);
             this.progressBarWidth = this.translations.length > 1 ? (this.currentIndex / (this.translations.length - 1)) * 100 + '%' : '0';
         }
+    }
+
+    hashCode(s){
+        return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+    }
+
+    rand(min, max) {
+        return min + Math.random() * (max - min);
+    }
+
+    getColor(translation) {
+        if (!this.colouredBackground) {
+            return undefined;
+        }
+        const h = this.hashCode(translation.original + translation.translation) % 360;
+        const s = 70 + this.hashCode(translation.original + translation.translation + '1') % 25;
+        const l = 85 + this.hashCode(translation.original + translation.translation + '2') % 15;
+        return 'hsl(' + h + ',' + s + '%,' + l + '%)';
     }
 
     back() {
@@ -79,8 +109,10 @@ export class LearnPage implements OnInit {
         this.starredNumber = translationsFiltered.filter(tr => tr.hasOwnProperty('starred') && tr.starred).length;
     }
 
-    private prepareLearning() {
-        this.utils.shuffleArray(this.translations);
+    private prepareLearning(shuffle = true) {
+        if (shuffle) {
+            this.utils.shuffleArray(this.translations);
+        }
         this.currentIndex = 0;
         this.translation = this.translations[this.currentIndex];
         this.started = true;
@@ -103,6 +135,17 @@ export class LearnPage implements OnInit {
     learnAll() {
         this.translations = this.translationsTotal;
         this.prepareLearning();
+    }
+
+    learnWeekByWeek() {
+        const translations = [];
+        for (let dateKey of Object.keys(this.translationsByDays)) {
+            const dayTranslations = [...this.translationsByDays[dateKey].translations];
+            this.utils.shuffleArray(dayTranslations);
+            translations.push.apply(translations, dayTranslations);
+        }
+        this.translations = translations;
+        this.prepareLearning(false);
     }
 
     swipedLeft() {

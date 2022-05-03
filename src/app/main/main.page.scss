@@ -15,41 +15,24 @@
 
 .hello-div {
   width: 100%;
-  text-align: center;
-  background: var(--header-background);
+  text-align: left;
+  /* background: var(--header-background); */
   background-size: var(--header-background-size);
-  padding-top: 25px;
-  padding-bottom: 0px;
-  //font-size: 90px;
+  padding: 2px 5px;
   color: var(--header-color);
+  font-size: 16pt;
+  display: flex;
 }
 
-.date-div {
-  text-align: center;
-  width: 100%;
-  font-size: small;
-  padding-top: 25px;
-  padding-bottom: 3px;
-  //background: var(--heading-background);
-  color: var(--heading-color);
+.hello-div-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: var(--header-background);
+  margin-right: 10px;
 }
 
-.date-header {
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.list-translation {
-  width: 50%;
-  align-self: center;
-  text-align: right;
-}
-
-.list-original {
-  width: 50%;
-  align-self: center;
+.hello-div-text {
 }
 
 .list-item {
