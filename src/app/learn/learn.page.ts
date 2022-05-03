@@ -79,7 +79,7 @@ export class LearnPage implements OnInit {
         }
         const h = this.hashCode(translation.original + translation.translation) % 360;
         const s = 70 + this.hashCode(translation.original + translation.translation + '1') % 25;
-        const l = 85 + this.hashCode(translation.original + translation.translation + '2') % 15;
+        const l = 92 + this.hashCode(translation.original + translation.translation + '2') % 8;
         return 'hsl(' + h + ',' + s + '%,' + l + '%)';
     }
 
@@ -137,7 +137,7 @@ export class LearnPage implements OnInit {
         this.prepareLearning();
     }
 
-    learnWeekByWeek() {
+    learnDayByDay() {
         const translations = [];
         for (let dateKey of Object.keys(this.translationsByDays)) {
             const dayTranslations = [...this.translationsByDays[dateKey].translations];

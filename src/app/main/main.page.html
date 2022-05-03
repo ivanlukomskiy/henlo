@@ -15,10 +15,7 @@
         <!--                </ion-tab-button>-->
         <!--            </div>-->
         <!--        </div>-->
-        <div class="hello-div" *ngIf="search === ''">
-            <div class="hello-div-avatar"></div>
-            <div class="hello-div-text">henlo, ivanlukomskiy</div>
-        </div>
+
 
 <!--        <ion-button expand="block" class="menu settings-button">Add draft</ion-button>-->
 <!--        <ion-button expand="block" class="menu settings-button">Learn</ion-button>-->
@@ -37,6 +34,10 @@
 <!--        </div>-->
         <div class="main-column-wrapper">
             <div class="main-column">
+                <div class="hello-div" *ngIf="search === ''">
+                    <div class="hello-div-avatar"></div>
+                    <div class="hello-div-text">henlo, ivanlukomskiy</div>
+                </div>
                 <div [ngStyle]="{height: selectedMode.showDates ? '0' : '20px'}"></div>
                 <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
                     <div class="date-div" *ngIf="selectedMode.showDates">

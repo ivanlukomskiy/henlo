@@ -36,9 +36,9 @@
 .learning-container {
   color: var(--default-color);
   height: 100%;
-  -webkit-transition: background-color 100ms linear;
-  -ms-transition: background-color 100ms linear;
-  transition: background-color 100ms linear;
+  -webkit-transition: background-color 50ms linear;
+  -ms-transition: background-color 50ms linear;
+  transition: background-color 50ms linear;
 }
 
 .progress-bar {
