@@ -1,7 +1,9 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
-import {IonicStorageModule} from '@ionic/storage';
+import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 
 import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
@@ -69,6 +71,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
         AngularD3CloudModule,
     ],
     providers: [
+        TextToSpeech,
+        Storage,
         StorageService,
         StatusBar,
         SplashScreen,

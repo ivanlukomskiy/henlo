@@ -3,6 +3,7 @@ import {StorageService} from '../storage.service';
 import {UtilsService} from '../utils/utils.service';
 import {ModalController} from '@ionic/angular';
 import { Platform } from '@ionic/angular';
+import {TextToSpeech} from '@ionic-native/text-to-speech/ngx';
 
 @Component({
     selector: 'app-tab3',
@@ -29,12 +30,17 @@ export class LearnPage implements OnInit {
 
     colouredBackground = true;
     backgroundColor = null;
+    showPlay: boolean = false;
 
     constructor(
         private storage: StorageService,
         private utils: UtilsService,
         public modalController: ModalController,
+        private textToSpeech: TextToSpeech,
+        private platform: Platform,
     ) {
+        console.log('PLATFORM IS', platform.url())
+        this.showPlay = platform.is('cordova');
     }
 
     segmentChanged(event) {
@@ -60,7 +66,6 @@ export class LearnPage implements OnInit {
             }
             this.translation = this.translations[this.currentIndex];
             this.unveiled = false;
-            console.log('this.translations.length > 1: ', this.translations.length > 1);
             this.progressBarWidth = this.translations.length > 1 ? (this.currentIndex / (this.translations.length - 1)) * 100 + '%' : '0';
         }
     }
@@ -160,5 +165,11 @@ export class LearnPage implements OnInit {
             this.translation.starred = true;
             this.storage.starTranslation(this.translation['uuid'], true);
         }
+    }
+
+    play(event: any, original: string) {
+        event.stopPropagation();
+        this.textToSpeech.speak(original)
+            .catch((reason: any) => console.log(reason));
     }
 }

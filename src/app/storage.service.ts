@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage-angular';
 import {Subject} from 'rxjs';
 import {v4 as uuid} from 'uuid';
 import {HttpClient} from '@angular/common/http';
@@ -14,6 +14,10 @@ export class StorageService {
 
     constructor(private storage: Storage,
                 private http: HttpClient) {
+    }
+
+    async init() {
+        await this.storage.create();
     }
 
     async sync() {
@@ -134,7 +138,7 @@ export class StorageService {
     getRandomWord() {
         const r = Math.random();
         const wordsCount = r < 0.6 ? 1 : r < 0.8 ? 2 : 3;
-        return randomWords({exactly: wordsCount, join: ' '})
+        return randomWords({exactly: wordsCount, join: ' '});
     }
 
     generate() {

@@ -54,6 +54,12 @@
   text-align: center
 }
 
+.play {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; top: -20px}
   to { opacity: 1; top: 0}
@@ -71,4 +77,9 @@
 .no-words {
   padding: 200px 10px 0 10px;
   text-align: center;
+}
+
+.play-icon {
+  width: 40px;
+  height: 40px;
 }
