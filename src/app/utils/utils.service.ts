@@ -44,9 +44,9 @@ export class UtilsService {
         } else if (diff < 7) {
             return diff + ' days ago';
         } else if (today.getFullYear() === date.getFullYear()) {
-            return date.getDate() + ' ' + monthNames[date.getMonth()];
+            return monthNames[date.getMonth()] + ' ' + date.getDate();
         } else {
-            return date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
+            return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
         }
     }
 

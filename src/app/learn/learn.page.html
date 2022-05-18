@@ -10,6 +10,9 @@
             <ion-button (click)="switchColouredBackground()" expand="block" class="menu settings-button">
                 Coloured background: {{colouredBackground ? "yes" : "no"}}
             </ion-button>
+            <ion-button (click)="switchAutoPronounce()" expand="block" class="menu settings-button">
+                Auto-pronounce: {{autoPronounce ? "yes" : "no"}}
+            </ion-button>
 
             <div class="date-div">
                 <h3 class="date-header">Learn mode</h3>
@@ -65,8 +68,9 @@
             {{timestampPretty(translation.added)}}<br>
             {{currentIndex + 1}} / {{translations.length}}
         </div>
-        <div class="play" (click)="play($event, translation.original)" *ngIf="showPlay">
-            <ion-icon name="volume-medium-outline" class="play-icon"></ion-icon>
+        <div class="play" *ngIf="showPlay">
+            <ion-icon name="volume-medium-outline" class="play-icon"
+                      (click)="play($event, translation.original)" ></ion-icon>
         </div>
         <fi-star [visible]="translation.hasOwnProperty(['starred']) && translation['starred']"></fi-star>
     </div>

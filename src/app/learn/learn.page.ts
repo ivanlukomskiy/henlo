@@ -5,6 +5,9 @@ import {ModalController} from '@ionic/angular';
 import { Platform } from '@ionic/angular';
 import {TextToSpeech} from '@ionic-native/text-to-speech/ngx';
 
+
+const LEARN_DIRECTION_DEFAULT = 'ru_en';
+
 @Component({
     selector: 'app-tab3',
     templateUrl: 'learn.page.html',
@@ -17,7 +20,7 @@ export class LearnPage implements OnInit {
     unveiled = false;
     started = false;
 
-    learnDirection = 'ru_en';
+    learnDirection = LEARN_DIRECTION_DEFAULT;
 
     translations;
     translationsTotal;
@@ -31,6 +34,7 @@ export class LearnPage implements OnInit {
     colouredBackground = true;
     backgroundColor = null;
     showPlay: boolean = false;
+    autoPronounce: boolean = false;
 
     constructor(
         private storage: StorageService,
@@ -39,7 +43,6 @@ export class LearnPage implements OnInit {
         private textToSpeech: TextToSpeech,
         private platform: Platform,
     ) {
-        console.log('PLATFORM IS', platform.url())
         this.showPlay = platform.is('cordova');
     }
 
@@ -48,16 +51,26 @@ export class LearnPage implements OnInit {
     }
 
     reverseOrder() {
-        this.learnDirection = this.learnDirection == 'ru_en' ? 'en_ru' : 'ru_en'
+        this.learnDirection = this.learnDirection == 'ru_en' ? 'en_ru' : 'ru_en';
+        this.storage.setProperty('learnDirection', this.learnDirection);
     }
 
     switchColouredBackground() {
         this.colouredBackground = !this.colouredBackground;
+        this.storage.setProperty('colouredBackground', this.colouredBackground.toString());
+    }
+
+    switchAutoPronounce() {
+        this.autoPronounce = !this.autoPronounce;
+        this.storage.setProperty('autoPronounce', this.autoPronounce.toString());
     }
 
     tapped() {
         if (!this.unveiled) {
             this.unveiled = true;
+            if (this.autoPronounce && this.learnDirection == 'ru_en') {
+                this.play(null, this.translation.original);
+            }
         } else {
             this.currentIndex++;
             if (this.currentIndex >= this.translations.length) {
@@ -67,6 +80,9 @@ export class LearnPage implements OnInit {
             this.translation = this.translations[this.currentIndex];
             this.unveiled = false;
             this.progressBarWidth = this.translations.length > 1 ? (this.currentIndex / (this.translations.length - 1)) * 100 + '%' : '0';
+            if (this.autoPronounce && this.learnDirection == 'en_ru') {
+                this.play(null, this.translation.original);
+            }
         }
     }
 
@@ -123,6 +139,9 @@ export class LearnPage implements OnInit {
         this.started = true;
         this.unveiled = false;
         this.progressBarWidth = '0';
+        if (this.autoPronounce && this.learnDirection == 'en_ru') {
+            this.play(null, this.translation.original);
+        }
     }
 
     ngOnInit(): void {
@@ -130,6 +149,15 @@ export class LearnPage implements OnInit {
         this.storage.subscribe(translations => {
             _self.updateList(translations);
         });
+        this.storage.getProperty('colouredBackground').then(value => {
+            _self.colouredBackground = value != 'false';
+        })
+        this.storage.getProperty('learnDirection').then(value => {
+            _self.learnDirection = value == '' ? LEARN_DIRECTION_DEFAULT : value;
+        })
+        this.storage.getProperty('autoPronounce').then(value => {
+            _self.autoPronounce = value == 'true';
+        })
     }
 
     learnStarred() {
@@ -168,7 +196,9 @@ export class LearnPage implements OnInit {
     }
 
     play(event: any, original: string) {
-        event.stopPropagation();
+        if (event !== null) {
+            event.stopPropagation();
+        }
         this.textToSpeech.speak(original)
             .catch((reason: any) => console.log(reason));
     }
