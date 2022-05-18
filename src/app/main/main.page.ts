@@ -279,4 +279,8 @@ export class MainPage implements OnInit {
         }
         event.target.complete();
     }
+
+    translationByDaysCount() {
+        return Object.keys(this.translationsByDates).length;
+    }
 }

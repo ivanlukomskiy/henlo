@@ -22,7 +22,7 @@
                     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
                         <ion-refresher-content></ion-refresher-content>
                     </ion-refresher>
-                    <ng-container *ngFor="let datestring of objectKeys(translationsByDates)">
+                    <ng-container *ngFor="let datestring of objectKeys(translationsByDates); let dateIndex=index">
                         <div class="date-div" *ngIf="selectedMode.showDates">
                             <h3 class="date-header">{{datePretty(translationsByDates[datestring].date)}}</h3>
                         </div>
@@ -36,7 +36,8 @@
                                 </div>
                                 <div (click)="editTranslation(tr)" class="list-item"
                                      *ngIf="tr.translation === ''"
-                                     [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1}">
+                                     [ngClass]="{'list-item-last': i === translationsByDates[datestring].translations.length - 1
+                                     && dateIndex === translationByDaysCount() - 1}">
                                     <div style="width: 100%; text-align: center">{{tr.original}}</div>
                                 </div>
                             </ng-container>
