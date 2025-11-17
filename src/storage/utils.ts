@@ -43,3 +43,12 @@ export const formatDate = (date: string): string => {
   if (sameYear) return `${month} ${day}`
   return `${month} ${day}, ${dt.getFullYear()}`
 }
+
+export function shuffleArray<T>(array: T[]): T[] {
+  const arr = array.slice(); // create a copy to avoid mutating original
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
