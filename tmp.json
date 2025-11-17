@@ -1,0 +1,4027 @@
+[
+  {
+    "uuid": "de0b319d-8d92-4f4a-bf73-739e0a41cd16",
+    "original": "composure",
+    "translation": "самообладание, выдержка",
+    "added": 1702954926454,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "13bcebe1-01e8-4e61-8d45-64743ca7da6b",
+    "original": "fluke",
+    "translation": "неожиданная удачная находка/событие (неформ)",
+    "added": 1702955058139,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "62a11e13-a2a8-4485-9da3-00fd7f7c178c",
+    "original": "rumpled",
+    "translation": "мятый (например кровать)",
+    "added": 1702955474409,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "86b93a7d-2179-4af9-93a1-468b18bfb81f",
+    "original": "tousled",
+    "translation": "взлохмаченный",
+    "added": 1702955523235,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7f4be316-6585-45f8-acda-fc3f83e3c3b4",
+    "original": "hind leg",
+    "translation": "задняя нога/лапа",
+    "added": 1669579528665,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5122593a-86ad-48d0-91ba-377459ffbd49",
+    "original": "lek",
+    "translation": "",
+    "added": 1651603277545,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "178e6c3d-5cfa-4dac-a593-00ba1ef083e2",
+    "original": "consume",
+    "translation": "",
+    "added": 1651609309960,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "9b717fe8-990b-4a42-a7eb-55c50a1c98ce",
+    "original": "pok",
+    "translation": "",
+    "added": 1651609356976,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "698f3167-13c4-4235-9bd2-ebc654d2e6e3",
+    "original": "lol",
+    "translation": "",
+    "added": 1651609363659,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "9b4e39ca-d3b1-4431-87f9-b04686010a4e",
+    "original": "to articulate",
+    "translation": "сформулировать (чувства, требования)",
+    "added": 1651609588569,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5750b69d-6f19-4864-ae75-95f3b8a23ada",
+    "original": "coherent",
+    "translation": "согласованный, последовательный (теория, меры, аргументация)",
+    "added": 1651609590608,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9b1981fe-874c-42ed-b0ab-11eae31620c3",
+    "original": "to be (a bit) tipsy",
+    "translation": "быть чутка пьяным",
+    "added": 1651609596193,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3db1ea04-38cd-4b89-910a-e63ba3b41190",
+    "original": "literate",
+    "translation": "грамотный (во всех смыслах)",
+    "added": 1651609601732,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "319bb64d-75cf-4b0c-a984-f50c2aad5f95",
+    "original": "reins",
+    "translation": "вожжи, поводья",
+    "added": 1651609611156,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9db988d6-b6d3-4b3e-b3f5-b997d7265d88",
+    "original": "laden",
+    "translation": "груженный (грузовик, вагон)",
+    "added": 1651609612469,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ef64e201-2f9e-4f0f-8b76-91fb87972f13",
+    "original": "burden",
+    "translation": "бремя, ноша",
+    "added": 1651609614378,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cfb7cda4-2705-4b2a-895d-bdb1fc1b1804",
+    "original": "to pout about something",
+    "translation": "дуться на что-то",
+    "added": 1651609621404,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "be6f7844-bb1b-49b2-a083-a1c9df2fdf44",
+    "original": "to be in gridlock",
+    "translation": "застрять в сильной пробке",
+    "added": 1651609636934,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e6013ae8-35d6-4ae4-a9e4-a1aa73b8a1b3",
+    "original": "pall of smoke/fog",
+    "translation": "пелена дыма/тумана",
+    "added": 1651609640992,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "283d64d4-54d4-4707-86b6-a8591c89d70f",
+    "original": "grind to a halt",
+    "translation": "застопориться (про процесс)",
+    "added": 1652627077211,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "578a7265-7056-45db-aa4c-671bc05da97c",
+    "original": "to blot",
+    "translation": "промакивать (например перо)",
+    "added": 1652627169498,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "de685d47-bef4-440c-888c-5a6e54067fc1",
+    "original": "to mar smth",
+    "translation": "портить (дела, настроение)",
+    "added": 1652627359353,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3e8c263f-0ef8-4da8-b4f5-896cd11c1eda",
+    "original": "hard hat",
+    "translation": "каска",
+    "added": 1651609663455,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b91c8505-fc8f-4308-b761-ba2fc937ec70",
+    "original": "crumble",
+    "translation": "крошить",
+    "added": 1652627384374,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "3d7a0363-c3c2-4479-b58f-09c65142b671",
+    "original": "floater",
+    "translation": "поплавок",
+    "added": 1653040538840,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d9941bbe-a5a1-4ac6-8977-edaee6a96ef8",
+    "original": "to wade",
+    "translation": "переходить в брод",
+    "added": 1652627444803,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "8a8b711a-02ff-4dae-9f9f-f42c88e00720",
+    "original": "salvage",
+    "translation": "",
+    "added": 1651609683772,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "c50a4097-a1b3-402d-af57-619b87f6d7b9",
+    "original": "to bask",
+    "translation": "наслаждаться (триумфом, моментом, патетично)",
+    "added": 1653040631480,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "bf8fe84c-58aa-4f18-b5b8-518b2065e6fc",
+    "original": "to win acclaim",
+    "translation": "завоёвывать признание",
+    "added": 1665675989719,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7b6519e0-7be8-4cd4-83fa-04dca9bec299",
+    "original": "contingent",
+    "translation": "",
+    "added": 1651609706727,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e8389881-2e70-4df1-a566-582e0f85065d",
+    "original": "easel",
+    "translation": "мольберт, пюпитр",
+    "added": 1665675927015,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "278894ef-cdb6-4edb-8804-7658e02402d3",
+    "original": "mallet",
+    "translation": "",
+    "added": 1651609716853,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a46dc007-42d0-4159-9d2d-00e5beb8e40e",
+    "original": "lawn",
+    "translation": "",
+    "added": 1651609722181,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0573a89f-4590-49e7-9f44-4a724ac30056",
+    "original": "quarrel",
+    "translation": "",
+    "added": 1651609729743,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "61550990-1678-4926-a9ed-b522fd03f32e",
+    "original": "to row",
+    "translation": "грести",
+    "added": 1665675943147,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "953b6e89-2e88-4b4c-8b3e-0ec4cf00645c",
+    "original": "rod",
+    "translation": "стержень, шток, прут",
+    "added": 1665676075513,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "05369c47-9c58-4ec0-be38-163c68d55626",
+    "original": "squint",
+    "translation": "",
+    "added": 1651609745703,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "469796b8-5fda-4c81-84a8-f016eb0b3848",
+    "original": "scruffy",
+    "translation": "",
+    "added": 1651609747679,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "50f16e3d-e19d-4ed2-ac11-8edb6488636f",
+    "original": "haughty",
+    "translation": "",
+    "added": 1651609753204,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d6841324-b474-4caa-bcfa-61971863881c",
+    "original": "revenue",
+    "translation": "доход (без учёта издержек)",
+    "added": 1653956709628,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9498cba9-b3c8-4c25-9590-14ce43d246a4",
+    "original": "exhilarating",
+    "translation": "",
+    "added": 1651609766201,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c359a392-1b65-42bc-ad99-6df1b287b234",
+    "original": "gown",
+    "translation": "",
+    "added": 1651609772206,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5d26d5cb-c9a0-4a61-846d-aa23bc56cd45",
+    "original": "ambivalency",
+    "translation": "двойственность, противоречивость",
+    "added": 1653956615070,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "45d4ca8f-a5b4-47cf-b8a4-20803e34b188",
+    "original": "exhilarated",
+    "translation": "",
+    "added": 1651609780866,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "62d871fb-abe3-4be9-96a6-0b0e1d30b710",
+    "original": "elated",
+    "translation": "ликующий, в приподнятом настроении",
+    "added": 1665676045856,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "99742dbb-21fb-47fd-92b6-9d4f7d9e6934",
+    "original": "compulsory",
+    "translation": "",
+    "added": 1651609792524,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3b36128e-ee87-496b-a7b5-8530b469ae92",
+    "original": "maternity/paternity leave",
+    "translation": "",
+    "added": 1651609802623,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "96199072-30d4-40ba-b94c-bd52019b5a62",
+    "original": "run off the mill",
+    "translation": "",
+    "added": 1651609806326,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "3674d493-573d-4594-b472-b09f97570a78",
+    "original": "skeleton staff",
+    "translation": "",
+    "added": 1651609814474,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "fbef2278-333c-4550-abbd-43c0238e18c4",
+    "original": "rigging",
+    "translation": "такелаж",
+    "added": 1651609845724,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "158e07a4-47ba-41fe-a4a8-7f09bb194f18",
+    "original": "milling",
+    "translation": "фрезеровка",
+    "added": 1651609854441,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "258aa44f-a0ea-4dc7-84b9-972e2af56c2f",
+    "original": "turning",
+    "translation": "точение",
+    "added": 1651609859667,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "bffd962e-2acd-434a-a788-bcbf94b77f01",
+    "original": "сверление",
+    "translation": "",
+    "added": 1651609867423,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "87eb9fd9-b970-4286-86c3-0339687f242f",
+    "original": "pressing in",
+    "translation": "запрессовка",
+    "added": 1651609883970,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "80440478-b192-4bb9-8794-c5a4e9699e45",
+    "original": "welding",
+    "translation": "сварка",
+    "added": 1651609887382,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5a02e726-a7bd-49b1-8b21-458ff96e3951",
+    "original": "grinding",
+    "translation": "шлифовка (с помощью диска)",
+    "added": 1651609891726,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "439bb886-ab9a-48c0-99b3-eebf54701867",
+    "original": "cast iron",
+    "translation": "чугун",
+    "added": 1651609903157,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4b559079-8bab-4ec0-91d7-c223955a940d",
+    "original": "roasting / baking",
+    "translation": "обжиг",
+    "added": 1651609911537,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4e05dcff-bdab-4a23-9f70-7a9bac4a60c4",
+    "original": "forging",
+    "translation": "ковка",
+    "added": 1651609923714,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "eace3458-df8e-4395-ba9c-ca9b8caadb42",
+    "original": "soldering",
+    "translation": "пайка",
+    "added": 1651609945175,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "39914bf6-d77d-4b26-a560-08bf5b39a936",
+    "original": "etching",
+    "translation": "травление",
+    "added": 1651610011331,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8169eca5-d945-4d8d-b69e-46ff2c0304b0",
+    "original": "chamfer",
+    "translation": "фаска",
+    "added": 1651610021878,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4b74b365-75cc-4e11-8e96-479c42c44001",
+    "original": "thread",
+    "translation": "резьба",
+    "added": 1651610027703,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6011fa9e-fb00-4ec9-835c-61e0c2c079b9",
+    "original": "отверстие",
+    "translation": "",
+    "added": 1651610032046,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "247a995b-a221-4f3c-8628-a363cc52ef02",
+    "original": "приспособление",
+    "translation": "",
+    "added": 1651610045448,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "2c69394c-944c-4d8f-a639-fd9553edb2c6",
+    "original": "skrew",
+    "translation": "винт",
+    "added": 1651610063202,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "05b29cdd-a2fe-4348-8ce1-73b904836c11",
+    "original": "shaft",
+    "translation": "вал",
+    "added": 1651610068860,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "04406a05-ffd7-4827-b38d-91985bc098f1",
+    "original": "hinge",
+    "translation": "дверная петля",
+    "added": 1651610078900,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "db3b70ae-47cb-4e45-adff-31d512241d9a",
+    "original": "rolling bearing",
+    "translation": "шариковый подшипник",
+    "added": 1651610083739,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "68d9306c-4067-48e5-99c4-78d810aa769e",
+    "original": "bluing",
+    "translation": "воронение",
+    "added": 1651610086876,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "161ce0bb-2f22-43ad-b7aa-a27c33b3c973",
+    "original": "solder",
+    "translation": "припой",
+    "added": 1651610095970,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "51497627-00a5-4adf-bc48-be543dc897ad",
+    "original": "soldering acid",
+    "translation": "паяльная кислота",
+    "added": 1651610102485,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f3a08d46-0f1c-497b-bed7-2a958d99f995",
+    "original": "sliding bearing",
+    "translation": "подшипник скольжения",
+    "added": 1651610113731,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b5bdc49d-8a25-4186-82de-59a5f3643aec",
+    "original": "filing",
+    "translation": "обработка напильником",
+    "added": 1651611910241,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8f9c389a-2c30-4cbc-9f8d-f04209ff4357",
+    "original": "sanding",
+    "translation": "шлифовка (наждачкой)",
+    "added": 1651611871338,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9ad70777-324b-42d4-8658-8561da1609f2",
+    "original": "varnish",
+    "translation": "лак (напр. для дерева)",
+    "added": 1651611665817,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "26e7dd2e-142b-4a38-b221-e11e6a488f6f",
+    "original": "washer",
+    "translation": "шайба (крепёж)",
+    "added": 1651611453371,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "33c3aa41-8afe-43c3-89d8-8a268603c986",
+    "original": "joint",
+    "translation": "шарнир",
+    "added": 1651611338796,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ed65d717-e3d4-4761-839e-55fe6d47b410",
+    "original": "lathe",
+    "translation": "токарный станок",
+    "added": 1651612207857,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7a9a47cc-c319-4244-91f4-829dd937be63",
+    "original": "culprit",
+    "translation": "преступник",
+    "added": 1653956479126,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ec4208e4-2894-4701-ac01-4dbb4309d893",
+    "original": "fangs",
+    "translation": "клыки",
+    "added": 1653956504278,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e691348e-a507-4a46-884d-75e8393c8dec",
+    "original": "talon",
+    "translation": "коготь (птичий)",
+    "added": 1653434456051,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a8fd52ea-8f75-4dc7-a941-dc27ba7d91ba",
+    "original": "denture",
+    "translation": "зубной протез",
+    "added": 1653956685574,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "54d07d1c-8b51-4cfd-b88c-e103f9a23392",
+    "original": "coagulator",
+    "translation": "",
+    "added": 1651693339104,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4a1ac8fd-7c7b-4ec3-80f6-aa6422abe973",
+    "original": "extensive plans",
+    "translation": "обширные планы",
+    "added": 1653641629502,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "56b4cbda-4b9d-4674-92bb-711bbea6bf99",
+    "original": "tap",
+    "translation": "метчик",
+    "added": 1652614062250,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "81e92b40-d38b-4424-8bbb-ab7823154102",
+    "original": "Обострение",
+    "translation": "",
+    "added": 1651770549895,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9b02d20e-a4b4-4e20-acf6-f3269897b193",
+    "original": "to contrive",
+    "translation": "придумывать, изобретать (причину, приспособление)",
+    "added": 1653956560651,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f451f30f-f4e7-4e61-af75-5c2e1b3e7973",
+    "original": "stirrup",
+    "translation": "стремя",
+    "added": 1651778208867,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0e250e8a-5771-4b88-a6a2-7356b6f7dd5f",
+    "original": "tar",
+    "translation": "смола (древесная, в т.ч. от горения), дёгодь, гудрон",
+    "added": 1651779883518,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6d38c913-2288-4366-b218-72346baf6947",
+    "original": "resin",
+    "translation": "смола, резина",
+    "added": 1651779680349,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "084cdfce-b646-45e9-9777-5cb4b00ff6fd",
+    "original": "epoxy",
+    "translation": "эпоксидная смола",
+    "added": 1651779531791,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "24274553-2d13-4655-8da3-b27dbb222421",
+    "original": "textolite",
+    "translation": "текстолит",
+    "added": 1651779240668,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "65d8b196-d3b3-47e9-8770-707d425a4dee",
+    "original": "untenable",
+    "translation": "несостоятельный, неприемлемый (утверждение, оправдание)",
+    "added": 1651781154197,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "051b1726-57f1-401f-97b5-5c0eade9042a",
+    "original": "desolate",
+    "translation": "",
+    "added": 1652292830927,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "724e3359-9edb-42af-bc51-f458474ec04a",
+    "original": "barren land",
+    "translation": "пустошь (неприогодная для культивации земля)",
+    "added": 1653434766824,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "21325e83-7958-424a-8468-42ea137dcbbc",
+    "original": "to litter",
+    "translation": "мусорить",
+    "added": 1653642022774,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0d9ea7c7-b0c4-4ba4-9d1d-10bc4f7599ba",
+    "original": "housebroken",
+    "translation": "приученный к туалету (про животных)",
+    "added": 1653434599922,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "14a1d966-039f-43ba-918f-ea31468bf153",
+    "original": "Притворяться кем-то",
+    "translation": "",
+    "added": 1652344993066,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "13b601d1-34f1-4b10-90a1-14449a127de8",
+    "original": "Abide",
+    "translation": "",
+    "added": 1652345832069,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3ff78403-c1bd-4205-8576-4ff7ddc705ec",
+    "original": "repent",
+    "translation": "каяться",
+    "added": 1653434363148,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "b7bb125b-5523-45de-a7ec-b9918ad7e494",
+    "original": "Прижимать",
+    "translation": "",
+    "added": 1652355174230,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "2b617b4b-fe38-4664-9cb4-267f27d13ff6",
+    "original": "Прикладывать нож к горлу",
+    "translation": "",
+    "added": 1652355180167,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "487d52ae-b48e-4cb3-a685-5822c63a328e",
+    "original": "mole",
+    "translation": "крот",
+    "added": 1651991934521,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "52ba24bf-881e-418c-9217-a3bb0e49a762",
+    "original": "comply with the law",
+    "translation": "выполнять закон",
+    "added": 1651912646152,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9f0b1438-0f73-403a-9595-24f5ad56d941",
+    "original": "Impale",
+    "translation": "",
+    "added": 1652462055117,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "b4d37144-c947-46fc-9bcc-7c6ba4ca70fc",
+    "original": "Impose",
+    "translation": "",
+    "added": 1652462055326,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "ba38a9e5-3670-463b-b1de-79d531bfe8bc",
+    "original": "be impaled",
+    "translation": "быть проткнутым (травма)",
+    "added": 1652462241435,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "450a1658-3f18-4784-b8d8-6d88231127bf",
+    "original": "Osculum in fame",
+    "translation": "",
+    "added": 1652474431381,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "353c65a6-604b-4710-9c64-9839165ef5c8",
+    "original": "infamy",
+    "translation": "позор",
+    "added": 1652474450038,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "dc833930-9e27-4345-9487-13ccec501ca1",
+    "original": "pastry",
+    "translation": "выпечка",
+    "added": 1652535173974,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6730954a-73d4-4100-89c1-4f18c501f5ca",
+    "original": "Platter",
+    "translation": "блюдо (посуда)",
+    "added": 1652535268519,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c9ad0e1b-b4ee-4700-858f-531163fcfdc4",
+    "original": "to behold",
+    "translation": "созерцать, лицезреть",
+    "added": 1652463800484,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7a9cc552-75e6-4e9c-8baa-c5241e1985b1",
+    "original": "to pump",
+    "translation": "качать (любую жидкость)",
+    "added": 1652463669041,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "febb3061-671b-459b-8982-10dede80ebdc",
+    "original": "i get seasick",
+    "translation": "меня укачивает (от качки)",
+    "added": 1652463593892,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3a034792-8051-45c8-a287-ced9b004a53e",
+    "original": "to cradle, to rock",
+    "translation": "качать (ребёнка)",
+    "added": 1652463539579,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "59740754-c24b-4db6-a712-dcad17c1e346",
+    "original": "i get carsick",
+    "translation": "меня укачивает (в машине)",
+    "added": 1652463508673,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c9622e3f-56b7-4747-9f9c-13ad8ccf762f",
+    "original": "to impose your laws",
+    "translation": "навязывать свои законы/правила",
+    "added": 1652462660329,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cc404c1d-bd75-4222-b038-29cdbe3634c1",
+    "original": "impose obligation",
+    "translation": "накладывать обязательства",
+    "added": 1652462308076,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7f323866-ee85-4773-bb3a-4bad1d979a46",
+    "original": "walnut",
+    "translation": "грецкий орех",
+    "added": 1653434281449,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "67ed4dc9-8fb7-4284-bcf7-b0a926353b6e",
+    "original": "coating",
+    "translation": "покрытие",
+    "added": 1653434262587,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8738d5f6-8cbd-4048-8e77-0662679e926a",
+    "original": "rib cage",
+    "translation": "грудная клетка",
+    "added": 1653040093008,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "2507fa67-37a1-4f7f-ab45-55e73b22a6e9",
+    "original": "shoulder blade",
+    "translation": "лопатка (часть тела)",
+    "added": 1653040291086,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b1620e74-f2a2-4f9f-b867-e161bfb92509",
+    "original": "curvature of the spine",
+    "translation": "искривление позвоночника",
+    "added": 1653040128892,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "61a549de-578b-4311-b62a-b9a31b6d2f76",
+    "original": "vertebrae",
+    "translation": "позвонок",
+    "added": 1653040171978,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7cd176e3-bebe-42c2-ae0b-e4d899145381",
+    "original": "Усечённый",
+    "translation": "",
+    "added": 1652540122404,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "ae50aa6a-0481-4fcb-ab33-369205a7365d",
+    "original": "iridescent",
+    "translation": "радужный, переливающийся цветами",
+    "added": 1653039805964,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "e4fa5619-cae4-4c64-adf5-ba1d102f7918",
+    "original": "Amid",
+    "translation": "",
+    "added": 1652554261635,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "6294ff9e-a5dc-4a21-979f-9c28671007dc",
+    "original": "cheese platter",
+    "translation": "сырная тарелка",
+    "added": 1652554356808,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "65f1a7dd-4276-4eba-81a1-ab0d6fb80f75",
+    "original": "to plane",
+    "translation": "стругать",
+    "added": 1652868004107,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "257db141-9a6a-4076-9d5f-181ab57063cf",
+    "original": "plane",
+    "translation": "рубанок",
+    "added": 1652867969838,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7b955150-ae92-4a45-ae80-2c2a2ddf6cc2",
+    "original": "chisel",
+    "translation": "стамеска, долото",
+    "added": 1652867991364,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a9e271fd-39c7-4df8-b46d-38050eaa6e31",
+    "original": "Долото",
+    "translation": "",
+    "added": 1652562559947,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "13feffe2-bf56-4e25-bbad-7b54125b675a",
+    "original": "Бор-машина",
+    "translation": "",
+    "added": 1652562566385,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "a8751ea7-2bd8-41b7-a2a3-c45cf7ac54ae",
+    "original": "metal casting",
+    "translation": "литьё металла",
+    "added": 1652627019530,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fa9c9d90-5526-4ba3-a6e5-72cecebc447e",
+    "original": "ford",
+    "translation": "брод",
+    "added": 1652627480553,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b73b0f03-a111-460f-8f6c-0575fbbc367a",
+    "original": "blemish",
+    "translation": "недостаток, порок, изъян",
+    "added": 1652627293440,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c3d3dd27-8079-439c-b86a-4453a22b9853",
+    "original": "to blemish",
+    "translation": "запятнать",
+    "added": 1652627273446,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "33116802-1ba4-4b5c-b0ad-18cb869bf8b5",
+    "original": "stain",
+    "translation": "пятно (бесцветное)",
+    "added": 1652627218163,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "297ae01e-a65d-44e4-8a84-8feb7e2e055f",
+    "original": "blot",
+    "translation": "пятно от краски",
+    "added": 1652627210534,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "50bec743-e5ed-4ea8-a8c3-d5082afb6e66",
+    "original": "lads",
+    "translation": "парни",
+    "added": 1652867958305,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9076c607-67a2-4965-8b60-3154a9abce5f",
+    "original": "infraction",
+    "translation": "правонарушение",
+    "added": 1652868062222,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "963b62c9-4924-48a2-af75-ec42dbdee2e4",
+    "original": "discern",
+    "translation": "различать (очертания, смысл)",
+    "added": 1652867949988,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "710aa94f-4edf-4ea5-aa93-7c9fc39e16e5",
+    "original": "cheeky",
+    "translation": "нахальный",
+    "added": 1652867923302,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "e07ee018-9176-463c-8ece-3d2596459302",
+    "original": "fares",
+    "translation": "плата за проезд",
+    "added": 1652868047965,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "aaa08044-3957-4e66-af9a-0a3b239b2bc5",
+    "original": "mesmerize",
+    "translation": "гипнотезировать, зачаровывать",
+    "added": 1652868036234,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "24bb9b29-9531-4921-9101-a1da92bb2025",
+    "original": "to flog",
+    "translation": "пороть",
+    "added": 1652868078026,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "8b8767c5-1ab5-4ddc-9721-070c06b11da3",
+    "original": "flurried",
+    "translation": "взволнованный",
+    "added": 1652868123776,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "a54930fb-a399-457a-80a0-8abb4c788f9b",
+    "original": "vigilant",
+    "translation": "блительный",
+    "added": 1652867891864,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "504b2435-3cfe-46c3-9614-b036dda8293c",
+    "original": "to give attitude",
+    "translation": "упрекать",
+    "added": 1653039583627,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "daf94915-5c05-46b7-9d53-1715d5f92cbb",
+    "original": "across",
+    "translation": "поперёк",
+    "added": 1652867778775,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "092abbff-3b14-4ea7-89ac-bc84ccd98056",
+    "original": "sawdust",
+    "translation": "опилки",
+    "added": 1652789766900,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fb173e18-e7b0-430e-af13-1fc8b95c74ed",
+    "original": "shavings",
+    "translation": "стружка",
+    "added": 1652789748590,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "04991147-94c2-4b0f-9885-59dfef0bfcc0",
+    "original": "clover",
+    "translation": "клевер",
+    "added": 1652789315700,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b6a7ed04-a993-4474-998a-59605d58779a",
+    "original": "horseshoe",
+    "translation": "подкова",
+    "added": 1652789351427,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "97a268a0-1250-47ae-9805-236c8e83e946",
+    "original": "Тухнуть (про вещи)",
+    "translation": "",
+    "added": 1652899828016,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "45a404c2-f644-45e0-912c-3b228b9d04d0",
+    "original": "when at Rome do as the Romans do",
+    "translation": "принимай культурные обычаи места где находишься",
+    "added": 1653045093704,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d156a764-01a7-4642-9746-a67642278c59",
+    "original": "capillary effect",
+    "translation": "каппилярный эффект",
+    "added": 1653434153057,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b398d20a-c1d9-44d3-926c-cb18e9e3fc1b",
+    "original": "surface tension",
+    "translation": "поверхностное натяжение",
+    "added": 1653434187134,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e0298519-6326-42af-95ba-86a2e92f5829",
+    "original": "oil film",
+    "translation": "масляная плёнка",
+    "added": 1653434238461,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "0f23da5c-bef6-470b-8615-60b6021ecea6",
+    "original": "to cram",
+    "translation": "зубрить",
+    "added": 1653040861320,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "052fb4dd-5e3b-4679-b7f1-61559360bc09",
+    "original": "vane",
+    "translation": "флюгер",
+    "added": 1653040395732,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "27e5bed9-7b27-4c60-8f3c-b15c8c323be9",
+    "original": "blade",
+    "translation": "лопатка (вентилятора, турбины)",
+    "added": 1653040327822,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "454364e8-1162-4862-ab51-d375793520d0",
+    "original": "truncated",
+    "translation": "усечённый",
+    "added": 1653040220711,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2b9f3c82-8f7a-465e-bf0a-cecf2448ba79",
+    "original": "flat feet",
+    "translation": "плоскостопие",
+    "added": 1653040196948,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "93211249-c92a-44b6-b6d2-838074f2ecf5",
+    "original": "glossy",
+    "translation": "глянцевый, блестящий",
+    "added": 1653039882938,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ce5c1f54-e7b6-4c1f-927f-3f4319d768c4",
+    "original": "matte",
+    "translation": "матовый",
+    "added": 1653039858732,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "80851ae1-7902-41c6-bc6b-183d7c3bedc1",
+    "original": "musty smell",
+    "translation": "затхлый запах (напр. про одежду)",
+    "added": 1653039493018,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "c883fa6b-7511-41c2-a29f-a2150de553a3",
+    "original": "rancid",
+    "translation": "тухлый (запах, вкус)",
+    "added": 1653039159839,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e641391e-d70a-48c8-a422-1499d4470244",
+    "original": "zap",
+    "translation": "убить, долбануть",
+    "added": 1653039740531,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7ff882ea-5803-4e3f-8666-ad64e3e592d9",
+    "original": "whir",
+    "translation": "",
+    "added": 1653049944247,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "edaf818d-5453-4185-a9bc-c2571f80a635",
+    "original": "helicopter thrumming",
+    "translation": "шум винтов вертолёта",
+    "added": 1653641468776,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b01e2992-45fe-44a2-b697-728e9dc7177b",
+    "original": "prejudice against smb.",
+    "translation": "предубеждение, предрассудок",
+    "added": 1653641582443,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "0ba501f7-9cb8-4081-9031-1b635ff0bea7",
+    "original": "stay-at-home, homebody",
+    "translation": "домосед",
+    "added": 1653434951796,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "8e1492e2-ce9d-4923-9b31-3b317555e9e7",
+    "original": "excerpt",
+    "translation": "цитата, выдержка",
+    "added": 1653434983534,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "39906756-7c71-4c3b-8e02-2d87c64cc902",
+    "original": "tamper",
+    "translation": "подделывать (улики, эксперимент)",
+    "added": 1653641428879,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b1f2799b-f204-4e63-a52b-91be2e8a71d9",
+    "original": "mix",
+    "translation": "",
+    "added": 1653077421745,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ef2656ee-f7ea-4121-9669-63345ab27206",
+    "original": "demur",
+    "translation": "",
+    "added": 1653077424709,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "708a1173-44c9-454c-8fbe-bab35303f2e1",
+    "original": "recurring",
+    "translation": "повторяющийся, периодически возникающий",
+    "added": 1653641366609,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fe9d3be0-b4bf-48a3-8488-13472b88bcd9",
+    "original": "besides",
+    "translation": "",
+    "added": 1653319553244,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "80d7e004-9e70-4745-b657-e8acef839a40",
+    "original": "besides smth",
+    "translation": "",
+    "added": 1653319612982,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5e812f23-6322-453d-906a-54cd83972487",
+    "original": "sedentary lifestyle",
+    "translation": "сидячий образ жизни",
+    "added": 1653641310077,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6ab135e5-6c53-4d65-8831-1887adfecc2b",
+    "original": "scorching hot",
+    "translation": "очень жарко",
+    "added": 1655126149306,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "03a100a4-079a-4827-971c-f5372e1d6de0",
+    "original": "boiling",
+    "translation": "",
+    "added": 1653320280876,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2f7317f3-fbb1-4a94-9237-e5771f575cac",
+    "original": "shows",
+    "translation": "",
+    "added": 1653320409095,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "34d44a5f-34a2-41e6-a86b-143d86f920dc",
+    "original": "gnat",
+    "translation": "мошка",
+    "added": 1653434869260,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a4288f23-2345-4211-aaa9-0cd70306fed8",
+    "original": "зануда",
+    "translation": "",
+    "added": 1653350036087,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "34aab88b-6f37-4496-b380-c3ea552555eb",
+    "original": "душнила",
+    "translation": "",
+    "added": 1653350039011,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "ca3d350e-23e5-4aae-b1fd-7f2aa327e194",
+    "original": "extern",
+    "translation": "",
+    "added": 1653395157861,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "7c684b24-72f6-42ad-8f2f-f1707e7435ab",
+    "original": "claw",
+    "translation": "коготь",
+    "added": 1653434515761,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "16eb462e-5c9b-4c95-b5a8-d481ba6efbf9",
+    "original": "clunky",
+    "translation": "неуклюжий (больше про неодушевлён.)",
+    "added": 1653317755961,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "968b6e76-a2c6-43ef-a478-acd583dee057",
+    "original": "self-sufficient",
+    "translation": "самодостаточный",
+    "added": 1653641239520,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fb963f01-6e4c-4b75-b7f4-c9a325405aca",
+    "original": "to no avail",
+    "translation": "безрезультатно",
+    "added": 1653641204129,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "317548cf-38c3-40a3-a35f-34f6819a0978",
+    "original": "stupefied",
+    "translation": "ошеломлённый, поражённый",
+    "added": 1653641273740,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ea36c80b-64dd-4dd0-89e1-4a1dc39ca54a",
+    "original": "hazelnut",
+    "translation": "лесной орех",
+    "added": 1653435113143,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6c521d3d-d007-4dce-be71-e1a5e83b9b84",
+    "original": "staycation",
+    "translation": "",
+    "added": 1653598841027,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "1114b17f-4507-49b3-bd4c-861a54cf82dc",
+    "original": "a stark contrast",
+    "translation": "сильный контраст",
+    "added": 1653642083721,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "eb5fcaa2-f749-44e4-950f-ed2ff01be58a",
+    "original": "sink or swim",
+    "translation": "выживи или сдохни",
+    "added": 1653642055221,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "27f966e8-6349-41f4-9ee6-1ad64b0b3bec",
+    "original": "stretch yourself / your skills",
+    "translation": "",
+    "added": 1653598868461,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4fc7026b-2d0f-4252-b6fd-3778fa054268",
+    "original": "i felt stuck in a rut",
+    "translation": "",
+    "added": 1653598874183,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e6d1bc62-cacd-44dd-9bee-7d8fd67b69aa",
+    "original": "to shake things up",
+    "translation": "",
+    "added": 1653598878957,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "d090378a-434c-4db1-b976-b54f40ce5d63",
+    "original": "close-nit",
+    "translation": "",
+    "added": 1653598882294,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5905471e-74e2-4d32-8e71-8512f665ab16",
+    "original": "go off the beaten track",
+    "translation": "свернуть с проторенной дорожки",
+    "added": 1653642120504,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2cfd0c6f-9da9-4a57-bb72-6666701f3bb2",
+    "original": "override your decisions",
+    "translation": "",
+    "added": 1653598907514,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a2bf7262-0d0b-4c5c-99a9-8ebdd201f8bc",
+    "original": "change of scene",
+    "translation": "смена обстановки",
+    "added": 1653956448692,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "dd9a4d73-6bf7-4b9d-a4bd-8dcbd4082b3d",
+    "original": "affluent",
+    "translation": "",
+    "added": 1653598925630,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5c1e55f6-f1e3-4d37-a4bc-5048ea68dc25",
+    "original": "trains don't run on weekends",
+    "translation": "поезда не ходят по выходным",
+    "added": 1653642173770,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "70908e2a-7f8b-4a2a-a9d0-b5aa4d34f033",
+    "original": "extensive knowledge",
+    "translation": "обширные знания",
+    "added": 1653641650771,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "f6a7ef80-0138-48f9-a7ae-25164acf9c16",
+    "original": "erratic",
+    "translation": "",
+    "added": 1653659626475,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "513cb00f-4a54-427d-9097-89181685e091",
+    "original": "to stipulate certain conditions",
+    "translation": "запрашивать определённые условия",
+    "added": 1653956438317,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "ef0bdfda-77b0-4e20-a6ee-074f4aceeeef",
+    "original": "tighten the muscles",
+    "translation": "напрягать мышцы",
+    "added": 1653956401397,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "17d8bd85-79f3-456c-a0c1-cb085e883413",
+    "original": "mingle",
+    "translation": "сливаться (про звуки)",
+    "added": 1653921874897,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c7dcdee5-1331-485c-9612-9b230c0170e9",
+    "original": "semicircle",
+    "translation": "полукруг",
+    "added": 1653956349278,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b8a5fac5-103d-4ea7-b4d7-3244e53e3343",
+    "original": "cooped up at home",
+    "translation": "",
+    "added": 1653920760938,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "1eede4ec-6685-4821-bed0-f94148d23279",
+    "original": "back to being at capacity",
+    "translation": "восстановить силы",
+    "added": 1653921833737,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "83ba7103-667b-4932-998b-27c76d79b37b",
+    "original": "to tap into your wanderlust",
+    "translation": "удовлетворить страсть к путешестиям",
+    "added": 1653921811125,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ab6e8816-2260-4f1f-9cdd-e3ee54ed68a2",
+    "original": "get you down",
+    "translation": "",
+    "added": 1653920793484,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "769ffa10-2d08-428c-9125-e114fd209532",
+    "original": "to shake things up",
+    "translation": "встряхнуться",
+    "added": 1653921767931,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2c2db89d-aecf-4cf8-990e-f46c39c22b9e",
+    "original": "getaway trip",
+    "translation": "поездка на отдых",
+    "added": 1653921740634,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "4e61b569-f9d9-403a-9b9a-427471c16213",
+    "original": "to seize the day",
+    "translation": "ловить момент",
+    "added": 1653921721637,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "71f956de-9499-480e-9579-2b653bc3fea1",
+    "original": "smth breaks the bank",
+    "translation": "что-то, что вышло в копеечку",
+    "added": 1653921659799,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "e22a889a-2f2b-40e9-b5e0-4d0faff580c0",
+    "original": "connecting flights",
+    "translation": "рейс с пересадкой",
+    "added": 1653921610588,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ae04440c-2681-4bdb-9169-a59ad9ad0c9a",
+    "original": "worthwhile",
+    "translation": "полезный, стоящий",
+    "added": 1653921589935,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "bec3beb5-1a1f-4aec-b0b0-5ca21d9e0364",
+    "original": "to be cooped up",
+    "translation": "сидеть взаперти",
+    "added": 1653921514107,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "307bb20e-def8-4636-9a10-881f85d5e43c",
+    "original": "get gutted",
+    "translation": "",
+    "added": 1653920882006,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "5ab43850-c645-423d-a857-d9c1667da86b",
+    "original": "rejuvenation",
+    "translation": "облагораживание территории, омоложение",
+    "added": 1653921453885,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "3f3f4bd1-abb3-4a5b-aa63-e70f2162fc3b",
+    "original": "to veg out",
+    "translation": "лежать как овощ",
+    "added": 1653921406946,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "1adb3ab6-f556-40b6-9c80-914276903575",
+    "original": "itinerary",
+    "translation": "маршрут (детальный, с расписанием и временем)",
+    "added": 1653921361882,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e0c6982b-9362-428c-b515-161894215ad1",
+    "original": "to put a damper on smth",
+    "translation": "испортить впечатление от чего-то (вечеринки, путешестивия)",
+    "added": 1653921302921,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "80bc5e60-6a6a-4613-84ac-20025cd78865",
+    "original": "go stir-crazy",
+    "translation": "желать вырваться наружу, развеяться",
+    "added": 1653921155069,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "ab3fd8a2-0b02-4207-84f1-d0f2db7c0b4a",
+    "original": "окурок",
+    "translation": "",
+    "added": 1653927371054,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8aadee80-7b3e-48bb-afc0-85a4afb8d0d8",
+    "original": "immaculate",
+    "translation": "безупречный (вкус, репутация, внешность)",
+    "added": 1654331492380,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "e485cfc9-e733-4464-bab2-f0b0dd567154",
+    "original": "lurge",
+    "translation": "",
+    "added": 1653941368132,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d947959a-b583-4103-b708-cd7f96c9945d",
+    "original": "spotless",
+    "translation": "идеально чистый",
+    "added": 1654331186709,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9222323d-82c9-4bd7-95ec-57bd34751d28",
+    "original": "count your blessing",
+    "translation": "быть благодарным за то что имеешь",
+    "added": 1654331085720,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "0fff42c4-5be4-498a-b9d3-b08fe3a032bf",
+    "original": "income",
+    "translation": "чистый доход",
+    "added": 1653956802160,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fc2dbe39-254d-49a4-88d3-866c27083b66",
+    "original": "ambivalent feelings",
+    "translation": "смешанные чувства",
+    "added": 1653956632687,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1892adc9-6c05-4baf-af1e-77b08f7d077b",
+    "original": "beauty lies in the eyes of the beholder",
+    "translation": "красота в глазах смотрящего",
+    "added": 1653956336441,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "bae2831e-3ca2-44e0-8d9b-dee750fff841",
+    "original": "chip in",
+    "translation": "скидываться",
+    "added": 1653922595848,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "ce01cc0d-9f78-4375-8582-1ee2b4ec0d07",
+    "original": "to seize",
+    "translation": "схватить на ходу",
+    "added": 1653921702496,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "03131c6f-d2a1-4f88-af06-81ae263e79c8",
+    "original": "chicken coop",
+    "translation": "курятник",
+    "added": 1653921546342,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "b78d768d-7dfb-47cb-93cc-febad42f97a7",
+    "original": "damper",
+    "translation": "демпфер",
+    "added": 1653921250362,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a739badb-6713-4822-ac32-0c3f9aa9ef8a",
+    "original": "damper",
+    "translation": "увлажнитель",
+    "added": 1653921242261,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d67722a3-c280-4c39-8340-f476fecd5dff",
+    "original": "to stir",
+    "translation": "перемешивать",
+    "added": 1653921207660,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "bd13b006-13ad-4f4e-a5c7-39298193e9f0",
+    "original": "to yank smth out",
+    "translation": "выдёргивать (например вилку из розетки)",
+    "added": 1654331179211,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4a9f1e18-64da-403d-a871-bc3a04a021f8",
+    "original": "rose-colored glasses",
+    "translation": "",
+    "added": 1654180879486,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2097167f-f298-4990-a35e-a8db96cb58fa",
+    "original": "yank your rose-colored glasses off",
+    "translation": "срывать розовые очки",
+    "added": 1654331442781,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f700c690-9134-4e5b-8905-0309848f4b61",
+    "original": "began to decline",
+    "translation": "",
+    "added": 1654181109562,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7df2c113-8aaf-43d9-ada4-13939c4ee0e5",
+    "original": "conference room",
+    "translation": "переговорка",
+    "added": 1654331371302,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f907bac5-703a-4b65-96c8-a2d65b79b658",
+    "original": "meet through friends/interests",
+    "translation": "",
+    "added": 1654182955893,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e8e58574-e430-458a-94cf-357a66c17c64",
+    "original": "juggle family and work",
+    "translation": "",
+    "added": 1654183290764,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "77f93433-1245-468f-9452-04e1d4f3adee",
+    "original": "to have a lot of plates spinning",
+    "translation": "",
+    "added": 1654183312717,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2b61444e-5008-4d55-bb3b-3529ef94cf3f",
+    "original": "good test of character",
+    "translation": "",
+    "added": 1654183484148,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "22b4287c-d6ef-498a-95ea-bfacc8efe658",
+    "original": "step out of your shell",
+    "translation": "",
+    "added": 1654183850014,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a61a5c4a-1d45-4841-ab65-07eda227180b",
+    "original": "pull smb out of his shell",
+    "translation": "выдернуть кого-то из рутины",
+    "added": 1654331407428,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "85098cdb-2035-4401-8787-e03a4fc4c0ec",
+    "original": "shoot the breeze",
+    "translation": "трепаться",
+    "added": 1654330838888,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "12009d9e-8831-41e9-b17a-5e4a652d4462",
+    "original": "reach out to someone",
+    "translation": "",
+    "added": 1654184248023,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "524239c7-fd58-4387-b5d5-190f42f781bb",
+    "original": "to be hard-wired to do smth",
+    "translation": "",
+    "added": 1654184747249,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2ffa3599-6bb0-4cc2-8253-c055b4efb538",
+    "original": "to be stuck in your way",
+    "translation": "быть упёртым, не желать никаких изменений",
+    "added": 1654331346599,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "90d20bb2-2945-4e25-8434-c1486608c746",
+    "original": "prevail",
+    "translation": "преобладать",
+    "added": 1654330805574,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f3036d16-ce34-4146-a0d3-9cb56ce8daf7",
+    "original": "hyphen",
+    "translation": "дефис",
+    "added": 1654330761182,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8415a360-5c54-4890-bc2f-6e305860c35a",
+    "original": "landline phone",
+    "translation": "стационарный телефон",
+    "added": 1654330739077,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d8cde2f8-3e42-4c41-b246-553a5895ae08",
+    "original": "overindulged",
+    "translation": "зажравшийся",
+    "added": 1654170566763,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c8f9e962-494c-462e-844a-cec23e9c183b",
+    "original": "to tap into security cameras",
+    "translation": "получить доступ к камерам видеонаблюдения",
+    "added": 1653982405665,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c3c635a5-8a76-465f-b1d2-762142ec4188",
+    "original": "dirt ingrained in the sole",
+    "translation": "грязь застрявшая в подошве",
+    "added": 1654355453274,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a6123174-f2ec-41fd-a5f4-21439580ec7e",
+    "original": "ingrained",
+    "translation": "укоренившийся (например обычай)",
+    "added": 1654355383020,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "76a52ff9-bb1c-4d0e-ab4e-bd4ab3188434",
+    "original": "have a moment ingrained in your memory",
+    "translation": "момент врезавшийся в память",
+    "added": 1654355285154,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8ac041a6-b71f-41d4-a168-51cb4b6b98cd",
+    "original": "coagulation of blood",
+    "translation": "свёртывание крови",
+    "added": 1654331724010,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0370a4dd-e767-4160-9fb6-0a27a46aa104",
+    "original": "expulsion",
+    "translation": "высылка, исключение (например из университета)",
+    "added": 1655126242358,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b0fa66d6-61aa-4c04-a154-e7111a2f5350",
+    "original": "carrot and stick",
+    "translation": "кнут и пряник",
+    "added": 1655126123315,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c831df54-3acc-4c17-8eec-42f1207343ae",
+    "original": "emotional dumping ground",
+    "translation": "кто-то на кого постоянно  изливают свои эмоции (в негативном смысле)",
+    "added": 1655126082219,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "460405f7-661b-4d2e-915c-903128351d23",
+    "original": "calve",
+    "translation": "телёнок",
+    "added": 1655126115603,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fa5b9333-446e-44c6-8593-09692129ff98",
+    "original": "oven",
+    "translation": "духовка",
+    "added": 1655126102862,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ff87c384-03f7-4e0f-8ae4-0712ab8f9ab6",
+    "original": "when the going gets tough",
+    "translation": "когда наступает тяжёлое время",
+    "added": 1655126412524,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ab321f02-7030-45c7-83cf-dfd34bd857a2",
+    "original": "stocks and bonds",
+    "translation": "",
+    "added": 1655123261303,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b5e7c020-d8d5-4ebf-b533-ce11d8631ca0",
+    "original": "to exacerbate",
+    "translation": "обострять, усугублять (проблемную ситуацию)",
+    "added": 1655126333759,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8ababbef-8f68-4db3-9826-0c2af2d3cf7b",
+    "original": "tumultuous time",
+    "translation": "неспокойное время",
+    "added": 1655125888555,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "693dfbbf-ccf6-43b6-9466-c74af9fdf8bd",
+    "original": "to skimp on smth",
+    "translation": "тратиться на что-то по минимуму (про деньги)",
+    "added": 1655125555712,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0b603648-ec3d-4c77-ba24-cf0c3ce9e756",
+    "original": "to scrimp on smth",
+    "translation": "экономить на чем-то (не обязательно про деньги)",
+    "added": 1655125335267,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b7b19008-1852-4a7e-b7bd-a4213827df8f",
+    "original": "whim",
+    "translation": "прихоть, каприз",
+    "added": 1655125311566,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0fb608a0-89cc-479f-839b-1ea21d7fc5cf",
+    "original": "quip",
+    "translation": "подкол, сарказм, язвительность",
+    "added": 1655125283004,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "0a9b63f7-5609-4b82-87c8-d12b6ad769e8",
+    "original": "pipe dream",
+    "translation": "несбыточная мечта",
+    "added": 1655125217496,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a8c32ccd-196e-4c5a-a7f5-a0ff96b60bf5",
+    "original": "burp",
+    "translation": "",
+    "added": 1655133828554,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "706916d8-907a-4be3-8de7-13de34df02e8",
+    "original": "daintly",
+    "translation": "",
+    "added": 1655133831302,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2b192160-359a-4ee2-a572-e1d65bb98a23",
+    "original": "wake up call",
+    "translation": "",
+    "added": 1655133960878,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "856d935c-1e9c-4d45-a014-59ff7bc74a9a",
+    "original": "yolo",
+    "translation": "",
+    "added": 1655135882229,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cf9d3254-4f2c-44de-8793-fefebf7089fe",
+    "original": "/start",
+    "translation": "",
+    "added": 1655357582064,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "37bdc0f4-a1ce-4492-aa89-ff7a0009699f",
+    "original": "pinch pennies",
+    "translation": "",
+    "added": 1655739591922,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a57ccf66-b1b3-4b90-a240-0282a197c3d1",
+    "original": "through the roof",
+    "translation": "",
+    "added": 1655740061610,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c92b72e3-d6f9-490c-8b4b-215de5624e09",
+    "original": "topsy-turvy",
+    "translation": "",
+    "added": 1655740403416,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4de3ece9-d082-48f4-824a-4184d33f3d95",
+    "original": "pandemonium",
+    "translation": "",
+    "added": 1655740433955,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6382511e-fa59-4174-81fd-ce35b951ca50",
+    "original": "whenever the wind takes me",
+    "translation": "",
+    "added": 1655740508753,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "11be1232-e765-4527-b40d-ec5f1ebe375e",
+    "original": "disposable income",
+    "translation": "",
+    "added": 1655740728900,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9b1b0f38-265b-4ba2-b843-6a551e982885",
+    "original": "pay out of the pockey",
+    "translation": "",
+    "added": 1655741152184,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "71741d9b-baae-411b-ae3b-d081c2abbd6d",
+    "original": "provisioning",
+    "translation": "",
+    "added": 1656005946446,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0d5f2474-35db-4b90-ac06-202b9c8a01fb",
+    "original": "scourge",
+    "translation": "",
+    "added": 1657648899795,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cb2ac422-659a-48f1-b12a-2fd008670a8b",
+    "original": "nuisance",
+    "translation": "",
+    "added": 1657648909611,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fc5b9b64-6f21-43d6-9155-2ce766af3b25",
+    "original": "куропатка",
+    "translation": "",
+    "added": 1657648913655,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a7833fd9-b9eb-47fb-9f65-99a4b97e3a2e",
+    "original": "кузов",
+    "translation": "",
+    "added": 1657648917320,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f7082c84-1f4f-4a13-a14a-1477f9009192",
+    "original": "lesions",
+    "translation": "",
+    "added": 1657648960782,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b3c6bcc9-128c-4e3e-b07d-aa694af1d924",
+    "original": "abrading",
+    "translation": "",
+    "added": 1657649117946,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c68eb585-b0dc-4146-b39c-38cbb67dce89",
+    "original": "salvia",
+    "translation": "",
+    "added": 1657649146872,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e3110bce-b4c4-4163-96c6-de1c1fbc2fe1",
+    "original": "to zero in",
+    "translation": "",
+    "added": 1657649180180,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c5b3e378-a42b-4a5b-8e3a-7367f29bae21",
+    "original": "pronounced",
+    "translation": "",
+    "added": 1657649213050,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "51ab6cf7-9b29-4a68-a024-5c7024218f07",
+    "original": "vertebrate",
+    "translation": "",
+    "added": 1657649329576,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6fd0d4eb-81de-40b4-85ef-75379777b662",
+    "original": "horse-flies",
+    "translation": "",
+    "added": 1657649500662,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "143bb3eb-765b-4122-a6ab-b0879349755a",
+    "original": "biting midge",
+    "translation": "",
+    "added": 1657649792116,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f41dccac-7b73-4e59-a747-73f2d6a656e2",
+    "original": "nuisance",
+    "translation": "",
+    "added": 1657720873580,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e3a3a90b-1e4b-467f-ac1c-cc070fe8bc2e",
+    "original": "blackfly",
+    "translation": "",
+    "added": 1657720873945,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d3b9ebbe-5123-45de-bbac-58d950e57c26",
+    "original": "preposterous",
+    "translation": "",
+    "added": 1657720877317,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d3ece856-c806-49b5-a747-38c58d0c3484",
+    "original": "sentient robot",
+    "translation": "",
+    "added": 1657805229177,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "15081336-072f-4a1f-8974-127a628ffd74",
+    "original": "forsaken",
+    "translation": "",
+    "added": 1657877873265,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ff99609a-2e71-4103-8346-c9dce641fb35",
+    "original": "cut down on smth",
+    "translation": "",
+    "added": 1659021972193,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1713e7c8-9878-4651-9d6c-157ef97ffe97",
+    "original": "to be up in arms about smth",
+    "translation": "",
+    "added": 1659022972180,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e382c13e-6bc1-4c66-849b-673fbc33fc6b",
+    "original": "шприц",
+    "translation": "",
+    "added": 1659358627666,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6b0840d8-6f69-4bb8-a375-236e95bc47de",
+    "original": "pollen",
+    "translation": "",
+    "added": 1660231990940,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e59c91b9-f296-4a51-8a9b-72d76a0d19db",
+    "original": "pollinate",
+    "translation": "",
+    "added": 1660231993433,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3aff5a57-3122-4ae7-a111-e8ea8fd55fed",
+    "original": "fetrilizers",
+    "translation": "",
+    "added": 1660232001109,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "73521b55-7206-4699-8782-f52284f126cb",
+    "original": "cardiovascular disease",
+    "translation": "",
+    "added": 1660232008743,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0b10c5c5-c863-420e-807e-dc8f0fb6fd5c",
+    "original": "decate",
+    "translation": "",
+    "added": 1660232135367,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2c5e03d0-6ddf-484c-bbd9-8a1e49bf948b",
+    "original": "decay",
+    "translation": "",
+    "added": 1660232140673,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fb02216b-a6cc-4ba6-bd65-da49c0cc5e3c",
+    "original": "eerie",
+    "translation": "",
+    "added": 1660232542794,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "580d530a-a0dd-4cfe-9dc6-bced2357b46c",
+    "original": "inflammation",
+    "translation": "",
+    "added": 1660232981653,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d7f7875e-d6a3-46ab-8465-7976e840fc98",
+    "original": "longevity",
+    "translation": "",
+    "added": 1660233093747,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f3edc3e3-fb78-4eb8-8b3e-81083fb836be",
+    "original": "centinerian",
+    "translation": "",
+    "added": 1660233207784,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "85b51150-da44-4469-a5ba-8481ca9713e2",
+    "original": "nourishing",
+    "translation": "",
+    "added": 1660233952786,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "dd371845-a8bf-43a6-8d07-8a6c740d536f",
+    "original": "nutricious",
+    "translation": "",
+    "added": 1660233956217,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ecda5b6c-e77a-424a-b36d-a26804eff17a",
+    "original": "spectacular!",
+    "translation": "",
+    "added": 1660510763450,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d8ba6718-9373-421a-b5d0-dfc1fdf8369b",
+    "original": "belittle",
+    "translation": "",
+    "added": 1660561705026,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "79f65b9c-e4e1-473c-935e-aacbbc62d625",
+    "original": "to venture",
+    "translation": "",
+    "added": 1660573494569,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "68c7bbec-c124-4e04-914a-fd4fe88778f8",
+    "original": "to cover all the bases",
+    "translation": "",
+    "added": 1660573586820,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "34603495-0f0a-4eaa-a201-07cfa4969c63",
+    "original": "bland",
+    "translation": "",
+    "added": 1660573619521,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5789215e-ba83-4988-913d-36d492f9fec6",
+    "original": "to dive in",
+    "translation": "",
+    "added": 1660573632533,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "519dae33-6194-4b23-b388-51c07e0afb0d",
+    "original": "not to mention",
+    "translation": "",
+    "added": 1660573642650,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b48504af-5893-42ed-a2f6-4de96a97908d",
+    "original": "down the road",
+    "translation": "",
+    "added": 1660573658133,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cc1e9c54-5318-4219-85d0-5a2c6619143f",
+    "original": "to have smth on hand",
+    "translation": "",
+    "added": 1660573756028,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b0796f61-8f25-483b-ae6a-801f476144c9",
+    "original": "to stock up on smth",
+    "translation": "",
+    "added": 1660573774848,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5c2d5bca-b405-48fd-bd54-7334740361b5",
+    "original": "the cost of essentials",
+    "translation": "",
+    "added": 1660573793693,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "aa987f0d-c40e-40a2-b15d-57487b65d377",
+    "original": "give smb a hard time about smth",
+    "translation": "",
+    "added": 1660573851670,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c2f4c671-d634-40a7-9caa-60d4a9e2a154",
+    "original": "smth is picking up momentum",
+    "translation": "",
+    "added": 1660573989350,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "63638efc-a76c-48ac-81fb-647d9551c74d",
+    "original": "do smth for ones peace of mind",
+    "translation": "",
+    "added": 1660574043476,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0ab42d7d-c8b7-49bc-b7a8-53b89cd4dbb6",
+    "original": "to slip up",
+    "translation": "",
+    "added": 1660574072501,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "569d108f-5315-4b00-bde5-b480a6246d10",
+    "original": "don't sweat it",
+    "translation": "",
+    "added": 1660574086967,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "794426d1-e3dc-47b3-b1ca-08f9d24a390f",
+    "original": "to rock the boat",
+    "translation": "",
+    "added": 1660574128544,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ad046fc9-b728-48f1-802e-34a43528831a",
+    "original": "it was onwards and upwards from here",
+    "translation": "",
+    "added": 1660574167028,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "de5233d7-a31c-4d12-a1df-407456163a50",
+    "original": "to lead by example",
+    "translation": "",
+    "added": 1660574343495,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "78ce3483-610c-400a-b5b7-85d5d6c13299",
+    "original": "stag night",
+    "translation": "мальчишник",
+    "added": 1662044880367,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4867c4e9-f28f-424f-876f-125b5a740181",
+    "original": "hermit",
+    "translation": "отшельник",
+    "added": 1662044830447,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "cc704d05-6677-4deb-a610-b466d83b05c0",
+    "original": "susceptible",
+    "translation": "уязвим, склонен",
+    "added": 1662044811571,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5db7dd81-0d03-4d7a-a895-7cec123c1530",
+    "original": "contingency",
+    "translation": "случайность, непредвиденные обстоятельства",
+    "added": 1662044775921,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a166db45-f43a-49c6-8aca-85b6f9e819b4",
+    "original": "bust your ass",
+    "translation": "работать на износ",
+    "added": 1662044727673,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "43865e11-5106-4b5e-ae1b-d22deafa0cc2",
+    "original": "to work your ass off",
+    "translation": "работать на износ",
+    "added": 1662044718951,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2e881345-59d9-43ac-9339-8804b2678ec0",
+    "original": "settle for smth",
+    "translation": "принять, смириться с чем-то",
+    "added": 1662044697643,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0dbe1ffc-fe5b-415f-8c27-bd19d57de7b7",
+    "original": "commute",
+    "translation": "добираться до работы",
+    "added": 1662044667461,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "dc6bbb68-1845-4e5a-a1e9-eb04656f19b6",
+    "original": "tangerine",
+    "translation": "мандарин",
+    "added": 1662044648194,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a92ebd50-4cbc-4c5d-91b0-ba85a3c8e357",
+    "original": "cardiovascular disease",
+    "translation": "сердечно-сосудистое заболевание",
+    "added": 1662044633789,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "73e3f5a1-7df2-454d-9761-47858018c332",
+    "original": "fossil",
+    "translation": "ископаемый, окаменелый",
+    "added": 1662044605453,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ee642925-276b-4343-88ee-4e81bf89c0b6",
+    "original": "прощать",
+    "translation": "",
+    "added": 1656250437016,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "425689a1-8969-4d91-9240-f07d106f1f16",
+    "original": "nourishment",
+    "translation": "",
+    "added": 1662047555488,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cc2f695c-2c57-48ad-8021-e584ea60bd5d",
+    "original": "nutrishion",
+    "translation": "",
+    "added": 1662047557733,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7d6b50b6-8f53-421d-ac76-4fdcdfa8c9f7",
+    "original": "dud",
+    "translation": "неразорвавшийся снаряд",
+    "added": 1665675146102,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "484093df-7c56-48ce-96f0-c911943b22f1",
+    "original": "rave about smth",
+    "translation": "",
+    "added": 1662048187859,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "84e27516-509f-4e0c-bfd7-30b1b54865b4",
+    "original": "sitting on the fence about",
+    "translation": "",
+    "added": 1662048317878,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2039af1d-b998-4bad-a75d-603ce5fca207",
+    "original": "to fit the bill",
+    "translation": "",
+    "added": 1662048420294,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c4d0e9b7-6c6e-4830-b60e-11b9064f8685",
+    "original": "in cold blood",
+    "translation": "в трезвом уме",
+    "added": 1665675092911,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f1c7000a-5cd3-45d4-96d6-18ea831931e1",
+    "original": "to be painted as",
+    "translation": "быть представленным как",
+    "added": 1665675082575,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b56c68dd-b385-44af-becc-6e25f8610a9c",
+    "original": "strain",
+    "translation": "",
+    "added": 1663601944924,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "36f44a18-b5ce-4320-8ebc-d00d77636bd3",
+    "original": "time is up the essence",
+    "translation": "время дорого",
+    "added": 1665675012478,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "979d2dcc-b652-432f-9b95-3fe93b598953",
+    "original": "insidious",
+    "translation": "коварный, вероломный",
+    "added": 1665675358145,
+    "starred": true,
+    "deleted": false
+  },
+  {
+    "uuid": "0cc88730-acad-4666-b908-df90d656d3fa",
+    "original": "hemorrhage",
+    "translation": "внутреннее кровоизлияние",
+    "added": 1665675485012,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b250ee65-62eb-49d4-be1e-684d0dbc873d",
+    "original": "spare a thought for smb",
+    "translation": "думать о ком-то, кто в тяжёлых обстоятельствах",
+    "added": 1665675879366,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8e3101dc-93f8-45bd-aadc-e73c40dd5843",
+    "original": "tempers will fray",
+    "translation": "",
+    "added": 1663856467725,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "25c9ba04-4912-4fe8-b733-476ecd7365fc",
+    "original": "repercussions",
+    "translation": "неприятные последствия",
+    "added": 1665675805188,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c4359387-0c27-4f29-944f-921788aa5b4c",
+    "original": "a bit rough around the edges",
+    "translation": "немного грубый",
+    "added": 1665675057412,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "65ee7ccc-56de-413b-958a-016843c93afd",
+    "original": "bachelor",
+    "translation": "холостяк",
+    "added": 1662044896390,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "75d66f5a-9c3f-4246-9ea6-9ab50cdf441c",
+    "original": "stag",
+    "translation": "олень",
+    "added": 1662044888479,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "64bd02c4-6d8c-4898-a952-0682fab8f98a",
+    "original": "contingency plan",
+    "translation": "запасной, аварийный план",
+    "added": 1662044796009,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d670182a-aaf4-4cc0-9756-0219000267db",
+    "original": "lucrative",
+    "translation": "",
+    "added": 1665071450630,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f27b1f30-eca3-4a4a-9315-a627f63eec90",
+    "original": "the glass ceiling",
+    "translation": "",
+    "added": 1665071680464,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ba189895-5e52-4d0c-a084-6a66cf90dc69",
+    "original": "intrinsic",
+    "translation": "",
+    "added": 1665071743706,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "79f38418-159f-406e-b573-e4eda0d646cc",
+    "original": "cushy life",
+    "translation": "лёгкая обеспеченная жизнь",
+    "added": 1702955401777,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1fcc14e3-785c-49c1-9579-fbd110fd27f5",
+    "original": "exorbitant",
+    "translation": "",
+    "added": 1665072061598,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c2912e0f-2e1c-48f3-bcbb-3526ba1eb651",
+    "original": "to jump through hoops",
+    "translation": "",
+    "added": 1665072422730,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9458ea24-855b-476b-aeba-6611be5d975c",
+    "original": "knee jerk reaction",
+    "translation": "рефлекторное движение колена (при ударе молоточком)",
+    "added": 1667564320086,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c1d730b2-70cf-47e6-9e08-beedb63c2164",
+    "original": "uproot",
+    "translation": "",
+    "added": 1665072817692,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ba0f8493-18d5-4e38-905c-6b6d659fb019",
+    "original": "there are two sides of the coin",
+    "translation": "",
+    "added": 1665073471456,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2e28f4c2-e4f8-4fc1-9784-b4abe7b952a9",
+    "original": "opt to do smth",
+    "translation": "",
+    "added": 1665073483834,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "34d36c1b-9274-4638-87eb-6810a6a53bf7",
+    "original": "flip-flopping",
+    "translation": "",
+    "added": 1665073560693,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ca70f74a-f5d8-4d2a-ae4d-06412929db9d",
+    "original": "slate",
+    "translation": "",
+    "added": 1665074354177,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1e0c1c98-be96-41e1-a518-7af94a21cb38",
+    "original": "witpe the slate clean",
+    "translation": "",
+    "added": 1665074359901,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7ae70bb5-a142-4969-9d60-53960f6e227a",
+    "original": "resentful",
+    "translation": "обиженный, возмущённый",
+    "added": 1667564223852,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "11df67d8-6fcf-4e8e-9802-76cecfd540ce",
+    "original": "business went bust",
+    "translation": "",
+    "added": 1665074658294,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3b8b01dd-403e-42c2-93d9-9740edd840d5",
+    "original": "list (other meaning)",
+    "translation": "",
+    "added": 1665074846603,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "56a7367b-32cb-448e-98c4-15829aac9faa",
+    "original": "statistical outlier",
+    "translation": "статистический выброс",
+    "added": 1667564133990,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "57818858-e25f-458d-8768-3120f4475df9",
+    "original": "intermingle",
+    "translation": "смешиваться (про людей, факты)",
+    "added": 1668422266416,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "635a8a9a-3a6d-4bb7-924f-dcdc2f0fd566",
+    "original": "to skim through",
+    "translation": "",
+    "added": 1665416387362,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "28b22aac-14c8-4bca-9363-e4ddf2643338",
+    "original": "more bark than bite",
+    "translation": "больше лает чем кусается",
+    "added": 1667564038946,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "80f07d8a-9c00-49c8-8238-998a4c98b2d7",
+    "original": "abundant",
+    "translation": "в избытке",
+    "added": 1667564119208,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a34b63c6-9c23-4399-bf92-91e9caa8f6ec",
+    "original": "to know your way around smth",
+    "translation": "",
+    "added": 1667256342096,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d4f92e8b-8207-4620-a445-9baaef744154",
+    "original": "abyss",
+    "translation": "пропасть",
+    "added": 1667563954737,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "468693f8-92bb-4700-87d0-399b75d213da",
+    "original": "to bridge the gap (between rich and poor)",
+    "translation": "снизить разницу (между богатыми и бедными)",
+    "added": 1667564251787,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "94a1d19d-b73b-4eb1-9522-ab4a7d47a164",
+    "original": "to bitch and moan (about smth)",
+    "translation": "плакаться и злиться",
+    "added": 1667564023674,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b6e44d15-9e42-4960-8750-251688001b2e",
+    "original": "to bitch and moan about smth",
+    "translation": "",
+    "added": 1667501578705,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "1d4737fa-9162-45c5-bb0c-0af44ccfa1e3",
+    "original": "backlash",
+    "translation": "сильная негативная реакция со стороны общества",
+    "added": 1667563928593,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "05a99fe3-dbc8-471e-b6d5-5d6bccb08aac",
+    "original": "to stand out",
+    "translation": "выделяться (на фоне чего-то)",
+    "added": 1667563835841,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fa34d691-8db9-4197-88d5-8ada9c8d52b0",
+    "original": "hidsight",
+    "translation": "умение предугадывать прошлое",
+    "added": 1667563762101,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ac511675-967f-492b-9e71-dcaa9718b4f8",
+    "original": "gutting the fish",
+    "translation": "чистить рыбу",
+    "added": 1667563789357,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7760017c-f3d5-4e9c-806f-7a64a3871b57",
+    "original": "a slew of smth",
+    "translation": "",
+    "added": 1667505128995,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0a475112-c968-4c15-bc73-a51f534e7084",
+    "original": "fishing rod",
+    "translation": "удочка",
+    "added": 1665676088402,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d8be302f-fe0f-4712-803f-325acbee21a5",
+    "original": "sabbatical",
+    "translation": "творческий отпуск, длительный отпуск",
+    "added": 1668422141995,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "96fca8ee-2255-4ad5-8313-977ec1ae84c5",
+    "original": "to get hitched",
+    "translation": "жениться (неформ.)",
+    "added": 1668422224268,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e7dadb47-2195-4bc5-a05f-472d9f4ec198",
+    "original": "as a stopgap",
+    "translation": "",
+    "added": 1667924914046,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5b9c6188-ce21-487c-bec2-92ee5a1035d8",
+    "original": "the last leg of the trip",
+    "translation": "",
+    "added": 1667925097579,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "19559771-2ad5-4a5b-baf7-389edecabe62",
+    "original": "to be head over heels in love with smb",
+    "translation": "быть по уши влюблённым а кого-то",
+    "added": 1668416792454,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "84515fdb-040a-4c48-8004-b4e97177f646",
+    "original": "to sweep someone off the feet",
+    "translation": "",
+    "added": 1667925545402,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3ffc5d50-694e-4fcb-8ab9-9671ad040b3a",
+    "original": "to be on the board",
+    "translation": "быть в совете директоров / руководстве",
+    "added": 1668422171290,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "e6e7423f-2c09-431c-bc16-132eaa0f9045",
+    "original": "sew (соу)",
+    "translation": "шить",
+    "added": 1668422099614,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "88e419e5-cd59-4325-8ad6-371b8cdf8d8c",
+    "original": "the money is tight",
+    "translation": "денег в обрез",
+    "added": 1668416825307,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "34c78663-aca8-4087-af35-f3c68f0b6f0f",
+    "original": "to pinpoint smth",
+    "translation": "подсветить что-то (проблему, особенность)",
+    "added": 1668422034292,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1b8793d9-9d4e-42a0-9763-c7371bfe5144",
+    "original": "to sell yourself short",
+    "translation": "продать себя дёшево",
+    "added": 1668422072956,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "321618cf-322a-4521-bda0-10156ebfdf19",
+    "original": "go out on a limb",
+    "translation": "пойти на риск / сделать рискованное предположение",
+    "added": 1668422014761,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "945e68d1-a15b-4764-989a-b1c827378534",
+    "original": "rod",
+    "translation": "розга",
+    "added": 1668416709603,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5ad0f21e-a10c-4f75-9042-716b621fe77f",
+    "original": "foresight",
+    "translation": "умение предугадывать будущее",
+    "added": 1667563741716,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1f44f65e-4152-4f5a-8921-9770f583b655",
+    "original": "kek",
+    "translation": "",
+    "added": 1702441410771,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "65841acd-cd02-4f7f-ad65-20d35f885ccb",
+    "original": "labor law",
+    "translation": "трудовой кодекс",
+    "added": 1702442973044,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d831d5a2-03da-423d-a43f-98875cd4fd2d",
+    "original": "doggedly",
+    "translation": "упорно (напр. добиваться чего-то)",
+    "added": 1702442965623,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d2f1100e-bf1a-46e4-910e-759559234162",
+    "original": "bowel",
+    "translation": "кишечник",
+    "added": 1702442926312,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "73fe5b7b-03b7-4d50-a721-544557e4680a",
+    "original": "to curdle",
+    "translation": "сворачиваться (про молоко)",
+    "added": 1702442891323,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "219f0c55-1f6e-42af-a9aa-f4494ca13324",
+    "original": "drivel",
+    "translation": "бред, чушь (про текст или речь)",
+    "added": 1702442740740,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "69a318de-9315-41c9-b433-4378d4cb8544",
+    "original": "contemplate",
+    "translation": "созерцать, рассматривать (офиц.)",
+    "added": 1702442716186,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "fb24327a-b056-4b30-80ed-3d1d881fb85d",
+    "original": "to thwart someone",
+    "translation": "предотвратить кого-либо от достижения цели",
+    "added": 1702441835801,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "40ba0181-5983-4346-bcd0-88d8db9fa2c6",
+    "original": "peanuts",
+    "translation": "арахис",
+    "added": 1702442674047,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "331a39ed-3ae5-4af4-b768-e18aa5a3e46b",
+    "original": "to nudge someone to do smth",
+    "translation": "подтолкнуть кого-то к чем-то",
+    "added": 1702442659556,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "433ab71d-1147-4d1e-8b21-9cfb458469c0",
+    "original": "celibate",
+    "translation": "асексуал, человек давший обет безбрачия",
+    "added": 1702442584893,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ea6ae7bd-c628-40f3-b629-10107f073a0d",
+    "original": "attire",
+    "translation": "наряд, костюм",
+    "added": 1702442515974,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "799dcc5a-4217-48c3-a215-d06057f84d32",
+    "original": "to rustle",
+    "translation": "шуршать, шелестать (про листья, одежду)",
+    "added": 1702442480567,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "77d74464-6cb6-4fba-88bd-3292e32a0a7c",
+    "original": "to chirp",
+    "translation": "щебетать, чирикать (про птиц / жуков)",
+    "added": 1702442430083,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9a469b94-186a-4007-8666-a00dcececca0",
+    "original": "wonky",
+    "translation": "кривой, заваленный, неустойчивый",
+    "added": 1702442328129,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d1665792-f81c-4841-ae7e-2b355ea71821",
+    "original": "vicinity",
+    "translation": "окрестности",
+    "added": 1702442247821,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3141556f-150f-450c-b74e-c9b86d1a13d7",
+    "original": "meagre",
+    "translation": "скучный, мизерный (зп, объём информации)",
+    "added": 1702442169252,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b866be87-b94c-4591-a3a1-2e1e8944e751",
+    "original": "flimsy",
+    "translation": "хрупкий, хрупкий, неубедительный",
+    "added": 1702442101432,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b7bce745-1e93-4182-851b-264049080bc3",
+    "original": "to gush",
+    "translation": "выражать чрезмерный восторг",
+    "added": 1702442006219,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "963df087-4ccd-4de0-b06a-930ecf7b404a",
+    "original": "lukewarm",
+    "translation": "остывший",
+    "added": 1702442054263,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "329ef987-b9e7-46e6-bb28-e0681b7c4306",
+    "original": "rowdy",
+    "translation": "",
+    "added": 1702481962884,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4aebac08-feb6-4977-8043-b6428f37405c",
+    "original": "skillet",
+    "translation": "",
+    "added": 1702483753465,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "86a440c6-9abc-456f-a062-e9d93b129970",
+    "original": "housewarming",
+    "translation": "новоселье",
+    "added": 1702983623616,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ab8c8572-eb88-4807-a664-62f136ef272f",
+    "original": "cushy",
+    "translation": "удобный, комфортный",
+    "added": 1702955418689,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9213b483-7454-4eef-b32e-b27c6790a99c",
+    "original": "serendipity",
+    "translation": "неожиданная удачная находка/открытие (литературное)",
+    "added": 1702955202524,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "30475c22-c434-4462-8ec6-7841c9a04b9e",
+    "original": "viper, adder",
+    "translation": "гадюка",
+    "added": 1702953444044,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a64dae30-f384-42a9-8419-0a9f00d60711",
+    "original": "bullfrog",
+    "translation": "жаба",
+    "added": 1702953414954,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d37dcb9b-e6bf-427a-81f3-337111aebfc9",
+    "original": "loll",
+    "translation": "",
+    "added": 1702985700528,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d616434e-d515-4cde-ab09-a1ba5aaf0d87",
+    "original": "pear (g'h)",
+    "translation": "",
+    "added": 1702986019424,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "38bbb789-d384-49dd-9d2a-6ca28b5f0853",
+    "original": "stand smb up",
+    "translation": "",
+    "added": 1702986508513,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "bfebc49f-dfc4-40b9-830e-7222186f09ec",
+    "original": "confer",
+    "translation": "",
+    "added": 1702986782438,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f5cb8a4f-dbf6-4aef-a30b-a2b4b8c78539",
+    "original": "infer",
+    "translation": "",
+    "added": 1702986783922,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0cd3f63e-8085-4b48-b2b1-ecd2620c33d1",
+    "original": "banter",
+    "translation": "",
+    "added": 1702986899697,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "28c6845e-1b6a-4629-95b9-08a20dc5dafd",
+    "original": "broach the subject",
+    "translation": "",
+    "added": 1702986909423,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "b779504a-f130-4d95-972e-125a2e18343f",
+    "original": "thrash",
+    "translation": "",
+    "added": 1702987200929,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "922b032e-ad06-4106-a469-c9258352f443",
+    "original": "talk shop",
+    "translation": "",
+    "added": 1702987253332,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "258daba1-5edf-4bdb-9c47-a79e73617b5d",
+    "original": "jeopardize",
+    "translation": "",
+    "added": 1704134495505,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1072a9e5-b1f3-4150-ad38-0e61c75d93bf",
+    "original": "solicitation",
+    "translation": "",
+    "added": 1704137649897,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5d1aa5aa-2979-4ea1-b908-5b1904cb07fc",
+    "original": "devour",
+    "translation": "",
+    "added": 1704202589830,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "be6dc445-c11a-4cae-a7c3-76e85fc79f48",
+    "original": "to water tea down",
+    "translation": "",
+    "added": 1704210906109,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0c5df488-60ff-49a2-aabd-974bb8061924",
+    "original": "wrigle",
+    "translation": "",
+    "added": 1704833666377,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "13c2deb9-49a9-4789-9759-cab4c0eb3eda",
+    "original": "deed",
+    "translation": "",
+    "added": 1704833672300,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "852d4a15-1f7d-4d96-bcf2-7429e81137b2",
+    "original": "hampe",
+    "translation": "",
+    "added": 1704833674947,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "12f609d0-7c5c-4eb3-b949-88bc94c96e3d",
+    "original": "grumble",
+    "translation": "",
+    "added": 1704833679843,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "cd9b4cda-025a-4eec-803a-7400303a81e0",
+    "original": "gleam",
+    "translation": "",
+    "added": 1704833684505,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2560b6cc-450b-43b9-b873-ebf870b60c12",
+    "original": "derelict",
+    "translation": "",
+    "added": 1704833689508,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "00086927-bdc9-48c3-be5e-9ddb427b9f2a",
+    "original": "wriggle",
+    "translation": "",
+    "added": 1704833694227,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "72500b9e-269c-4f1a-b415-f8a6b925a622",
+    "original": "overt",
+    "translation": "",
+    "added": 1704833699373,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3b7af5ae-cf22-431b-8768-7a4e6b307a61",
+    "original": "streamline",
+    "translation": "",
+    "added": 1704833739004,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "461e3b5d-df32-4d66-a547-8871b658127f",
+    "original": "reproach",
+    "translation": "",
+    "added": 1704833763762,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a48ac019-35bc-4678-8954-266cc1e88b6c",
+    "original": "shaggy",
+    "translation": "",
+    "added": 1704833766719,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "ca3993c6-e33e-4b22-ac5c-aa49d9b48b22",
+    "original": "stead",
+    "translation": "",
+    "added": 1704833771389,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4bef3ad1-15c3-4935-b3f3-0c0ffb42a69c",
+    "original": "simmer",
+    "translation": "",
+    "added": 1704833775177,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "4ca994b2-2ff1-42f5-bee6-763d0b825d01",
+    "original": "/start",
+    "translation": "",
+    "added": 1705034519637,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f581dce2-ebcf-493e-b3ba-03c2ddd52067",
+    "original": "sea buckthorn",
+    "translation": "",
+    "added": 1705049101170,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "7443643e-4bef-4c9d-b68d-6b537ddb5c33",
+    "original": "embellish",
+    "translation": "",
+    "added": 1705066278411,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c689e5ad-3868-4dbb-9437-bf25ac9a28fb",
+    "original": "i know better than that",
+    "translation": "",
+    "added": 1705402578316,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "22c357f7-807a-415e-8c8e-c93396a51415",
+    "original": "to pluck up/muster the courage",
+    "translation": "",
+    "added": 1705569593958,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "03141065-558d-46a9-bf27-f7892ecb6a98",
+    "original": "wake up call",
+    "translation": "",
+    "added": 1705570208656,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6795cbd6-02de-4638-bb07-f93ca78333ee",
+    "original": "caterpillar",
+    "translation": "",
+    "added": 1705926032897,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "df3c82cd-0d56-40b5-98de-84a7dc519bcc",
+    "original": "to take my mind off",
+    "translation": "",
+    "added": 1706535251004,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "d724ce9d-94a5-458d-961a-fd9de3e9df79",
+    "original": "to look for a needle in a haystack",
+    "translation": "искать иголку в стоге сена",
+    "added": 1703728521994,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "2d3b2802-0e29-4cb7-be31-200751a871fe",
+    "original": "exorbitant",
+    "translation": "",
+    "added": 1706536139740,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "c2177c1d-cb51-4da7-a620-e38b21659cdf",
+    "original": "musty",
+    "translation": "",
+    "added": 1707227135400,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "0f1ede60-b593-4ac7-bbcc-b748cbb7488a",
+    "original": "pungent",
+    "translation": "",
+    "added": 1707227140829,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "42e3810f-dab1-444f-a10c-041d8eb12b70",
+    "original": "mellow",
+    "translation": "",
+    "added": 1707227151411,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "f975d334-0d4d-4a9a-b15f-ca32e20d2ead",
+    "original": "crisp",
+    "translation": "",
+    "added": 1707227155543,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "3f21037b-2181-47b5-ac5a-b660db2b9170",
+    "original": "savoury",
+    "translation": "",
+    "added": 1707227395755,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6f23286b-41da-4d43-94d7-c4279064beed",
+    "original": "shrill",
+    "translation": "визгливый, пронзительный звук",
+    "added": 1707396824426,
+    "starred": false,
+    "deleted": false,
+    "updated": 1763394898694
+  },
+  {
+    "uuid": "df408f40-ac46-4cd2-9883-6b5aca8c1901",
+    "original": "blaring siren",
+    "translation": "орущая сирена",
+    "added": 1707396673592,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "5783caf0-cac0-452a-8ec7-4b369abf1ed8",
+    "original": "blotchy skin",
+    "translation": "кожа покрытая пятнами",
+    "added": 1707396556337,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "8775fc9a-a52e-4ce6-aaa2-b54311029f8c",
+    "original": "bristle",
+    "translation": "колючий, щетинистый (подбородок, ёж, стебель)",
+    "added": 1707396356771,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "dff05624-be5b-4cda-b3ed-314cc70b5e5d",
+    "original": "crinkly",
+    "translation": "",
+    "added": 1707228072112,
+    "starred": false,
+    "deleted": true
+  },
+  {
+    "uuid": "de5d287b-30fe-4d09-b0da-2e13769ac6ae",
+    "original": "clank",
+    "translation": "лязг металла",
+    "added": 1707395948225,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "6792c825-dcca-45c9-adee-b3ebebe0d3a5",
+    "original": "clatter",
+    "translation": "стук предметов друг о друга",
+    "added": 1707396053211,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "1a9a4324-c54d-4b22-9e7d-88f52e2154e4",
+    "original": "fleecy",
+    "translation": "пушистый, тёплый (про ткань)",
+    "added": 1707395914202,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "75abd99c-0b00-4f05-b6c4-ec72c99c5f9d",
+    "original": "piquant",
+    "translation": "пикантный",
+    "added": 1707395863804,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "a0bf80a5-2373-45f7-9dd4-8a8148db22e3",
+    "original": "starlit",
+    "translation": "освещённый звёздами",
+    "added": 1707395856029,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "9c42864d-3141-43ff-a561-33af3a256252",
+    "original": "willowy",
+    "translation": "стройная, гибкая (про девушку)",
+    "added": 1707395835414,
+    "starred": false,
+    "deleted": false
+  },
+  {
+    "uuid": "167b9a81-58e0-419e-b86a-ac8134e4cef4",
+    "original": "willow",
+    "translation": "ива",
+    "added": 1707395802761,
+    "starred": false,
+    "deleted": false
+  }
+]
