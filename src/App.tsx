@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import './App.css';
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Burger, Flex, Title } from '@mantine/core';
+import { AppShell, Burger, Flex, Space, Title } from '@mantine/core';
 import { Main } from './screens/main/main.tsx';
 import { Add } from './screens/add/add.tsx';
 import { Link, Route, Routes } from 'react-router';
 import { Import } from './screens/import/import.tsx';
+import { listWords } from './storage/storage.ts';
+import { $translations } from './storage/nanostores.ts';
 
 function App() {
   const [opened, { toggle }] = useDisclosure();
@@ -14,6 +16,12 @@ function App() {
     const version = import.meta.env.VITE_APP_VERSION ?? 'dev';
     console.log('App version: ', version);
   }, []);
+
+  useEffect(() => {
+    listWords().then((words) => {
+      $translations.set(words);
+    })
+  }, [])
 
   return (
     <AppShell
@@ -26,9 +34,12 @@ function App() {
       }}
     >
       <AppShell.Header>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+        <Flex direction={'row'} style={{width:'100%'}} justify={'space-between'} align={'center'}>
+        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" style={{flexGrow: 0, width: '24px', padding: 25}} />
+        <Title style={{color: 'var(--mantine-color-gray-6)', flexGrow: 1, textAlign: 'center'}}>henlo!</Title>
+          <Space hiddenFrom="sm" style={{flexGrow: 0, width: '24px', padding: 25}}></Space>
+        </Flex>
 
-        <Title style={{color: '#5c5c5c'}}>Henlo!</Title>
       </AppShell.Header>
 
       <AppShell.Navbar>

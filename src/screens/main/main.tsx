@@ -1,16 +1,9 @@
 import { Button, Flex } from '@mantine/core';
 import { useNavigate } from 'react-router';
-import { useEffect } from 'react';
-import { listWords } from '../../storage/storage.ts';
+import { WordsList } from './words-list.tsx';
 
 export function Main() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    listWords().then((words) => {
-      console.log('Words in storage: ', words);
-    })
-  }, [])
 
   return (
     <Flex direction="column" gap={'md'}>
@@ -24,6 +17,7 @@ export function Main() {
       <Button variant="gradient" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'}>
         Settings
       </Button>
+      <WordsList/>
     </Flex>
   );
 }
