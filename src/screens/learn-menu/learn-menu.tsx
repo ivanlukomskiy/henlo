@@ -32,7 +32,7 @@ export function LearnMenu() {
 
   return (
     <Flex direction="column" gap={'md'}>
-      <SegmentedControl size={'xl'}
+      <SegmentedControl size={'lg'}
         value={inverse ? 'inverse' : 'normal'}
         onChange={(value) => $inverse.set(value === 'inverse')}
         data={[
@@ -40,7 +40,7 @@ export function LearnMenu() {
           { label: 'Inverse', value: 'inverse' },
         ]}
       />
-      <SegmentedControl size={'xl'}
+      <SegmentedControl size={'lg'}
         value={pronounce ? 'autoPronounce' : 'silent'}
         onChange={(value) => $autoPronounce.set(value === 'autoPronounce')}
         data={[

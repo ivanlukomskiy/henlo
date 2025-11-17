@@ -16,6 +16,7 @@ export function setupLearningRandomOrder() {
   ids = shuffleArray(ids);
   $learningWordIds.set(ids);
   $learningWordIdx.set(0);
+  $revealed.set(false);
 }
 
 export function setupLearningByDays() {
@@ -28,6 +29,7 @@ export function setupLearningByDays() {
   }
   $learningWordIds.set(ids);
   $learningWordIdx.set(0);
+  $revealed.set(false);
 }
 
 export function setupLearningStarredOnly() {
@@ -36,4 +38,5 @@ export function setupLearningStarredOnly() {
   ids = shuffleArray(ids);
   $learningWordIds.set(ids);
   $learningWordIdx.set(0);
+  $revealed.set(false);
 }

@@ -1,11 +1,13 @@
 import { useStore } from '@nanostores/react';
 import { $translations } from '../../storage/nanostores.ts';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { formatDate, groupByAddedDate } from '../../storage/utils.ts';
 import { Flex, Paper, Text, Title } from '@mantine/core';
+import { useNavigate } from 'react-router';
 
 export function WordsList({ search }: { search?: string }) {
   const translations = useStore($translations);
+  const navigate = useNavigate()
 
   const grouped = useMemo(() => {
     if (!translations) return {};
@@ -20,6 +22,10 @@ export function WordsList({ search }: { search?: string }) {
     }
     return groupByAddedDate(translations);
   }, [translations, search]);
+
+  const wordClicked = useCallback((uuid: string) => {
+    navigate(`/words/${uuid}/edit`);
+  } , [navigate])
 
   return (
     <Flex direction={'column'}>
@@ -42,10 +48,12 @@ export function WordsList({ search }: { search?: string }) {
               <Paper
                 key={word.uuid}
                 shadow={'xs'}
+                onClick={() => wordClicked(word.uuid)}
                 style={{
                   padding: '5px 5px 15px 5px',
                   maxWidth: 240,
                   flexGrow: 1,
+                  cursor: 'pointer',
                   backgroundColor: 'var(--mantine-color-gray-0)',
                   // background: 'linear-gradient(35deg, #eee, cyan)',
                 }}

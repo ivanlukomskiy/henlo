@@ -28,43 +28,43 @@ function App() {
   return (
     <AppShell
       padding="0"
-      // header={{ height: 60 }}
-      // navbar={{
-      //   width: 200,
-      //   breakpoint: 'sm',
-      //   collapsed: { mobile: !opened },
-      // }}
+      header={{ height: 60 }}
+      navbar={{
+        width: 200,
+        breakpoint: 'sm',
+        collapsed: { mobile: !opened },
+      }}
     >
-      {/*<AppShell.Header>*/}
-      {/*  <Flex direction={'row'} style={{ width: '100%', height: 60 }} justify={'space-between'} align={'center'}>*/}
-      {/*    <Burger*/}
-      {/*      opened={opened}*/}
-      {/*      onClick={toggle}*/}
-      {/*      hiddenFrom="sm"*/}
-      {/*      size="sm"*/}
-      {/*      style={{ flexGrow: 0, width: '24px', padding: 25 }}*/}
-      {/*    />*/}
-      {/*    <Title style={{ color: 'var(--mantine-color-gray-6)', flexGrow: 1, textAlign: 'center' }}>henlo!</Title>*/}
-      {/*    <Space hiddenFrom="sm" style={{ flexGrow: 0, width: '24px', padding: 25 }}></Space>*/}
-      {/*  </Flex>*/}
-      {/*</AppShell.Header>*/}
+      <AppShell.Header>
+        <Flex direction={'row'} style={{ width: '100%', height: 60 }} justify={'space-between'} align={'center'}>
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="sm"
+            size="sm"
+            style={{ flexGrow: 0, width: '24px', padding: 25 }}
+          />
+          <Title style={{ color: 'var(--mantine-color-gray-6)', flexGrow: 1, textAlign: 'center' }}>henlo!</Title>
+          <Space hiddenFrom="sm" style={{ flexGrow: 0, width: '24px', padding: 25 }}></Space>
+        </Flex>
+      </AppShell.Header>
 
-      {/*<AppShell.Navbar>*/}
-      {/*  <Flex direction={'column'}>*/}
-      {/*    <Link to="/" style={{ padding: 16 }} onClick={toggle}>*/}
-      {/*      main*/}
-      {/*    </Link>*/}
-      {/*    <Link to="/add" style={{ padding: 16 }} onClick={toggle}>*/}
-      {/*      add*/}
-      {/*    </Link>*/}
-      {/*    <Link to="/learn-menu" style={{ padding: 16 }} onClick={toggle}>*/}
-      {/*      learn*/}
-      {/*    </Link>*/}
-      {/*    <Link to="/import" style={{ padding: 16 }} onClick={toggle}>*/}
-      {/*      import*/}
-      {/*    </Link>*/}
-      {/*  </Flex>*/}
-      {/*</AppShell.Navbar>*/}
+      <AppShell.Navbar>
+        <Flex direction={'column'}>
+          <Link to="/" style={{ padding: 16 }} onClick={toggle}>
+            main
+          </Link>
+          <Link to="/add" style={{ padding: 16 }} onClick={toggle}>
+            add
+          </Link>
+          <Link to="/learn-menu" style={{ padding: 16 }} onClick={toggle}>
+            learn
+          </Link>
+          <Link to="/import" style={{ padding: 16 }} onClick={toggle}>
+            import
+          </Link>
+        </Flex>
+      </AppShell.Navbar>
 
       <AppShell.Main
         style={{
@@ -77,16 +77,13 @@ function App() {
       >
         <Flex direction={'column'} style={{
           width:'100%',
-          // backgroundColor: 'magenta',
           padding: 20,
           maxWidth: 500,
-          // flex: 1,             // Fill the space
-          // overflowY: 'auto',   // Enable vertical scrolling
-          // minHeight: 0
         }}>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/add" element={<Add />} />
+            <Route path="/words/:uuid/edit" element={<Add />} />
             <Route path="/import" element={<Import />} />
             <Route path="/learn-menu" element={<LearnMenu />} />
             <Route path="/learn" element={<Learn />} />

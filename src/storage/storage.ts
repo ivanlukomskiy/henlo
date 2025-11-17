@@ -1,8 +1,9 @@
 import type { Translation } from './models.ts';
+import { $translations } from './nanostores.ts';
 
-const DB_NAME = "vocab";
+const DB_NAME = 'vocab';
 const DB_VERSION = 1;
-const STORE = "words";
+const STORE = 'words';
 
 export function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -10,10 +11,10 @@ export function openDB(): Promise<IDBDatabase> {
 
     req.onupgradeneeded = () => {
       const db = req.result;
-      const store = db.createObjectStore(STORE, { keyPath: "uuid" });
-      store.createIndex("added", "added");
-      store.createIndex("updated", "updated");
-      store.createIndex("deleted", "deleted");
+      const store = db.createObjectStore(STORE, { keyPath: 'uuid' });
+      store.createIndex('added', 'added');
+      store.createIndex('updated', 'updated');
+      store.createIndex('deleted', 'deleted');
     };
 
     req.onsuccess = () => resolve(req.result);
@@ -24,17 +25,38 @@ export function openDB(): Promise<IDBDatabase> {
 export async function putWord(word: Translation): Promise<void> {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE, "readwrite");
+    const tx = db.transaction(STORE, 'readwrite');
     tx.objectStore(STORE).put(word);
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
+
+    $translations.set([...($translations.get() ?? []), word]);
+  });
+}
+
+export async function updateWord(word: Translation): Promise<void> {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE, 'readwrite');
+    tx.objectStore(STORE).put(word);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+
+    $translations.set(
+      $translations.get()?.map(t => {
+        if (t.uuid === word.uuid) {
+          return word;
+        }
+        return t;
+      }) ?? [],
+    );
   });
 }
 
 export async function getWord(uuid: string) {
   const db = await openDB();
   return new Promise<Translation>((resolve, reject) => {
-    const tx = db.transaction(STORE, "readonly");
+    const tx = db.transaction(STORE, 'readonly');
     const req = tx.objectStore(STORE).get(uuid);
     req.onsuccess = () => resolve(req.result || null);
     req.onerror = () => reject(req.error);
@@ -44,7 +66,7 @@ export async function getWord(uuid: string) {
 export async function listWords(): Promise<Translation[]> {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE, "readonly");
+    const tx = db.transaction(STORE, 'readonly');
     const req = tx.objectStore(STORE).getAll();
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
@@ -54,9 +76,11 @@ export async function listWords(): Promise<Translation[]> {
 export async function deleteWord(uuid: string): Promise<void> {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE, "readwrite");
+    const tx = db.transaction(STORE, 'readwrite');
     tx.objectStore(STORE).delete(uuid);
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
+
+    $translations.set($translations.get()?.filter(t => t.uuid !== uuid) ?? null);
   });
 }
