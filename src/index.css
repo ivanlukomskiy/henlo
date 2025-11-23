@@ -60,6 +60,14 @@
  color: var(--mantine-color-yellow-1);
   font-size: 1.28em;
 }
+.highlight {
+  text-shadow: 0 0 1em var(--mantine-color-yellow-7);
+  color: var(--mantine-color-yellow-7);
+}
+.highlightSecondary {
+  text-shadow: 0 0 1em var(--mantine-color-teal-7);
+  color: var(--mantine-color-teal-7);
+}
 .word-star-unselected {
   color: var(--mantine-color-gray-6);
   font-size: 1.28em;

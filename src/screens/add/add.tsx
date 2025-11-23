@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Flex, Textarea } from '@mantine/core';
+import { ActionIcon, Button, Flex, Text, Textarea } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
 import { getWord, putWord, updateWord } from '../../storage/storage.ts';
 import { useNavigate, useParams } from 'react-router';
@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router';
 export function Add() {
   const [original, setOriginal] = useState('');
   const [translation, setTranslation] = useState('');
+  const [starred, setStarred] = useState(false);
   const navigate = useNavigate();
 
   const { uuid } = useParams<{ uuid?: string }>();
@@ -19,7 +20,7 @@ export function Add() {
         uuid,
         original,
         translation,
-        starred: word.starred,
+        starred,
         added: word.added,
         updated: Date.now(),
         deleted: word.deleted,
@@ -34,14 +35,15 @@ export function Add() {
       uuid: newUuid,
       original,
       translation,
-      starred: false,
+      starred,
       added: now,
       updated: now,
       deleted: false,
     });
     setOriginal('');
     setTranslation('');
-  }, [navigate, original, translation, uuid]);
+    setStarred(false);
+  }, [navigate, original, starred, translation, uuid]);
 
   useEffect(() => {
     if (!uuid) return;
@@ -49,6 +51,7 @@ export function Add() {
       if (word) {
         setOriginal(word.original);
         setTranslation(word.translation);
+        setStarred(word.starred);
       }
     });
   }, [uuid]);
@@ -71,11 +74,26 @@ export function Add() {
 
   return (
     <Flex direction={'column'} gap={'md'}>
+      <Flex
+        direction={'row'}
+        justify={'center'}
+        style={{
+          width: 50,
+          height: 50,
+          // border: '1px solid yellow',
+          alignSelf: 'end',
+          fontSize: 32,
+        }}
+        onClick={() => setStarred(!starred)}
+      >
+        {starred && <Text className={'word-star-selected'}>★</Text>}
+        {!starred && <Text className={'word-star-unselected'}>☆</Text>}
+      </Flex>
       <Textarea
         size={'lg'}
         value={original}
         onChange={event => setOriginal(event.currentTarget.value)}
-        placeholder={'original'}
+        placeholder={'>original'}
         autosize
         rightSection={
           original && (
@@ -89,7 +107,7 @@ export function Add() {
         size={'lg'}
         value={translation}
         onChange={event => setTranslation(event.currentTarget.value)}
-        placeholder={'translation'}
+        placeholder={'>translation'}
         autosize
         rightSection={
           translation && (
@@ -102,27 +120,25 @@ export function Add() {
       <Flex direction={'row'} gap={'sm'} style={{ width: '100%' }} justify={'stretch'}>
         <Button
           size={'xl'}
-          variant="gradient"
-          gradient={{ from: 'cyan', to: 'yellow', deg: 90 }}
+          variant="dim"
           onClick={add}
           style={{ flexGrow: 1 }}
         >
-          {uuid ? 'Update' : 'Add'}
+          ok
         </Button>
         {uuid && (
           <Button size={'xl'} variant="light" onClick={del} color={'red'}>
-            Delete
+            del
           </Button>
         )}
         {uuid && (
           <Button
             size={'xl'}
             variant="light"
-            // variant="outline"
             onClick={() => navigate(-1)}
             color={'gray'}
           >
-            Cancel
+            cancel
           </Button>
         )}
       </Flex>

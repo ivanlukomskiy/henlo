@@ -50,3 +50,51 @@ export function setupLearningStarredOnly() {
   $learningWordIdx.set(0);
   $revealed.set(false);
 }
+
+export interface MonthStats {
+  month: string;
+  year: number;
+  words: number;
+}
+
+export function getMonthlyStats(translations: Translation[]): MonthStats[] {
+  translations = translations.filter(t => !t.deleted && t.original && t.translation);
+  const counts: Record<string, number> = {};
+
+  for (const t of translations) {
+    const date = new Date(t.added);
+    const year = date.getFullYear();
+    const month = date.getMonth(); // 0-11
+    const key = `${year}-${month}`;
+    counts[key] = (counts[key] || 0) + 1;
+  }
+
+  const stats: MonthStats[] = [];
+  const now = new Date();
+  let endDate: Date;
+
+  if (translations.length > 0) {
+    const oldestTimestamp = Math.min(...translations.map(t => new Date(t.added).getTime()));
+    endDate = new Date(oldestTimestamp);
+  } else {
+    endDate = now;
+  }
+
+  const currentDate = new Date(now.getFullYear(), now.getMonth(), 1);
+  const oldestDate = new Date(endDate.getFullYear(), endDate.getMonth(), 1);
+
+  while (currentDate >= oldestDate) {
+    const year = currentDate.getFullYear();
+    const monthIndex = currentDate.getMonth();
+    const key = `${year}-${monthIndex}`;
+
+    stats.push({
+      month: currentDate.toLocaleString('default', { month: 'short' }),
+      year: year,
+      words: counts[key] || 0,
+    });
+    currentDate.setMonth(currentDate.getMonth() - 1);
+  }
+
+  return stats;
+}
