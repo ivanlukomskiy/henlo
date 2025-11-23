@@ -10,6 +10,7 @@ import { listWords } from './storage/storage.ts';
 import { $translations } from './storage/nanostores.ts';
 import { Learn } from './screens/learn/learn.tsx';
 import { LearnMenu } from './screens/learn-menu/learn-menu.tsx';
+import { Auth } from './components/auth/Auth.tsx';
 
 function App() {
   const [opened, { toggle }] = useDisclosure();
@@ -80,6 +81,7 @@ function App() {
           padding: 20,
           maxWidth: 500,
         }}>
+          <Auth />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/add" element={<Add />} />
