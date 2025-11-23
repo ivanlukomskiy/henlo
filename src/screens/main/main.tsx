@@ -25,7 +25,8 @@ export function Main() {
         learn
       </Button>
       <Button
-        variant="dim" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'}>
+        variant="dim" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'}
+        onClick={() => navigate('/stats')}>
         stats
       </Button>
       </Group>

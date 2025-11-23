@@ -14,6 +14,7 @@ import { useFirebaseAuth } from './hooks/use-firebase-app.ts';
 import { Auth } from './components/auth/Auth.tsx';
 import { useStore } from '@nanostores/react';
 import classes from './styles_ext.module.css';
+import { Stats } from './screens/stats/stats.tsx';
 
 const theme = createTheme({
   fontFamily:
@@ -93,6 +94,9 @@ function App() {
             <Link to="/import" style={{ padding: 16 }} onClick={toggle}>
               import
             </Link>
+            <Link to="/stats" style={{ padding: 16 }} onClick={toggle}>
+              stats
+            </Link>
             <Auth />
           </Flex>
         </AppShell.Navbar>
@@ -121,6 +125,7 @@ function App() {
               <Route path="/import" element={<Import />} />
               <Route path="/learn-menu" element={<LearnMenu />} />
               <Route path="/learn" element={<Learn />} />
+              <Route path="/stats" element={<Stats />} />
             </Routes>
           </Flex>
         </AppShell.Main>
