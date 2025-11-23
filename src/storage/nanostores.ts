@@ -17,8 +17,12 @@ export const $authError = atom<string | null>(null);
 
 export const $colorScheme = atom<'light' | 'dark'>('dark');
 
+export function getNoDrafts(): Translation[] {
+  return ($translations.get() || []).filter(t => !t.deleted && t.original && t.translation);
+}
+
 export function setupLearningRandomOrder() {
-  let ids = $translations.get()?.map(t => t.uuid) || [];
+  let ids = getNoDrafts().map(t => t.uuid);
   ids = shuffleArray(ids);
   $learningWordIds.set(ids);
   $learningWordIdx.set(0);
@@ -26,7 +30,7 @@ export function setupLearningRandomOrder() {
 }
 
 export function setupLearningByDays() {
-  const byDates = groupByAddedDate($translations?.get() ?? []);
+  const byDates = groupByAddedDate(getNoDrafts());
   let ids: string[] = [];
   for (const date of Object.keys(byDates).sort((a, b) => b.localeCompare(a))) {
     const words = byDates[date];
@@ -39,7 +43,7 @@ export function setupLearningByDays() {
 }
 
 export function setupLearningStarredOnly() {
-  const starred = ($translations.get() || []).filter(t => t.starred);
+  const starred = getNoDrafts().filter(t => t.starred);
   let ids = starred.map(t => t.uuid);
   ids = shuffleArray(ids);
   $learningWordIds.set(ids);
