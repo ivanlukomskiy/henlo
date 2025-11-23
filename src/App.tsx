@@ -10,10 +10,12 @@ import { listWords } from './storage/storage.ts';
 import { $translations } from './storage/nanostores.ts';
 import { Learn } from './screens/learn/learn.tsx';
 import { LearnMenu } from './screens/learn-menu/learn-menu.tsx';
+import { useFirebaseAuth } from './hooks/use-firebase-app.ts';
 import { Auth } from './components/auth/Auth.tsx';
 
 function App() {
   const [opened, { toggle }] = useDisclosure();
+  useFirebaseAuth();
 
   useEffect(() => {
     const version = import.meta.env.VITE_APP_VERSION ?? 'dev';
@@ -51,7 +53,7 @@ function App() {
       </AppShell.Header>
 
       <AppShell.Navbar>
-        <Flex direction={'column'}>
+        <Flex direction={'column'} style={{padding: 12}}>
           <Link to="/" style={{ padding: 16 }} onClick={toggle}>
             main
           </Link>
@@ -64,6 +66,7 @@ function App() {
           <Link to="/import" style={{ padding: 16 }} onClick={toggle}>
             import
           </Link>
+          <Auth />
         </Flex>
       </AppShell.Navbar>
 
@@ -76,12 +79,14 @@ function App() {
           flexGrow: 1,
         }}
       >
-        <Flex direction={'column'} style={{
-          width:'100%',
-          padding: 20,
-          maxWidth: 500,
-        }}>
-          <Auth />
+        <Flex
+          direction={'column'}
+          style={{
+            width: '100%',
+            padding: 20,
+            maxWidth: 500,
+          }}
+        >
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/add" element={<Add />} />

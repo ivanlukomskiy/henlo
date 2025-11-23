@@ -11,6 +11,10 @@ export const $inverse = atom<boolean>(false);
 export const $autoPronounce = atom<boolean>(true);
 export const $revealed = atom<boolean>(false);
 
+export const $user = atom<any>(null);
+export const $loading = atom<boolean>(true);
+export const $authError = atom<string | null>(null);
+
 export function setupLearningRandomOrder() {
   let ids = $translations.get()?.map(t => t.uuid) || [];
   ids = shuffleArray(ids);
