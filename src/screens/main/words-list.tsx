@@ -34,10 +34,10 @@ export function WordsList({ search }: { search?: string }) {
           {date !== '' &&
             <Title
               size={'xl'}
-              c={'var(--mantine-color-gray-4)'}
+              c={'var(--mantine-color-cyan-5)'}
               style={{
                 padding: '32px 0 28px 0',
-                fontStyle: 'italic',
+                // fontStyle: 'italic',
               }}
             >
               {formatDate(date).toUpperCase()}
@@ -47,18 +47,26 @@ export function WordsList({ search }: { search?: string }) {
             {words.map(word => (
               <Paper
                 key={word.uuid}
-                shadow={'xs'}
+                shadow={'lg'}
                 onClick={() => wordClicked(word.uuid)}
                 style={{
+                  flex: `${word.original.length + word.translation.length * 0.8 + 1} 0 120px`,
                   padding: '5px 5px 15px 5px',
-                  maxWidth: 240,
-                  flexGrow: 1,
+                  // maxWidth: 240,
+                  // flexGrow: 1,
                   cursor: 'pointer',
-                  backgroundColor: 'var(--mantine-color-gray-0)',
+                  border: '1px solid var(--mantine-color-gray-6)',
+                  borderRadius: 5,
+                  // backgroundColor: 'var(--mantine-color-gray-0)',
                   // background: 'linear-gradient(35deg, #eee, cyan)',
                 }}
               >
-                <Text size={'lg'}>{word.original}</Text>
+                <Flex direction={'row'} justify={'space-around'}>
+                  <Text size={'lg'} c={'var(--mantine-color-yellow-7)'}>
+                    {word.original}
+                  </Text>
+                  {word.starred && <Text style={{color: 'var(--mantine-color-yellow-1)'}}>★</Text>}
+                </Flex>
                 <Text size={'sm'} c={'var(--mantine-color-teal-7)'}>
                   {word.translation}
                 </Text>

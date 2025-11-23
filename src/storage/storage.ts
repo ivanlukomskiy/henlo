@@ -1,5 +1,5 @@
-import type { Translation } from './models.ts';
-import { $translations } from './nanostores.ts';
+import type { AppSettings, Translation } from './models.ts';
+import { $autoPronounce, $inverse, $translations } from './nanostores.ts';
 
 const DB_NAME = 'vocab';
 const DB_VERSION = 1;
@@ -71,4 +71,23 @@ export async function listWords(): Promise<Translation[]> {
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
   });
+}
+
+export async function saveSettings(): Promise<void> {
+  const settings = {
+    autoPronounce: $autoPronounce.get(),
+    learnInverse: $inverse.get(),
+  };
+  localStorage.setItem('appSettings', JSON.stringify(settings));
+  return Promise.resolve();
+}
+
+export function loadSettings(): AppSettings | null {
+  const settingsStr = localStorage.getItem('appSettings');
+  if (!settingsStr) return null;
+  try {
+    return JSON.parse(settingsStr) as AppSettings;
+  } catch {
+    return null;
+  }
 }

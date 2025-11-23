@@ -37,7 +37,6 @@ export function useFirebaseAuth() {
     const unsubscribe = onAuthStateChanged(
       auth,
       u => {
-        console.log('user:', JSON.stringify(u, null, 2));
         $user.set(u);
         $loading.set(false);
       },

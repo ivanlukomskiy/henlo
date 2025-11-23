@@ -7,3 +7,8 @@ export interface Translation {
   updated: number
   deleted: boolean
 }
+
+export interface AppSettings {
+  autoPronounce: boolean
+  learnInverse: boolean
+}

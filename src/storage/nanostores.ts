@@ -15,6 +15,8 @@ export const $user = atom<any>(null);
 export const $loading = atom<boolean>(true);
 export const $authError = atom<string | null>(null);
 
+export const $colorScheme = atom<'light' | 'dark'>('dark');
+
 export function setupLearningRandomOrder() {
   let ids = $translations.get()?.map(t => t.uuid) || [];
   ids = shuffleArray(ids);
@@ -26,7 +28,7 @@ export function setupLearningRandomOrder() {
 export function setupLearningByDays() {
   const byDates = groupByAddedDate($translations?.get() ?? []);
   let ids: string[] = [];
-  for (const date of Object.keys(byDates).sort()) {
+  for (const date of Object.keys(byDates).sort((a, b) => b.localeCompare(a))) {
     const words = byDates[date];
     const dayIds = words.map(w => w.uuid);
     ids = ids.concat(shuffleArray(dayIds));
