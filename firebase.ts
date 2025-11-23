@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTyRvP76I_K2C0zU-hT1rkJZKmnCvlYgM",
-  authDomain: "henlo-c012d.firebaseapp.com",
-  projectId: "henlo-c012d",
-  storageBucket: "henlo-c012d.firebasestorage.app",
-  messagingSenderId: "725559120284",
-  appId: "1:725559120284:web:5788c473cb6afbe5ea7859"
+  apiKey: "AIzaSyCndD8YK-4dbUtZQbv4XVrosnsUdXHqCYw",
+  authDomain: "henlo-vocab-app.firebaseapp.com",
+  projectId: "henlo-vocab-app",
+  storageBucket: "henlo-vocab-app.firebasestorage.app",
+  messagingSenderId: "440327640792",
+  appId: "1:440327640792:web:2b1a596e394e5609a029ad"
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]

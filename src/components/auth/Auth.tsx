@@ -1,7 +1,18 @@
 import { useFirebaseAuth } from '../../hooks/use-firebase-app.ts';
+import { useEffect } from 'react';
+import { syncWords } from '../../storage/sync.ts';
 
 export function Auth() {
   const { user, loading, authError, dbResult, signInWithGoogle, logout, writeTestDoc, readTestDoc } = useFirebaseAuth();
+
+  useEffect(() => {
+    if (!user) return;
+    syncWords(user).then(() => {
+      console.log('sync done');
+    }).catch((err) => {
+      console.error('sync error', err);
+    })
+  }, [user]);
 
   const isAuthed = !!user;
 
