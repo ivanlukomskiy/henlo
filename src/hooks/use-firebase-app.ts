@@ -1,5 +1,13 @@
 import { useEffect } from 'react';
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  signOut,
+} from 'firebase/auth';
+import type { UserCredential } from 'firebase/auth';
 import { auth } from '../../firebase.ts';
 import { $authError, $loading, $user } from '../storage/nanostores.ts';
 
@@ -8,12 +16,20 @@ provider.setCustomParameters({
   prompt: 'select_account',
 });
 
-function isStandalonePWA() {
-  return (
-    window.matchMedia?.('(display-mode: standalone)').matches ||
-    // iOS Safari PWA
-    (window.navigator as any).standalone === true
-  );
+interface StandaloneNavigator extends Navigator {
+  standalone?: boolean;
+}
+
+function isStandalonePWA(): boolean {
+  const isStandaloneDisplayMode =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(display-mode: standalone)').matches;
+
+  const isIOSStandalone =
+    typeof window !== 'undefined' &&
+    ((window.navigator as StandaloneNavigator).standalone === true);
+
+  return Boolean(isStandaloneDisplayMode || isIOSStandalone);
 }
 
 export async function henloSignIn() {
@@ -42,7 +58,22 @@ export async function henloSignOut() {
 
 export function useFirebaseAuth() {
   useEffect(() => {
-    onAuthStateChanged(
+    // Handle redirect result once after returning from provider
+    getRedirectResult(auth)
+      .then((result) => {
+        const userCredential = result as UserCredential | null;
+        if (userCredential?.user) {
+          $user.set(userCredential.user);
+        }
+      })
+      .catch(err => {
+        $authError.set(err.message);
+      })
+      .finally(() => {
+        $loading.set(false);
+      });
+
+    const unsubscribe = onAuthStateChanged(
       auth,
       u => {
         $user.set(u);
@@ -53,5 +84,7 @@ export function useFirebaseAuth() {
         $loading.set(false);
       },
     );
-  });
+
+    return () => unsubscribe();
+  }, []);
 }
