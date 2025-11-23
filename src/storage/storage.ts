@@ -72,15 +72,3 @@ export async function listWords(): Promise<Translation[]> {
     req.onerror = () => reject(req.error);
   });
 }
-
-export async function deleteWord(uuid: string): Promise<void> {
-  const db = await openDB();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE, 'readwrite');
-    tx.objectStore(STORE).delete(uuid);
-    tx.oncomplete = () => resolve();
-    tx.onerror = () => reject(tx.error);
-
-    $translations.set($translations.get()?.filter(t => t.uuid !== uuid) ?? null);
-  });
-}
