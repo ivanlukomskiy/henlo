@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
 import { auth } from '../../firebase.ts';
 import { $authError, $loading, $user } from '../storage/nanostores.ts';
 
@@ -8,9 +8,21 @@ provider.setCustomParameters({
   prompt: 'select_account',
 });
 
+function isStandalonePWA() {
+  return (
+    window.matchMedia?.('(display-mode: standalone)').matches ||
+    // iOS Safari PWA
+    (window.navigator as any).standalone === true
+  );
+}
+
 export async function henloSignIn() {
   $authError.set(null);
   try {
+    if (isStandalonePWA()) {
+      await signInWithRedirect(auth, provider);
+      return;
+    }
     await signInWithPopup(auth, provider);
   } catch (e) {
     const err = e as Error;
