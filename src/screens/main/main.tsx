@@ -1,4 +1,4 @@
-import { ActionIcon, Button, Flex, TextInput } from '@mantine/core';
+import { ActionIcon, Button, Flex, Group, TextInput } from '@mantine/core';
 import { useNavigate } from 'react-router';
 import { WordsList } from './words-list.tsx';
 import { useState } from 'react';
@@ -9,29 +9,30 @@ export function Main() {
 
   return (
     <Flex direction="column" gap={'md'}>
+      <Group gap={'sm'}>
       <Button
-        variant="gradient"
-        gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+        variant="dim"
         size={'xl'}
         onClick={() => navigate('/add')}
       >
-        Add words
+        +add
       </Button>
       <Button
-        variant="gradient"
-        gradient={{ from: 'cyan', to: 'lightgreen', deg: 90 }}
+        variant="dim"
         size={'xl'}
         onClick={() => navigate('/learn-menu')}
       >
-        Learn
+        learn
       </Button>
-      <Button variant="gradient" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'}>
-        Settings
+      <Button
+        variant="dim" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'}>
+        stats
       </Button>
+      </Group>
       <TextInput
         size={'lg'}
         leftSectionPointerEvents="none"
-        leftSection={'🔍'}
+        // leftSection={'🔍'}
         rightSection={
           search && (
             <ActionIcon variant={'subtle'} size={'xl'} onClick={() => setSearch('')}>
@@ -39,7 +40,7 @@ export function Main() {
             </ActionIcon>
           )
         }
-        placeholder="Search..."
+        placeholder="> search"
         value={search}
         onChange={event => setSearch(event.currentTarget.value)}
       />

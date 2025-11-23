@@ -66,7 +66,7 @@ export function Learn() {
     <Flex
       direction="column"
       gap={'xl'}
-      style={{ width: '100%', padding: '64px 32px 0px 32px', fontSize: 18 }}
+      style={{ width: '100%', padding: '64px 32px 0px 32px', fontSize: 18, userSelect: 'none' }}
       onClick={progress}
     >
       <Flex

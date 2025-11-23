@@ -58,23 +58,21 @@ export function LearnMenu() {
         ]}
       />
       <Button
-        variant="gradient"
-        gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+        variant="dim"
         size={'xl'}
         onClick={onDataByDateClick}
       >
         Date by date
       </Button>
       <Button
-        variant="gradient"
-        gradient={{ from: 'cyan', to: 'lightgreen', deg: 90 }}
+        variant="dim"
         size={'xl'}
         onClick={onFullRandomClick}
       >
         Full random
       </Button>
       <Button
-        variant="gradient"
+        variant="dim"
         gradient={{ from: 'cyan', to: 'yellow', deg: 90 }}
         size={'xl'}
         onClick={onStarredOnlyClick}

@@ -1,0 +1,10 @@
+.root {
+    &[data-variant='dim'] {
+        background-color: var(--mantine-color-blue-light);
+        font-weight: inherit;
+        color: var(--mantine-color-red-0);
+        /*border: 1px solid var(--mantine-color-gray-6);*/
+        padding: 0;
+        flex-grow: 1;
+    }
+}

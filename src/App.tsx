@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './App.css';
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Burger, createTheme, Flex, MantineProvider, Space, Title } from '@mantine/core';
+import { AppShell, Burger, createTheme, Flex, MantineProvider, Space, Title, Button } from '@mantine/core';
 import { Main } from './screens/main/main.tsx';
 import { Add } from './screens/add/add.tsx';
 import { Link, Route, Routes } from 'react-router';
@@ -13,10 +13,16 @@ import { LearnMenu } from './screens/learn-menu/learn-menu.tsx';
 import { useFirebaseAuth } from './hooks/use-firebase-app.ts';
 import { Auth } from './components/auth/Auth.tsx';
 import { useStore } from '@nanostores/react';
+import classes from './styles_ext.module.css';
 
 const theme = createTheme({
   fontFamily:
     'Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  components: {
+    Button: Button.extend({
+      classNames: classes,
+    }),
+  },
 });
 
 function App() {

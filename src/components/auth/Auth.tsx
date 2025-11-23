@@ -25,7 +25,7 @@ export function Auth() {
       {user && <Text>{user.displayName}</Text>}
       {loading && <Text>Loading...</Text>}
       {!user && !loading && <Button onClick={henloSignIn}>Sign in</Button>}
-      {user && !loading && <Button onClick={henloSignOut}>Sign out</Button>}
+      {user && !loading && <Button variant={'dim'} onClick={henloSignOut}>Sign out</Button>}
     </Flex>
   );
 }
