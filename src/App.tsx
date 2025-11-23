@@ -1,7 +1,18 @@
 import { useEffect } from 'react';
 import './App.css';
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Burger, createTheme, Flex, MantineProvider, Space, Title, Button } from '@mantine/core';
+import {
+  AppShell,
+  Burger,
+  Button,
+  createTheme,
+  Flex,
+  MantineProvider,
+  Space,
+  Textarea,
+  TextInput,
+  Title,
+} from '@mantine/core';
 import { Main } from './screens/main/main.tsx';
 import { Add } from './screens/add/add.tsx';
 import { Link, Route, Routes } from 'react-router';
@@ -14,6 +25,7 @@ import { useFirebaseAuth } from './hooks/use-firebase-app.ts';
 import { Auth } from './components/auth/Auth.tsx';
 import { useStore } from '@nanostores/react';
 import classes from './styles_ext.module.css';
+import textareaStyles from './textarea.module.css';
 import { Stats } from './screens/stats/stats.tsx';
 
 const theme = createTheme({
@@ -23,8 +35,16 @@ const theme = createTheme({
     Button: Button.extend({
       classNames: classes,
     }),
+    Textarea: Textarea.extend({
+      classNames: textareaStyles,
+    }),
+    TextInput: TextInput.extend({
+      classNames: textareaStyles,
+    }),
   },
 });
+console.log("classes", classes)
+console.log("textareaStyles", textareaStyles)
 
 function App() {
   const [opened, { toggle }] = useDisclosure();
@@ -48,7 +68,7 @@ function App() {
       $autoPronounce.set(settings.autoPronounce);
       $inverse.set(settings.learnInverse);
     }
-  }, [])
+  }, []);
 
   return (
     <MantineProvider theme={theme} forceColorScheme={colorScheme}>
@@ -70,12 +90,16 @@ function App() {
               size="sm"
               style={{ flexGrow: 0, width: '24px', padding: 25 }}
             />
-            <Title style={{
-              color: 'var(--mantine-color-gray-6)',
-              flexGrow: 1,
-              textAlign: 'center',
-              textShadow: '0px 0px 50px lightblue',
-            }}>henlo!</Title>
+            <Title
+              style={{
+                color: 'var(--mantine-color-gray-6)',
+                flexGrow: 1,
+                textAlign: 'center',
+                textShadow: '0px 0px 50px lightblue',
+              }}
+            >
+              henlo!
+            </Title>
             <Space hiddenFrom="sm" style={{ flexGrow: 0, width: '24px', padding: 25 }}></Space>
           </Flex>
         </AppShell.Header>

@@ -33,7 +33,7 @@ export function Main() {
       <TextInput
         size={'lg'}
         leftSectionPointerEvents="none"
-        // leftSection={'🔍'}
+        variant={'henlo'}
         rightSection={
           search && (
             <ActionIcon variant={'subtle'} size={'xl'} onClick={() => setSearch('')}>

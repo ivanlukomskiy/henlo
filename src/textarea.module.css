@@ -1,0 +1,10 @@
+.input[data-variant="henlo"] {
+    /*border: 1px solid var(--mantine-color-red-7);*/
+    background-color: unset;
+    /*color: var(--mantine-color-red-9);*/
+    /*transition: border-color 200ms ease;*/
+}
+.input[data-variant="henlo"]:focus {
+    /*border-color: var(--mantine-color-red-9);*/
+    /*box-shadow: 0 0 0 2px var(--mantine-color-red-2);*/
+}

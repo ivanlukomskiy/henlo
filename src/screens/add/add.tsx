@@ -2,6 +2,7 @@ import { ActionIcon, Button, Flex, Text, Textarea } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
 import { getWord, putWord, updateWord } from '../../storage/storage.ts';
 import { useNavigate, useParams } from 'react-router';
+import classes from './add.module.css'
 
 export function Add() {
   const [original, setOriginal] = useState('');
@@ -92,8 +93,10 @@ export function Add() {
       <Textarea
         size={'lg'}
         value={original}
+        variant={'henlo'}
+        classNames={{input: classes.originalInput}}
         onChange={event => setOriginal(event.currentTarget.value)}
-        placeholder={'>original'}
+        placeholder={'> original'}
         autosize
         rightSection={
           original && (
@@ -106,8 +109,10 @@ export function Add() {
       <Textarea
         size={'lg'}
         value={translation}
+        variant={'henlo'}
+        classNames={{input: classes.translationInput}}
         onChange={event => setTranslation(event.currentTarget.value)}
-        placeholder={'>translation'}
+        placeholder={'> translation'}
         autosize
         rightSection={
           translation && (
@@ -118,12 +123,7 @@ export function Add() {
         }
       />
       <Flex direction={'row'} gap={'sm'} style={{ width: '100%' }} justify={'stretch'}>
-        <Button
-          size={'xl'}
-          variant="dim"
-          onClick={add}
-          style={{ flexGrow: 1 }}
-        >
+        <Button size={'xl'} variant="dim" onClick={add} style={{ flexGrow: 1 }}>
           ok
         </Button>
         {uuid && (
@@ -132,12 +132,7 @@ export function Add() {
           </Button>
         )}
         {uuid && (
-          <Button
-            size={'xl'}
-            variant="light"
-            onClick={() => navigate(-1)}
-            color={'gray'}
-          >
+          <Button size={'xl'} variant="light" onClick={() => navigate(-1)} color={'gray'}>
             cancel
           </Button>
         )}
