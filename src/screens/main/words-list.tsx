@@ -57,17 +57,17 @@ export function WordsList({ search }: { search?: string }) {
                   cursor: 'pointer',
                   border: '1px solid var(--mantine-color-gray-6)',
                   borderRadius: 5,
+                  fontSize: 14,
+                  position: 'relative',
                   // backgroundColor: 'var(--mantine-color-gray-0)',
                   // background: 'linear-gradient(35deg, #eee, cyan)',
                 }}
               >
-                <Flex direction={'row'} justify={'space-around'}>
-                  <Text size={'lg'} c={'var(--mantine-color-yellow-7)'}>
-                    {word.original}
-                  </Text>
-                  {word.starred && <Text style={{color: 'var(--mantine-color-yellow-1)'}}>★</Text>}
-                </Flex>
-                <Text size={'sm'} c={'var(--mantine-color-teal-7)'}>
+                {word.starred && <Text className={'word-star-selected'} style={{position: 'absolute', right: '0.3em', top: '-0.25em'}}>★</Text>}
+                <Text className={'word-original'} style={{flexGrow: 1, paddingRight: word.starred ? '0.8em' : undefined}}>
+                  {word.original}
+                </Text>
+                <Text className={'word-translation'}>
                   {word.translation}
                 </Text>
               </Paper>

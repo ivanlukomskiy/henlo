@@ -63,7 +63,12 @@ function App() {
               size="sm"
               style={{ flexGrow: 0, width: '24px', padding: 25 }}
             />
-            <Title style={{ color: 'var(--mantine-color-gray-6)', flexGrow: 1, textAlign: 'center' }}>henlo!</Title>
+            <Title style={{
+              color: 'var(--mantine-color-gray-6)',
+              flexGrow: 1,
+              textAlign: 'center',
+              textShadow: '0px 0px 50px lightblue',
+            }}>henlo!</Title>
             <Space hiddenFrom="sm" style={{ flexGrow: 0, width: '24px', padding: 25 }}></Space>
           </Flex>
         </AppShell.Header>

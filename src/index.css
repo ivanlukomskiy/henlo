@@ -46,6 +46,28 @@
   font-display: swap;
 }
 
+.word-original {
+  text-shadow: 0 0 1em var(--mantine-color-yellow-7);
+  color: var(--mantine-color-yellow-7);
+  font-size: 1.28em;
+}
+.word-translation {
+    text-shadow: 0 0 1em var(--mantine-color-teal-7);
+    color: var(--mantine-color-teal-7);
+}
+.word-star-selected {
+ text-shadow: 0 0 1em var(--mantine-color-yellow-1);
+ color: var(--mantine-color-yellow-1);
+  font-size: 1.28em;
+}
+.word-star-unselected {
+  color: var(--mantine-color-gray-6);
+  font-size: 1.28em;
+}
+.text-secondary {
+    color: var(--mantine-color-gray-6);
+}
+
 :root[data-mantine-color-scheme="light"] {
   --mantine-color-body: #f4f4f4;
 }

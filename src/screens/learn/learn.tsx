@@ -63,7 +63,12 @@ export function Learn() {
   );
 
   return (
-    <Flex direction="column" gap={90} style={{ width: '100%', padding: 32 }} onClick={progress}>
+    <Flex
+      direction="column"
+      gap={'xl'}
+      style={{ width: '100%', padding: '64px 32px 0px 32px', fontSize: 18 }}
+      onClick={progress}
+    >
       <Flex
         direction={'row'}
         justify={'center'}
@@ -72,30 +77,30 @@ export function Learn() {
           height: 50,
           // border: '1px solid yellow',
           alignSelf: 'end',
+          fontSize: 32,
         }}
         onClick={toggleStarred}
       >
-        <Title c={starred ? 'var(--mantine-color-yellow-1)' : 'var(--mantine-color-gray-6)'}>
-          {starred ? '★' : '☆'}
-        </Title>
+        {starred && <Text className={'word-star-selected'}>★</Text>}
+        {!starred && <Text className={'word-star-unselected'}>☆</Text>}
       </Flex>
-      <Flex direction={'column'} gap={'md'}>
-        <Text size={'xl'} style={{ fontSize: 28 }}>
-          {inverse ? word?.translation : word?.original}
-        </Text>
-        <Text
-          size={'lg'}
-          c={'var(--mantine-color-teal-7)'}
-          style={{ visibility: revealed ? undefined : 'hidden', minHeight: 52 }}
-        >
+      <Flex
+        direction={'column'}
+        gap={'md'}
+        style={{
+          minHeight: 220,
+        }}
+      >
+        <Text className={'word-original'}>{inverse ? word?.translation : word?.original}</Text>
+        <Text className={'word-translation'} style={{ visibility: revealed ? undefined : 'hidden' }}>
           {inverse ? word?.original : word?.translation}
         </Text>
       </Flex>
-      <Flex direction={'column'} c={'var(--mantine-color-gray-6)'}>
-        <Text size={'sm'}>
+      <Flex direction={'column'} className={'text-secondary'}>
+        <Text>
           {idx + 1}/{wordsOrder?.length}
         </Text>
-        {word && <Text size={'sm'}>{formatDate(new Date(word.added).toISOString().slice(0, 10))}</Text>}
+        {word && <Text>{formatDate(new Date(word.added).toISOString().slice(0, 10))}</Text>}
         <Flex
           size={'lg'}
           style={{
