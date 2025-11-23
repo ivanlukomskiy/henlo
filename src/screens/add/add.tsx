@@ -1,6 +1,6 @@
 import { ActionIcon, Button, Flex, Textarea } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
-import { deleteWord, getWord, putWord, updateWord } from '../../storage/storage.ts';
+import { getWord, putWord, updateWord } from '../../storage/storage.ts';
 import { useNavigate, useParams } from 'react-router';
 
 export function Add() {
@@ -55,7 +55,17 @@ export function Add() {
 
   const del = useCallback(async () => {
     if (!uuid) return;
-    deleteWord(uuid);
+    const word = await getWord(uuid);
+    if (!word) throw new Error('updating word not found');
+    await updateWord({
+      uuid,
+      original: word.original,
+      translation: word.translation,
+      starred: word.starred,
+      added: word.added,
+      updated: Date.now(),
+      deleted: true,
+    });
     navigate(-1);
   }, [navigate, uuid]);
 
