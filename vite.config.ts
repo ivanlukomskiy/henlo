@@ -16,7 +16,7 @@ export default defineConfig({
         description: 'app to learn new vocabulary',
         theme_color: '#000000',
         background_color: '#000000',
-        display: 'standalone',
+        display: 'fullscreen',
         scope: '/henlo/',
         start_url: '/henlo/',
         icons: [

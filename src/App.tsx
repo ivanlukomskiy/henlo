@@ -138,7 +138,7 @@ function App() {
             direction={'column'}
             style={{
               width: '100%',
-              padding: 20,
+              padding: '5px',
               maxWidth: 500,
             }}
           >

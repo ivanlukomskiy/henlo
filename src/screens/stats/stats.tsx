@@ -40,7 +40,7 @@ export function Stats() {
           >
             <Text style={{ textTransform: 'uppercase',
               color: item.words > 0 ? 'inherit' : 'var(--mantine-color-gray-7)', }}>
-              {item.month}
+              {item.month.substring(0, 3)}
             </Text>
             <div
               style={{
