@@ -8,7 +8,7 @@ export function Main() {
   const [search, setSearch] = useState('');
 
   return (
-    <Flex direction="column" gap={'md'}>
+    <Flex direction="column" gap={'md'} style={{}}>
       <Group gap={'sm'}>
       <Button
         variant="dim"
@@ -46,6 +46,9 @@ export function Main() {
         onChange={event => setSearch(event.currentTarget.value)}
       />
       <WordsList search={search} />
+      {/*<Flex justify={'center'} align={'center'} style={{position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 99, height: 40}} className={'glass'}>*/}
+      {/*  ↑ UP ↑*/}
+      {/*</Flex>*/}
     </Flex>
   );
 }

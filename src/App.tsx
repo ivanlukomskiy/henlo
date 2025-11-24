@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -46,9 +46,12 @@ const theme = createTheme({
 console.log("classes", classes)
 console.log("textareaStyles", textareaStyles)
 
+const showUpThreshold = 500;
+
 function App() {
   const [opened, { toggle }] = useDisclosure();
   const colorScheme = useStore($colorScheme);
+  const [showScrollUp, setShowScrollUp] = useState(false);
   useFirebaseAuth();
 
   useEffect(() => {
@@ -68,6 +71,15 @@ function App() {
       $autoPronounce.set(settings.autoPronounce);
       $inverse.set(settings.learnInverse);
     }
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setShowScrollUp(y > showUpThreshold);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -153,7 +165,28 @@ function App() {
             </Routes>
           </Flex>
         </AppShell.Main>
-        {/*<AppShell.Footer>hehe</AppShell.Footer>*/}
+        <AppShell.Footer
+          className={'glass'}
+          style={{
+            opacity: showScrollUp ? 1 : 0,
+            transition: 'opacity 100ms ease-in-out',
+            pointerEvents: showScrollUp ? 'auto' : 'none',
+          }}
+        >
+          <Flex
+            justify={'center'}
+            align={'center'}
+            style={{ height: 40 }}
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+            }}
+          >
+            ↑ UP ↑
+          </Flex>
+        </AppShell.Footer>
       </AppShell>
     </MantineProvider>
   );

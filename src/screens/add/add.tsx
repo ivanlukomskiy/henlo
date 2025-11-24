@@ -2,7 +2,7 @@ import { ActionIcon, Button, Flex, Text, Textarea } from '@mantine/core';
 import { useCallback, useEffect, useState } from 'react';
 import { getWord, putWord, updateWord } from '../../storage/storage.ts';
 import { useNavigate, useParams } from 'react-router';
-import classes from './add.module.css'
+import classes from './add.module.css';
 
 export function Add() {
   const [original, setOriginal] = useState('');
@@ -94,7 +94,7 @@ export function Add() {
         size={'lg'}
         value={original}
         variant={'henlo'}
-        classNames={{input: classes.originalInput}}
+        classNames={{ input: classes.originalInput }}
         onChange={event => setOriginal(event.currentTarget.value)}
         placeholder={'> original'}
         autosize
@@ -110,7 +110,7 @@ export function Add() {
         size={'lg'}
         value={translation}
         variant={'henlo'}
-        classNames={{input: classes.translationInput}}
+        classNames={{ input: classes.translationInput }}
         onChange={event => setTranslation(event.currentTarget.value)}
         placeholder={'> translation'}
         autosize
@@ -131,11 +131,9 @@ export function Add() {
             del
           </Button>
         )}
-        {uuid && (
-          <Button size={'xl'} variant="light" onClick={() => navigate(-1)} color={'gray'}>
-            cancel
-          </Button>
-        )}
+        <Button size={'xl'} variant="light" onClick={() => navigate(-1)} color={'gray'}>
+          cancel
+        </Button>
       </Flex>
     </Flex>
   );
