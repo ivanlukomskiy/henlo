@@ -56,13 +56,13 @@
 }
 
 .word-original {
-  text-shadow: var(--henlo-color-original);
-  color: var(--henlo-shadow-original);
+  text-shadow: var(--henlo-shadow-original);
+  color: var(--henlo-color-original);
   font-size: 1.28em;
 }
 .word-translation {
-    text-shadow: var(--henlo-color-translation);
-    color: var(--henlo-shadow-translation);
+    text-shadow: var(--henlo-shadow-translation);
+    color: var(--henlo-color-translation);
 }
 .word-star-selected {
  text-shadow: 0 0 1em var(--mantine-color-yellow-1);
