@@ -91,3 +91,36 @@ export function loadSettings(): AppSettings | null {
     return null;
   }
 }
+
+export function saveLearningRoadmap(ids: string[] | null): void {
+  const roadmap = {
+    ids,
+  };
+  localStorage.setItem('learningRoadmap', JSON.stringify(roadmap));
+}
+
+export function loadLearningRoadmap(): string[] | null {
+  const roadmapStr = localStorage.getItem('learningRoadmap');
+  if (!roadmapStr) return null;
+  try {
+    const roadmap = JSON.parse(roadmapStr) as { ids: string[] | null };
+    return roadmap.ids;
+  } catch {
+    return null;
+  }
+}
+
+export function saveLearningProgress(idx: number, revealed: boolean): void {
+  const progress = {idx, revealed};
+  localStorage.setItem('learningProgressIdx', JSON.stringify(progress));
+}
+
+export function loadLearningProgress(): {idx: number; revealed: boolean} {
+  const progressStr = localStorage.getItem('learningProgressIdx');
+  if (!progressStr) return {idx: 0, revealed: false};
+  try {
+    return JSON.parse(progressStr) as { idx: number; revealed: boolean };
+  } catch {
+    return {idx: 0, revealed: false};
+  }
+}

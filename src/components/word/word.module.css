@@ -1,0 +1,19 @@
+.originalInput {
+    &::placeholder {
+        color: var(--henlo-color-original-dim);
+        text-shadow: none;
+    }
+    color: var(--henlo-color-original);
+    text-shadow: var(--henlo-shadow-original);
+    text-align: center;
+    font-size: 1.28em;
+}
+.translationInput {
+    &::placeholder {
+        color: var(--henlo-color-translation-dim);
+        text-shadow: none;
+    }
+    color: var(--henlo-color-translation);
+    text-shadow: var(--henlo-shadow-translation);
+    text-align: center;
+}

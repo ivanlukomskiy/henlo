@@ -53,6 +53,7 @@
   --henlo-color-translation: var(--mantine-color-teal-7);
   --henlo-color-translation-dim: var(--mantine-color-teal-9);
   --henlo-shadow-translation: 0 0 1em var(--mantine-color-teal-7);
+  --henlo-color-dim: var(--mantine-color-gray-6);
 }
 
 .word-original {

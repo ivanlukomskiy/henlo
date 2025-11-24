@@ -1,8 +1,9 @@
-import { ActionIcon, Button, Flex, Text, Textarea } from '@mantine/core';
-import { useCallback, useEffect, useState } from 'react';
+import { ActionIcon } from '@mantine/core';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getWord, putWord, updateWord } from '../../storage/storage.ts';
 import { useNavigate, useParams } from 'react-router';
-import classes from './add.module.css';
+import { Word } from '../../components/word/Word.tsx';
+import { RiCloseLargeLine, RiDeleteBin2Line, RiSaveLine } from '@remixicon/react';
 
 export function Add() {
   const [original, setOriginal] = useState('');
@@ -73,68 +74,37 @@ export function Add() {
     navigate(-1);
   }, [navigate, uuid]);
 
-  return (
-    <Flex direction={'column'} gap={'md'}>
-      <Flex
-        direction={'row'}
-        justify={'center'}
-        style={{
-          width: 50,
-          height: 50,
-          // border: '1px solid yellow',
-          alignSelf: 'end',
-          fontSize: 32,
+  const buttons = useMemo(() => {
+    return [
+      <ActionIcon size={'xl'} variant={'transparent'} onClick={add} c={'var(--henlo-color-dim)'}>
+        <RiSaveLine className="my-icon" />
+      </ActionIcon>,
+      <ActionIcon size={'xl'} variant={'transparent'} onClick={del} c={'var(--henlo-color-dim)'}>
+        <RiDeleteBin2Line />
+      </ActionIcon>,
+      <ActionIcon
+        size={'xl'}
+        variant={'transparent'}
+        onClick={() => {
+          navigate('/');
         }}
-        onClick={() => setStarred(!starred)}
+        c={'var(--henlo-color-dim)'}
       >
-        {starred && <Text className={'word-star-selected'}>★</Text>}
-        {!starred && <Text className={'word-star-unselected'}>☆</Text>}
-      </Flex>
-      <Textarea
-        size={'lg'}
-        value={original}
-        variant={'henlo'}
-        classNames={{ input: classes.originalInput }}
-        onChange={event => setOriginal(event.currentTarget.value)}
-        placeholder={'> original'}
-        autosize
-        rightSection={
-          original && (
-            <ActionIcon variant={'subtle'} size={'xl'} onClick={() => setOriginal('')}>
-              ❌
-            </ActionIcon>
-          )
-        }
-      />
-      <Textarea
-        size={'lg'}
-        value={translation}
-        variant={'henlo'}
-        classNames={{ input: classes.translationInput }}
-        onChange={event => setTranslation(event.currentTarget.value)}
-        placeholder={'> translation'}
-        autosize
-        rightSection={
-          translation && (
-            <ActionIcon variant={'subtle'} size={'xl'} onClick={() => setTranslation('')}>
-              ❌
-            </ActionIcon>
-          )
-        }
-      />
-      <Flex direction={'row'} gap={'sm'} style={{ width: '100%' }} justify={'stretch'}>
-        <Button size={'xl'} variant="dim" onClick={add} style={{ flexGrow: 1 }}>
-          ok
-        </Button>
-        {uuid && (
-          <Button size={'xl'} variant="light" onClick={del} color={'red'}>
-            del
-          </Button>
-        )}
-        <Button size={'xl'} variant="light" onClick={() => navigate(-1)} color={'gray'}>
-          cancel
-        </Button>
-      </Flex>
-    </Flex>
+        <RiCloseLargeLine />
+      </ActionIcon>,
+    ];
+  }, [add, del, navigate]);
+
+  return (
+    <Word
+      primary={original}
+      onPrimaryChanged={setOriginal}
+      secondary={translation}
+      onSecondaryChanged={setTranslation}
+      starred={starred ?? false}
+      edit={true}
+      onStarredToggled={() => setStarred(!starred)}
+      buttons={buttons}
+    />
   );
 }

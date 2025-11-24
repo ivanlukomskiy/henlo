@@ -17,8 +17,16 @@ import { Main } from './screens/main/main.tsx';
 import { Add } from './screens/add/add.tsx';
 import { Link, Route, Routes } from 'react-router';
 import { Import } from './screens/import/import.tsx';
-import { listWords, loadSettings } from './storage/storage.ts';
-import { $autoPronounce, $colorScheme, $inverse, $translations } from './storage/nanostores.ts';
+import { listWords, loadLearningProgress, loadLearningRoadmap, loadSettings } from './storage/storage.ts';
+import {
+  $autoPronounce,
+  $colorScheme,
+  $inverse,
+  $learningWordIds,
+  $learningWordIdx,
+  $revealed,
+  $translations,
+} from './storage/nanostores.ts';
 import { Learn } from './screens/learn/learn.tsx';
 import { LearnMenu } from './screens/learn-menu/learn-menu.tsx';
 import { useFirebaseAuth } from './hooks/use-firebase-app.ts';
@@ -43,8 +51,6 @@ const theme = createTheme({
     }),
   },
 });
-console.log("classes", classes)
-console.log("textareaStyles", textareaStyles)
 
 const showUpThreshold = 500;
 
@@ -63,6 +69,13 @@ function App() {
     listWords().then(words => {
       $translations.set(words);
     });
+    const { idx, revealed } = loadLearningProgress();
+    $learningWordIdx.set(idx);
+    $revealed.set(revealed);
+    const roadmap = loadLearningRoadmap();
+    if (roadmap != null) {
+      $learningWordIds.set(roadmap);
+    }
   }, []);
 
   useEffect(() => {
@@ -78,8 +91,8 @@ function App() {
       const y = window.scrollY;
       setShowScrollUp(y > showUpThreshold);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
@@ -169,7 +182,7 @@ function App() {
           className={'glass'}
           style={{
             opacity: showScrollUp ? 1 : 0,
-            transition: 'opacity 100ms ease-in-out',
+            transition: 'opacity 300ms ease-in-out',
             pointerEvents: showScrollUp ? 'auto' : 'none',
           }}
         >

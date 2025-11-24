@@ -4,30 +4,43 @@ import { useCallback } from 'react';
 import {
   $autoPronounce,
   $inverse,
+  $learningWordIds,
   setupLearningByDays,
   setupLearningRandomOrder,
   setupLearningStarredOnly,
 } from '../../storage/nanostores.ts';
 import { useStore } from '@nanostores/react';
-import { saveSettings } from '../../storage/storage.ts';
+import { saveLearningProgress, saveLearningRoadmap, saveSettings } from '../../storage/storage.ts';
 
 export function LearnMenu() {
   const navigate = useNavigate();
   const inverse = useStore($inverse);
   const pronounce = useStore($autoPronounce);
+  const learningWordIds = useStore($learningWordIds);
+  const hasRoadmap = learningWordIds && learningWordIds.length > 0;
 
   const onDataByDateClick = useCallback(() => {
     setupLearningByDays();
+    saveLearningRoadmap($learningWordIds.get());
+    saveLearningProgress(0, false);
     navigate('/learn');
   }, [navigate]);
 
   const onFullRandomClick = useCallback(() => {
     setupLearningRandomOrder();
+    saveLearningRoadmap($learningWordIds.get());
+    saveLearningProgress(0, false);
     navigate('/learn');
   }, [navigate]);
 
   const onStarredOnlyClick = useCallback(() => {
     setupLearningStarredOnly();
+    saveLearningRoadmap($learningWordIds.get());
+    saveLearningProgress(0, false);
+    navigate('/learn');
+  }, [navigate]);
+
+  const onContinue = useCallback(() => {
     navigate('/learn');
   }, [navigate]);
 
@@ -57,26 +70,18 @@ export function LearnMenu() {
           { label: 'Silent', value: 'silent' },
         ]}
       />
-      <Button
-        variant="dim"
-        size={'xl'}
-        onClick={onDataByDateClick}
-      >
+      {hasRoadmap && (
+        <Button variant="dim" size={'xl'} onClick={onContinue}>
+          Continue
+        </Button>
+      )}
+      <Button variant="dim" size={'xl'} onClick={onDataByDateClick}>
         Date by date
       </Button>
-      <Button
-        variant="dim"
-        size={'xl'}
-        onClick={onFullRandomClick}
-      >
+      <Button variant="dim" size={'xl'} onClick={onFullRandomClick}>
         Full random
       </Button>
-      <Button
-        variant="dim"
-        gradient={{ from: 'cyan', to: 'yellow', deg: 90 }}
-        size={'xl'}
-        onClick={onStarredOnlyClick}
-      >
+      <Button variant="dim" gradient={{ from: 'cyan', to: 'yellow', deg: 90 }} size={'xl'} onClick={onStarredOnlyClick}>
         Starred only
       </Button>
     </Flex>

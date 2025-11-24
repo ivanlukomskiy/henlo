@@ -1,84 +1,49 @@
 import { Flex, Text } from '@mantine/core';
-import { useStore } from '@nanostores/react';
-import { $autoPronounce, $inverse, $learningWordIds, $learningWordIdx, $revealed } from '../../storage/nanostores.ts';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { getWord, updateWord } from '../../storage/storage.ts';
-import type { Translation } from '../../storage/models.ts';
-import { formatDate } from '../../storage/utils.ts';
-import { useNavigate } from 'react-router';
+import type { JSX } from 'react';
+import { EditableText } from '../editable-text/EditableText.tsx';
+import classes from './word.module.css';
 
 interface WordProps {
   primary: string;
   secondary: string;
   starred: boolean;
-  onPrimaryChanged: (newPrimary: string) => void;
-  onSecondaryChanged: (newSecondary: string) => void;
-  onStarredToggled: () => void;
-  onClick: () => void;
+  revealed?: boolean;
   edit: boolean;
+
+  onPrimaryChanged?: (newPrimary: string) => void;
+  onSecondaryChanged?: (newSecondary: string) => void;
+  onStarredToggled?: () => void;
+  onClick?: () => void;
+  info?: JSX.Element;
+  buttons?: JSX.Element[];
 }
 
-export function Word() {
-  const idx = useStore($learningWordIdx);
-  const wordsOrder = useStore($learningWordIds);
-  const revealed = useStore($revealed);
-  const inverse = useStore($inverse);
-  const pronounce = useStore($autoPronounce);
-  const [word, setWord] = useState<Translation | null>(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!wordsOrder) return;
-    getWord(wordsOrder[idx]).then(word => setWord(word));
-  }, [idx, wordsOrder]);
-
-  const playText = useCallback((text: string) => {
-    speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    speechSynthesis.speak(utterance);
-  }, []);
-
-  const progress = useCallback(() => {
-    if (idx + 1 >= (wordsOrder?.length || 0)) {
-      $learningWordIds.set(null);
-      navigate('/learn-menu');
-      // finished
-      return;
+export function Word({
+  primary,
+  secondary,
+  starred,
+  onPrimaryChanged,
+  onSecondaryChanged,
+  onStarredToggled,
+  onClick,
+  edit,
+  revealed = true,
+  info,
+  buttons,
+}: WordProps) {
+  const onStarredClicked = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onStarredToggled) {
+      onStarredToggled();
     }
-    if (!revealed) {
-      $revealed.set(true);
-      if (pronounce && word) {
-        playText(word.original);
-      }
-      return;
-    }
-    $learningWordIdx.set(idx + 1);
-    $revealed.set(false);
-  }, [idx, navigate, playText, pronounce, revealed, word, wordsOrder?.length]);
-
-  const starred = useMemo(() => {
-    return word?.starred;
-  }, [word?.starred]);
-
-  const toggleStarred = useCallback(
-    e => {
-      console.log('toggle', word);
-      e.stopPropagation();
-      if (!word) return;
-      updateWord({ ...word, starred: !word.starred }).then(() => {
-        console.log('updated');
-        setWord({ ...word, starred: !word.starred });
-      });
-    },
-    [word],
-  );
+  };
 
   return (
     <Flex
       direction="column"
       gap={'xl'}
-      style={{ width: '100%', padding: '64px 32px 0px 32px', fontSize: 18, userSelect: 'none' }}
-      onClick={progress}
+      style={{ width: '100%', padding: '64px 0 0px 0', fontSize: 18, userSelect: 'none' }}
+      onClick={onClick}
     >
       <Flex
         direction={'row'}
@@ -86,11 +51,11 @@ export function Word() {
         style={{
           width: 50,
           height: 50,
-          // border: '1px solid yellow',
           alignSelf: 'end',
           fontSize: 32,
+          padding: '0 32px',
         }}
-        onClick={toggleStarred}
+        onClick={onStarredClicked}
       >
         {starred && <Text className={'word-star-selected'}>★</Text>}
         {!starred && <Text className={'word-star-unselected'}>☆</Text>}
@@ -102,34 +67,28 @@ export function Word() {
           minHeight: 220,
         }}
       >
-        <Text className={'word-original'}>{inverse ? word?.translation : word?.original}</Text>
-        <Text className={'word-translation'} style={{ visibility: revealed ? undefined : 'hidden' }}>
-          {inverse ? word?.original : word?.translation}
-        </Text>
+        <EditableText
+          text={primary}
+          edit={edit}
+          onTextChanged={onPrimaryChanged}
+          className={'word-original'}
+          placeholder={'> original'}
+          inputClassName={classes.originalInput}
+        />
+        <EditableText
+          text={secondary}
+          edit={edit}
+          onTextChanged={onSecondaryChanged}
+          className={'word-translation'}
+          style={{ visibility: revealed ? undefined : 'hidden' }}
+          placeholder={'> translation'}
+          inputClassName={classes.translationInput}
+        />
       </Flex>
       <Flex direction={'column'} className={'text-secondary'}>
-        <Text>
-          {idx + 1}/{wordsOrder?.length}
-        </Text>
-        {word && <Text>{formatDate(new Date(word.added).toISOString().slice(0, 10))}</Text>}
-        <Flex
-          size={'lg'}
-          style={{
-            width: 50,
-            height: 50,
-            // border: '1px solid var(--mantine-color-gray-6)',
-            alignSelf: 'center',
-          }}
-          justify={'center'}
-          align={'center'}
-          onClick={e => {
-            if (word) {
-              e.stopPropagation();
-              playText(word.original);
-            }
-          }}
-        >
-          <Text>🔊</Text>
+        {info}
+        <Flex direction={'row'} justify={'center'} gap={'sm'}>
+          {buttons}
         </Flex>
       </Flex>
     </Flex>

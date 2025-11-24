@@ -1,11 +1,13 @@
-import { Flex, Text, Title } from '@mantine/core';
+import { ActionIcon, Text } from '@mantine/core';
 import { useStore } from '@nanostores/react';
 import { $autoPronounce, $inverse, $learningWordIds, $learningWordIdx, $revealed } from '../../storage/nanostores.ts';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { getWord, updateWord } from '../../storage/storage.ts';
+import { getWord, saveLearningProgress, saveLearningRoadmap, updateWord } from '../../storage/storage.ts';
 import type { Translation } from '../../storage/models.ts';
 import { formatDate } from '../../storage/utils.ts';
 import { useNavigate } from 'react-router';
+import { Word } from '../../components/word/Word.tsx';
+import { RiCloseLargeLine, RiVolumeUpLine } from '@remixicon/react';
 
 export function Learn() {
   const idx = useStore($learningWordIdx);
@@ -30,6 +32,7 @@ export function Learn() {
   const progress = useCallback(() => {
     if (idx + 1 >= (wordsOrder?.length || 0)) {
       $learningWordIds.set(null);
+      saveLearningRoadmap(null)
       navigate('/learn-menu');
       // finished
       return;
@@ -39,88 +42,77 @@ export function Learn() {
       if (pronounce && word) {
         playText(word.original);
       }
+      saveLearningProgress(idx, true);
       return;
     }
     $learningWordIdx.set(idx + 1);
     $revealed.set(false);
+    saveLearningProgress(idx, false);
   }, [idx, navigate, playText, pronounce, revealed, word, wordsOrder?.length]);
 
   const starred = useMemo(() => {
     return word?.starred;
   }, [word?.starred]);
 
-  const toggleStarred = useCallback(
-    e => {
-      console.log('toggle', word);
-      e.stopPropagation();
-      if (!word) return;
-      updateWord({ ...word, starred: !word.starred }).then(() => {
-        console.log('updated');
-        setWord({ ...word, starred: !word.starred });
-      });
-    },
-    [word],
-  );
+  const toggleStarred = useCallback(() => {
+    if (!word) return;
+    updateWord({ ...word, starred: !word.starred }).then(() => {
+      console.log('updated');
+      setWord({ ...word, starred: !word.starred });
+    });
+  }, [word]);
 
-  return (
-    <Flex
-      direction="column"
-      gap={'xl'}
-      style={{ width: '100%', padding: '64px 32px 0px 32px', fontSize: 18, userSelect: 'none' }}
-      onClick={progress}
-    >
-      <Flex
-        direction={'row'}
-        justify={'center'}
-        style={{
-          width: 50,
-          height: 50,
-          // border: '1px solid yellow',
-          alignSelf: 'end',
-          fontSize: 32,
+  const buttons = useMemo(() => {
+    return [
+      <ActionIcon
+        size={'xl'}
+        variant={'transparent'}
+        onClick={e => {
+          if (word) {
+            e.stopPropagation();
+            playText(word.original);
+          }
         }}
-        onClick={toggleStarred}
+        c={'var(--henlo-color-dim)'}
       >
-        {starred && <Text className={'word-star-selected'}>★</Text>}
-        {!starred && <Text className={'word-star-unselected'}>☆</Text>}
-      </Flex>
-      <Flex
-        direction={'column'}
-        gap={'md'}
-        style={{
-          minHeight: 220,
+        <RiVolumeUpLine />
+      </ActionIcon>,
+      <ActionIcon
+        size={'xl'}
+        variant={'transparent'}
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate('/')
         }}
+        c={'var(--henlo-color-dim)'}
       >
-        <Text className={'word-original'}>{inverse ? word?.translation : word?.original}</Text>
-        <Text className={'word-translation'} style={{ visibility: revealed ? undefined : 'hidden' }}>
-          {inverse ? word?.original : word?.translation}
-        </Text>
-      </Flex>
-      <Flex direction={'column'} className={'text-secondary'}>
+        <RiCloseLargeLine/>
+      </ActionIcon>,
+    ];
+  }, [navigate, playText, word]);
+
+  const info = useMemo(() => {
+    return (
+      <>
         <Text>
           {idx + 1}/{wordsOrder?.length}
         </Text>
         {word && <Text>{formatDate(new Date(word.added).toISOString().slice(0, 10))}</Text>}
-        <Flex
-          size={'lg'}
-          style={{
-            width: 50,
-            height: 50,
-            // border: '1px solid var(--mantine-color-gray-6)',
-            alignSelf: 'center',
-          }}
-          justify={'center'}
-          align={'center'}
-          onClick={e => {
-            if (word) {
-              e.stopPropagation();
-              playText(word.original);
-            }
-          }}
-        >
-          <Text>🔊</Text>
-        </Flex>
-      </Flex>
-    </Flex>
+      </>
+    );
+  }, [idx, word, wordsOrder?.length]);
+
+  return (
+    <Word
+      primary={inverse ? word?.translation || '' : word?.original || ''}
+      secondary={inverse ? word?.original || '' : word?.translation || ''}
+      starred={starred ?? false}
+      edit={false}
+      onStarredToggled={toggleStarred}
+      info={info}
+      onClick={progress}
+      revealed={revealed}
+      buttons={buttons}
+    />
   );
 }
